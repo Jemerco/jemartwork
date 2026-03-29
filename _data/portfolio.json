@@ -3,55 +3,65 @@
     {
       "title": "Nesta Archeron",
       "meta": "ACOTAR · Full Color",
-      "tags": ["fanart"],
+      "tags": [
+        "fanart"
+      ],
       "img": "https://jemcomissao.carrd.co/assets/images/gallery01/882c113b.jpg?v=85d73096"
     },
     {
       "title": "Selestra Somniatis",
       "meta": "Princess of Souls · Full Color",
-      "tags": ["fanart"],
+      "tags": [
+        "editorial"
+      ],
       "img": "https://jemcomissao.carrd.co/assets/images/gallery03/2f589bcc.jpg?v=85d73096"
-    },
-    {
-      "title": "Cardan & Oak",
-      "meta": "Folk of the Air · Character",
-      "tags": ["fanart"],
-      "img": "https://jemcomissao.carrd.co/assets/images/gallery01/4597e79a.jpg?v=85d73096"
     },
     {
       "title": "Elide & Lorcan",
       "meta": "Throne of Glass · Editorial",
-      "tags": ["editorial"],
-      "img": "https://jemcomissao.carrd.co/assets/images/gallery01/140883ab.jpg?v=85d73096"
+      "tags": [
+        "editorial"
+      ],
+      "img": ""
     },
     {
-      "title": "Elain Archeron",
-      "meta": "ACOTAR · Character",
-      "tags": ["fanart"],
+      "title": "Rowan & Aelin - Throne of Glass",
+      "meta": "TOG · Rowan & Aelin",
+      "tags": [
+        "fanart"
+      ],
       "img": "https://jemcomissao.carrd.co/assets/images/gallery01/f1ff86e5.jpg?v=85d73096"
     },
     {
-      "title": "Editorial Spread",
+      "title": "Key",
       "meta": "Editorial · B&W",
-      "tags": ["editorial"],
+      "tags": [
+        "editorial"
+      ],
       "img": "https://jemcomissao.carrd.co/assets/images/gallery03/a65e5d7e.jpg?v=85d73096"
     },
     {
       "title": "Comic Page",
       "meta": "Comic · B&W",
-      "tags": ["comic"],
+      "tags": [
+        "comic"
+      ],
       "img": "https://jemcomissao.carrd.co/assets/images/gallery02/f07dc710.jpg?v=85d73096"
     },
     {
       "title": "Reference Sheet",
       "meta": "Character · Ref Sheet",
-      "tags": ["original"],
+      "tags": [
+        "original"
+      ],
       "img": "https://jemcomissao.carrd.co/assets/images/gallery05/1ea4bafd.jpg?v=85d73096"
     },
     {
       "title": "Cloud",
       "meta": "Original · Full Color",
-      "tags": ["original"],
+      "tags": [
+        "original"
+      ],
       "img": "/images/2.jpg"
     }
   ]
