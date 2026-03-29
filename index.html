@@ -296,8 +296,6 @@ body.shop-int [data-br]{display:none!important;}
 <!-- PORTFOLIO -->
 <section class="section" id="portfolio">
   <div class="s-label"><span data-en>Portfolio</span><span data-pt>Portfólio</span></div>
-  <h2 class="s-title"><span data-en>Selected Works</span><span data-pt>Trabalhos Selecionados</span></h2>
-  <p class="s-desc"><span data-en>Fantasy book illustration, original characters and editorial art.</span><span data-pt>Ilustrações de livros de fantasia, personagens originais e arte editorial.</span></p>
   <div class="filter-row" id="filter-row"></div>
   <div class="port-grid" id="port-grid"></div>
   <p style="font-size:10px;color:var(--text-dim);text-align:center;padding-bottom:8px;">
@@ -406,6 +404,7 @@ body.shop-int [data-br]{display:none!important;}
         <div class="dont-block"><div class="blk-title"><span data-en>I don't draw</span><span data-pt>Não faço</span></div><ul class="blk-list"><li>Mecha</li><li>Furry</li><li>Gore</li><li>NSFW</li></ul></div>
       </div>
 
+      <div class="s-label" style="margin-top:20px;"><span data-en>Policies</span><span data-pt>Políticas</span></div>
       <div class="info-block" id="info-payment"><strong data-en>Payment</strong><strong data-pt>Pagamento</strong><span id="info-payment-en" data-en></span><span id="info-payment-pt" data-pt></span></div>
       <div class="info-block" id="info-timeline"><strong data-en>Timeline</strong><strong data-pt>Prazo</strong><span id="info-timeline-en" data-en></span><span id="info-timeline-pt" data-pt></span></div>
       <div class="info-block" id="info-wips"><strong data-en>WIPs & Approval</strong><strong data-pt>WIPs e Aprovação</strong><span id="info-wips-en" data-en></span><span id="info-wips-pt" data-pt></span></div>
@@ -755,6 +754,7 @@ function buildMsg(price){
   if(state.size)lines.push(`${en?'Size':'Tamanho'}: ${szN[state.size]||state.size}`);
   if(state.color)lines.push(`${en?'Color':'Colorização'}: ${state.color==='pb'?'B&W':'Color'}`);
   if(state.pages)lines.push(`${en?'Pages':'Páginas'}: ${state.pages}`);
+  if(state.extras.size){const eN={extra_char:en?'Extra character':'Personagem adicional',detalhes:en?'Complex details':'Detalhes complexos',cen_s:en?'Simple background':'Cenário simples',cen_c:en?'Complex background':'Cenário complexo',ani_p:en?'Small animal':'Animal pequeno',ani_g:en?'Large animal':'Animal grande'};lines.push(`${en?'Add-ons':'Adicionais'}: ${[...state.extras].map(k=>eN[k]).join(', ')}`);}
   lines.push(`${en?'Estimated':'Estimativa'}: ${price}`,'',en?'[Describe your character + share references 🎨]':'[Descreva seu personagem e envie referências 🎨]');
   return lines.join('\n');
 }

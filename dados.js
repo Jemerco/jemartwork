@@ -131,7 +131,7 @@ const DADOS = {
     {
       title: "Comic Page",
       meta:  "Comic · B&W",
-      tags:  ["original"],
+      tags:  ["comic"],
       img:   "https://jemcomissao.carrd.co/assets/images/gallery02/f07dc710.jpg?v=85d73096",
     },
     {
@@ -173,6 +173,7 @@ const DADOS = {
   /* ── LABELS DOS FILTROS DO PORTFÓLIO ── */
   /* Adicione aqui o nome de exibição para cada tag usada nas obras */
   tagLabels: {
+    "comic":      { en: "Comics",     pt: "Quadrinhos" },
     "editorial":  { en: "Editorial",  pt: "Editorial"  },
     "fanart":     { en: "Fanarts",    pt: "Fanarts"    },
     "landscape":  { en: "Landscape",  pt: "Paisagem"   },
