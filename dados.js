@@ -170,6 +170,14 @@ const DADOS = {
     },
   ],
 
+  /* ── SOBRE / ABOUT ── */
+  sobre: {
+    nome: "Jéssica Merco",
+    bio_en: "Brazilian illustrator specializing in fantasy book fanart and original character design. Passionate about the bookish community and bringing literary characters to life — especially from ACOTAR, Throne of Glass, and The Folk of the Air.",
+    bio_pt: "Ilustradora brasileira especializada em fanart de livros de fantasia e design de personagens originais. Apaixonada pela comunidade bookish e por dar vida a personagens literários — especialmente ACOTAR, Throne of Glass e The Folk of the Air.",
+    tags: ["Fantasy Art", "Book Fanart", "Character Design", "Editorial", "Comic Pages"],
+  },
+
   /* ── LOJA BRASIL (Montink) ── */
   loja_br: [
     {
