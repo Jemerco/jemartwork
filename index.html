@@ -30,6 +30,13 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .nav.open .hamburger span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
 .nav.open .hamburger span:nth-child(2){opacity:0;}
 .nav.open .hamburger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+@media(min-width:768px){
+  .nav-links{display:flex;flex-direction:row;position:static;border-bottom:none;background:none;}
+  .nav-link{padding:0 14px;height:52px;display:flex;align-items:center;border-left:none;border-bottom:2px solid transparent;}
+  .nav-link:last-child{border-bottom:2px solid transparent;}
+  .nav-link:hover,.nav-link.active{border-left-color:transparent;border-bottom-color:var(--gold);}
+  .hamburger{display:none;}
+}
 
 /* HERO */
 .hero{background:linear-gradient(175deg,#b8c8d8 0%,#cad6e0 25%,#dce4e8 45%,#e8dfd0 70%,#f0ead8 100%);padding:64px 28px 52px;position:relative;overflow:hidden;text-align:center;}
@@ -265,25 +272,25 @@ body.shop-int [data-br]{display:none!important;}
 }
 
 /* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,9,8,.96);align-items:center;justify-content:center;padding:0;}
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(255,255,255,.10);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);align-items:center;justify-content:center;padding:0;}
 .lightbox.open{display:flex;}
 .lightbox-inner{position:relative;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.lightbox-inner img{max-width:96vw;max-height:90vh;object-fit:contain;border-radius:2px;display:block;}
-.lightbox-close{position:absolute;top:-40px;right:0;background:none;border:none;color:#f0e8d8;font-size:13px;cursor:pointer;font-family:'DM Mono',monospace;letter-spacing:.15em;text-transform:uppercase;opacity:.6;transition:opacity .15s;padding:4px 0;}
+.lightbox-inner img{max-width:88vw;max-height:88vh;object-fit:contain;border-radius:2px;display:block;}
+.lightbox-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--text);font-size:13px;cursor:pointer;font-family:'DM Mono',monospace;letter-spacing:.15em;text-transform:uppercase;opacity:.7;transition:opacity .15s;padding:4px 0;}
 .lightbox-close:hover{opacity:1;}
-.lightbox-caption{margin-top:12px;text-align:center;font-family:'DM Mono',monospace;font-size:10px;color:#9a8c78;letter-spacing:.1em;}
-.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:#f0e8d8;font-size:28px;cursor:pointer;padding:12px;opacity:.5;transition:opacity .15s;user-select:none;}
-.lightbox-nav:hover{opacity:1;}
-.lightbox-prev{left:-52px;}
-.lightbox-next{right:-52px;}
-.lightbox-counter{position:absolute;top:-40px;left:0;font-family:'DM Mono',monospace;font-size:10px;color:#9a8c78;letter-spacing:.1em;}
+.lightbox-caption{margin-top:12px;text-align:center;font-family:'DM Mono',monospace;font-size:10px;color:var(--text-mid);letter-spacing:.1em;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:var(--surface);border:1px solid var(--border);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--text);font-size:20px;cursor:pointer;padding:0;opacity:.8;transition:opacity .15s,background .15s;user-select:none;}
+.lightbox-nav:hover{opacity:1;background:var(--gold);color:var(--surface);border-color:var(--gold);}
+.lightbox-prev{left:20px;}
+.lightbox-next{right:20px;}
+.lightbox-counter{position:absolute;top:20px;left:24px;font-family:'DM Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.1em;}
 .copy-quote-btn{padding:10px 16px;background:transparent;border:1px solid var(--gold-dim);border-radius:2px;color:var(--gold);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0;}
 .copy-quote-btn:hover{background:#8a6f4210;}
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="/dados.js"></script>
 </head>
-<body class="lang-en cur-brl shop-int">
+<body class="lang-en cur-usd shop-int">
 
 <nav class="nav">
   <div class="nav-inner">
@@ -295,8 +302,8 @@ body.shop-int [data-br]{display:none!important;}
       <a class="nav-link" href="#about"><span data-en>About</span><span data-pt>Sobre</span></a>
     </div>
     <div class="lang-toggle">
-      <button class="lang-btn" onclick="setLang('pt')">PT</button>
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('pt')">PT R$</button>
+      <button class="lang-btn active" onclick="setLang('en')">EN $</button>
     </div>
     <button class="hamburger" onclick="this.closest('.nav').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -439,7 +446,7 @@ body.shop-int [data-br]{display:none!important;}
     </div>
   </div>
 
-  <div class="s-label" style="margin-top:40px;"><span data-en>Policies</span><span data-pt>Políticas</span></div>
+  <div class="s-label" style="margin-top:20px;"><span data-en>Policies</span><span data-pt>Políticas</span></div>
   <div class="policies-grid">
     <div class="info-block" id="info-payment"><strong data-en>Payment</strong><strong data-pt>Pagamento</strong><span id="info-payment-en" data-en></span><span id="info-payment-pt" data-pt></span></div>
     <div class="info-block" id="info-timeline"><strong data-en>Timeline</strong><strong data-pt>Prazo</strong><span id="info-timeline-en" data-en></span><span id="info-timeline-pt" data-pt></span></div>
@@ -447,7 +454,7 @@ body.shop-int [data-br]{display:none!important;}
   </div>
 
   <!-- QUOTE BUILDER -->
-  <div class="s-label" style="margin-top:40px;"><span data-en>Quote builder</span><span data-pt>Orçador</span></div>
+  <div class="s-label" style="margin-top:20px;"><span data-en>Quote builder</span><span data-pt>Orçador</span></div>
   <div class="calc-wrap">
     <div class="calc-header">
       <div class="calc-header-title"><span data-en>Build your quote</span><span data-pt>Monte seu orçamento</span></div>
@@ -479,7 +486,7 @@ body.shop-int [data-br]{display:none!important;}
   </div>
 
   <!-- CONTACT -->
-  <div class="s-label" style="margin-top:36px;"><span data-en>Send a request</span><span data-pt>Enviar pedido</span></div>
+  <div class="s-label" style="margin-top:20px;"><span data-en>Send a request</span><span data-pt>Enviar pedido</span></div>
   <div class="contact-layout">
     <div class="contact-channels">
       <button class="ch-btn email" onclick="openChannel('email')">
@@ -622,7 +629,7 @@ function renderPolicies(){
 }
 renderPolicies();
 // CURRENCY — can still be changed manually after language switch
-var currentCur='brl';
+var currentCur='usd';
 const isEN=()=>document.body.classList.contains('lang-en');
 function setCurrency(c,btn){currentCur=c;document.body.className=document.body.className.replace(/cur-\w+/,'cur-'+c);document.querySelectorAll('.tgl-opt[onclick*="setCurrency"]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');updateCalcResult();}
 // SHOP
