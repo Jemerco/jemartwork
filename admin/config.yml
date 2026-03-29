@@ -15,7 +15,18 @@ collections:
     label: "⚙ Informações Gerais"
     files:
 
-      - name: "sobre"
+      - name: "policies"
+        label: "Políticas / Policies"
+        file: "_data/policies.json"
+        fields:
+          - { label: "Pagamento (PT)", name: "payment_pt", widget: "text", required: false }
+          - { label: "Payment (EN)", name: "payment_en", widget: "text", required: false }
+          - { label: "Prazo (PT)", name: "timeline_pt", widget: "text", required: false }
+          - { label: "Timeline (EN)", name: "timeline_en", widget: "text", required: false }
+          - { label: "WIPs e Aprovação (PT)", name: "wips_pt", widget: "text", required: false }
+          - { label: "WIPs & Approval (EN)", name: "wips_en", widget: "text", required: false }
+
+      - name: "sobre" 
         label: "Sobre / About"
         file: "_data/sobre.json"
         fields:
