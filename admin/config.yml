@@ -1,8 +1,7 @@
 backend:
-  name: github
-  repo: Jemerco/jemartwork
+  name: git-gateway
   branch: main
-
+  
 media_folder: public/images
 public_folder: /images
 
