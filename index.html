@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jem Art — Fantasy Illustration & Commissions</title>
+<meta name="description" content="Fantasy book illustration, commissions and prints by Jéssica Merco. ACOTAR, Throne of Glass, original characters.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f2ea;--bg2:#f0ead8;--bg3:#e8e0cc;--surface:#faf7f2;--border:#ddd5c0;--border2:#ccc3aa;--gold:#8a6f42;--gold-lt:#b8966a;--gold-dim:#c8b090;--sky:#8faabb;--cream:#2a2018;--text:#3d3020;--text-mid:#6a5c48;--text-dim:#9a8c78;--green:#5a7a4a;--rose:#c08878;--max-w:1100px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font-size:13px;line-height:1.7;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 24px;height:52px;}
+.nav-inner{display:flex;align-items:center;width:100%;max-width:var(--max-w);margin:0 auto;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--text);margin-right:auto;flex-shrink:0;text-decoration:none;}
+.nav-logo em{font-style:italic;color:var(--gold);}
+.nav-links{display:flex;}
+.nav-link{padding:0 13px;height:52px;display:flex;align-items:center;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;white-space:nowrap;}
+.nav-link:hover,.nav-link.active{color:var(--gold);border-bottom-color:var(--gold);}
+.lang-toggle{margin-left:14px;display:flex;background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden;flex-shrink:0;}
+.lang-btn{padding:5px 10px;font-size:9px;letter-spacing:.1em;color:var(--text-dim);cursor:pointer;border:none;background:none;font-family:'DM Mono',monospace;transition:all .15s;}
+.lang-btn.active{background:var(--gold);color:var(--surface);}
+
+/* HERO */
+.hero{background:linear-gradient(175deg,#b8c8d8 0%,#cad6e0 25%,#dce4e8 45%,#e8dfd0 70%,#f0ead8 100%);padding:64px 28px 52px;position:relative;overflow:hidden;text-align:center;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 20%,#ffffff22 0%,transparent 60%);pointer-events:none;}
+.hero-inner{max-width:var(--max-w);margin:0 auto;position:relative;}
+.hero-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--sky);margin-bottom:18px;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--cream);line-height:1;margin-bottom:10px;}
+.hero-name em{font-style:italic;color:var(--gold);}
+.hero-tagline{font-size:11px;color:var(--text-mid);letter-spacing:.12em;margin-bottom:32px;line-height:2;}
+.hero-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{padding:12px 28px;background:var(--gold);color:var(--surface);border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background .2s;}
+.btn-primary:hover{background:var(--gold-lt);}
+.btn-outline{padding:12px 28px;background:transparent;color:var(--sky);border:1px solid var(--sky);border-radius:2px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .2s;}
+.btn-outline:hover{background:var(--sky);color:var(--surface);}
+
+/* PAGE BODY */
+.page-body{max-width:var(--max-w);margin:0 auto;padding:0 24px;}
+.section{padding:44px 0 0;}
+.divider{height:1px;background:var(--border);margin:44px 0 0;}
+.s-label{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.s-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--cream);margin-bottom:8px;line-height:1.1;}
+.s-desc{font-size:11px;color:var(--text-mid);margin-bottom:22px;line-height:1.9;}
+
+/* PORTFOLIO */
+.filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
+.ftag{padding:6px 14px;border:1px solid var(--border);border-radius:2px;font-size:9px;letter-spacing:.1em;color:var(--text-dim);background:transparent;cursor:pointer;transition:all .15s;font-family:'DM Mono',monospace;}
+.ftag:hover{border-color:var(--gold-dim);color:var(--gold);}
+.ftag.active{background:var(--gold);color:var(--surface);border-color:var(--gold);}
+.port-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+.port-card{background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s;}
+.port-card:hover{border-color:var(--gold-dim);transform:translateY(-2px);}
+.port-img{aspect-ratio:3/4;background:var(--bg3);overflow:hidden;}
+.port-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
+.port-card:hover .port-img img{transform:scale(1.04);}
+.port-info{padding:10px 12px;}
+.port-title{font-size:11px;color:var(--text);margin-bottom:2px;line-height:1.3;}
+.port-meta{font-size:9px;color:var(--text-dim);}
+
+/* TOGGLE */
+.toggle-bar{display:flex;background:var(--bg3);border:1px solid var(--border);border-radius:2px;padding:3px;gap:3px;margin-bottom:24px;}
+.tgl-opt{flex:1;padding:9px 6px;text-align:center;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;border-radius:1px;transition:all .15s;font-family:'DM Mono',monospace;border:none;background:none;}
+.tgl-opt.active{background:var(--surface);color:var(--gold);box-shadow:0 1px 4px rgba(0,0,0,.08);}
+
+/* PRICE BLOCKS */
+.price-block{background:var(--surface);border:1px solid var(--border);border-radius:2px;margin-bottom:10px;overflow:hidden;}
+.pb-head{padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;justify-content:space-between;align-items:center;}
+.pb-sub{font-size:9px;color:var(--text-dim);font-style:italic;text-transform:none;letter-spacing:0;}
+.pb-row{display:flex;justify-content:space-between;align-items:center;padding:9px 16px;border-bottom:1px solid var(--border);transition:background .12s;}
+.pb-row:last-child{border-bottom:none;}
+.pb-row:hover{background:var(--bg2);}
+.pl{font-size:11px;color:var(--text);}
+.pl small{color:var(--text-dim);font-size:9px;}
+.pv{font-size:12px;color:var(--gold);}
+
+.highlight-card{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--gold-dim);border-radius:2px;padding:22px;margin-bottom:10px;position:relative;overflow:hidden;}
+.highlight-card::after{content:'✦';position:absolute;top:-10px;right:18px;font-size:64px;color:var(--gold);opacity:.06;}
+.hl-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:8px;}
+.hl-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--text);margin-bottom:6px;}
+.hl-price{font-size:30px;color:var(--gold);font-family:'Cormorant Garamond',serif;}
+.hl-note{font-size:10px;color:var(--text-dim);margin-top:8px;font-style:italic;}
+
+.extras-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.extra-pill{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:12px;}
+.ep-name{font-size:9px;color:var(--text-dim);letter-spacing:.08em;margin-bottom:4px;}
+.ep-val{font-size:14px;color:var(--gold);}
+.ep-note{font-size:9px;color:var(--text-dim);opacity:.7;margin-top:2px;}
+
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.do-block,.dont-block{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:14px;}
+.do-block{border-top:2px solid #5a7a4a88;}
+.dont-block{border-top:2px solid #c0887888;}
+.blk-title{font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;}
+.do-block .blk-title{color:var(--green);}
+.dont-block .blk-title{color:var(--rose);}
+.blk-list{list-style:none;}
+.blk-list li{font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px solid var(--border);display:flex;gap:6px;align-items:flex-start;}
+.blk-list li:last-child{border-bottom:none;}
+.do-block .blk-list li::before{content:'✓';color:var(--green);flex-shrink:0;font-size:10px;}
+.dont-block .blk-list li::before{content:'✗';color:var(--rose);flex-shrink:0;font-size:10px;}
+
+.info-block{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:2px;padding:14px 16px;margin-bottom:10px;font-size:11px;color:var(--text);line-height:1.9;}
+.info-block strong{display:block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:6px;}
+.info-block a{color:var(--gold);text-decoration:none;}
+
+/* CALCULATOR */
+.calc-wrap{background:var(--surface);border:1px solid var(--border);border-radius:2px;overflow:hidden;margin-bottom:14px;}
+.calc-header{padding:16px 20px;background:var(--bg2);border-bottom:1px solid var(--border);}
+.calc-header-title{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--text);margin-bottom:2px;}
+.calc-header-sub{font-size:10px;color:var(--text-dim);}
+.calc-body{padding:20px;display:flex;flex-direction:column;gap:16px;}
+.calc-group label{display:block;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.option-pills{display:flex;flex-wrap:wrap;gap:6px;}
+.cpill{padding:7px 13px;border:1px solid var(--border);border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;color:var(--text-mid);background:transparent;cursor:pointer;transition:all .15s;letter-spacing:.05em;}
+.cpill:hover{border-color:var(--gold-dim);color:var(--gold);}
+.cpill.active{border-color:var(--gold);color:var(--gold);background:#8a6f4210;}
+.cpill.extra{border-style:dashed;}
+.cpill.extra.active{border-style:solid;}
+.calc-result{border-top:1px solid var(--border);padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-start;}
+.r-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-bottom:2px;}
+.r-price{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);line-height:1;}
+.r-note{font-size:9px;color:var(--gold-dim);margin-top:4px;max-width:200px;line-height:1.5;}
+
+/* CONTACT */
+.contact-channels{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.ch-btn{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:2px;border:1px solid var(--border);background:var(--surface);cursor:pointer;transition:all .2s;font-family:'DM Mono',monospace;text-align:left;width:100%;}
+.ch-btn:hover{transform:translateX(3px);}
+.ch-btn.email:hover,.ch-btn.active.email{border-color:var(--gold);background:#8a6f4208;}
+.ch-btn.insta:hover,.ch-btn.active.insta{border-color:#c77dff;background:#c77dff08;}
+
+.ch-icon{font-size:18px;flex-shrink:0;}
+.ch-badge{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);display:block;margin-bottom:2px;}
+.ch-main{font-size:11px;color:var(--text);}
+.prefill-panel{display:none;background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:14px;margin-top:8px;}
+.prefill-panel.open{display:block;}
+.pf-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px;display:block;}
+.pf-msg{font-size:10px;color:var(--text);line-height:1.85;white-space:pre-wrap;font-family:'DM Mono',monospace;}
+.copy-btn{display:block;width:100%;margin-top:10px;padding:9px;background:transparent;border:1px solid var(--border);color:var(--text-dim);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .15s;}
+.copy-btn:hover{border-color:var(--gold-dim);color:var(--gold);}
+.f-group{margin-bottom:12px;}
+.f-label{display:block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:6px;}
+.f-input,.f-textarea{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:10px 12px;font-size:11px;color:var(--text);font-family:'DM Mono',monospace;transition:border-color .15s;outline:none;}
+.f-input:focus,.f-textarea:focus{border-color:var(--gold-dim);}
+.f-textarea{height:80px;resize:vertical;}
+.f-row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+.submit-btn{display:block;width:100%;padding:14px;background:var(--gold);border:none;border-radius:2px;color:var(--surface);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+.submit-btn:hover{background:var(--gold-lt);}
+
+/* SHOP */
+.shop-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.prod-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color .2s,transform .2s;cursor:pointer;}
+.prod-card:hover{border-color:var(--gold-dim);transform:translateY(-2px);}
+.prod-img{aspect-ratio:1/1;background:var(--bg3);overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.prod-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.prod-ph{font-size:28px;opacity:.3;}
+.prod-info{padding:10px 12px;}
+.prod-name{font-size:10px;color:var(--text);margin-bottom:3px;line-height:1.4;}
+.prod-price{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold);margin-bottom:7px;}
+.prod-link{display:block;width:100%;padding:6px;background:transparent;border:1px solid var(--border);color:var(--text-dim);font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;text-align:center;text-decoration:none;border-radius:2px;transition:all .15s;}
+.prod-link:hover{border-color:var(--gold-dim);color:var(--gold);}
+
+/* ABOUT */
+.about-block{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:22px;margin-bottom:10px;}
+.about-name{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--text);margin-bottom:10px;}
+.about-bio{font-size:11px;color:var(--text-mid);line-height:1.9;margin-bottom:16px;}
+.about-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.about-tag{padding:4px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;font-size:9px;color:var(--text-dim);}
+
+/* FOOTER */
+.footer{padding:32px 24px;border-top:1px solid var(--border);background:var(--bg2);margin-top:44px;}
+.footer-inner{max-width:var(--max-w);margin:0 auto;}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--text);}
+.footer-logo em{font-style:italic;color:var(--gold);}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
+.footer-link{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .15s;}
+.footer-link:hover{color:var(--gold);}
+.footer-copy{font-size:9px;color:var(--border2);letter-spacing:.1em;text-align:center;padding-top:16px;border-top:1px solid var(--border);}
+
+/* VISIBILITY CLASSES */
+body.lang-en [data-pt]{display:none!important;}
+body.lang-pt [data-en]{display:none!important;}
+body.cur-usd [data-brl]{display:none!important;}
+body.cur-brl [data-usd]{display:none!important;}
+body.shop-br [data-int]{display:none!important;}
+body.shop-int [data-br]{display:none!important;}
+
+/* ANIMATION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.section{animation:fadeUp .5s ease both;}
+
+/* ══ DESKTOP 768px+ ══ */
+@media(min-width:768px){
+  .nav{padding:0 40px;height:60px;}
+  .nav-logo{font-size:26px;}
+  .nav-link{padding:0 18px;height:60px;font-size:10px;}
+  .lang-btn{padding:6px 12px;font-size:10px;}
+
+  .hero{padding:96px 40px 80px;}
+  .hero-eyebrow{font-size:11px;letter-spacing:.32em;margin-bottom:22px;}
+  .hero-name{font-size:108px;margin-bottom:14px;}
+  .hero-tagline{font-size:13px;margin-bottom:40px;}
+  .btn-primary,.btn-outline{padding:14px 36px;font-size:10px;}
+
+  .page-body{padding:0 40px;}
+  .section{padding:60px 0 0;}
+  .divider{margin:60px 0 0;}
+  .s-title{font-size:40px;}
+  .s-desc{font-size:12px;margin-bottom:28px;}
+
+  /* Portfolio — 4 cols */
+  .port-grid{grid-template-columns:repeat(4,1fr);gap:14px;}
+
+  /* Commissions — 2 cols */
+  .comm-layout{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+
+  /* Extras — 3 cols */
+  .extras-grid{grid-template-columns:repeat(3,1fr);}
+
+  /* Contact — 2 cols */
+  .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+
+  /* Shop — 4 cols */
+  .shop-grid{grid-template-columns:repeat(4,1fr);}
+
+  /* About — 2 cols */
+  .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+
+  .r-price{font-size:48px;}
+  .footer{padding:44px 40px;}
+}
+
+@media(min-width:1100px){
+  .hero-name{font-size:124px;}
+}
+</style>
+</head>
+<body class="lang-en cur-brl shop-int">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">J<em>em</em> Art</a>
+    <div class="nav-links">
+      <a class="nav-link active" href="#portfolio">Portfolio</a>
+      <a class="nav-link" href="#commissions">Commissions</a>
+      <a class="nav-link" href="#shop">Shop</a>
+      <a class="nav-link" href="#about">About</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">✦ Fantasy Illustration · Book Fanart · Original Characters</div>
+    <h1 class="hero-name">J<em>em</em> Art</h1>
+    <div class="hero-tagline">
+      <span data-en>Jéssica Merco · Illustrator<br>Open for commissions — worldwide & Brasil</span>
+      <span data-pt>Jéssica Merco · Ilustradora<br>Comissões abertas — BR & Internacional</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#commissions" class="btn-primary"><span data-en>Commission me</span><span data-pt>Encomendar</span></a>
+      <a href="#shop" class="btn-outline"><span data-en>Shop prints</span><span data-pt>Ver loja</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="page-body">
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="s-label"><span data-en>Portfolio</span><span data-pt>Portfólio</span></div>
+  <h2 class="s-title"><span data-en>Selected Works</span><span data-pt>Trabalhos Selecionados</span></h2>
+  <p class="s-desc"><span data-en>Fantasy book illustration, original characters and editorial art.</span><span data-pt>Ilustrações de livros de fantasia, personagens originais e arte editorial.</span></p>
+  <div class="filter-row">
+    <button class="ftag active" onclick="filterPort(this,'all')">All</button>
+    <button class="ftag" onclick="filterPort(this,'acotar')">ACOTAR</button>
+    <button class="ftag" onclick="filterPort(this,'tog')">TOG</button>
+    <button class="ftag" onclick="filterPort(this,'fantasy')">Fantasy</button>
+    <button class="ftag" onclick="filterPort(this,'original')">Original</button>
+  </div>
+  <div class="port-grid" id="port-grid"></div>
+  <p style="font-size:10px;color:var(--text-dim);text-align:center;padding-bottom:8px;">
+    <span data-en>↗ More on</span><span data-pt>↗ Mais no</span>
+    <a href="https://www.artstation.com/jem0" style="color:var(--gold);text-decoration:none;"> ArtStation</a> &
+    <a href="https://www.deviantart.com/0jem0" style="color:var(--gold);text-decoration:none;"> DeviantArt</a>
+  </p>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMMISSIONS -->
+<section class="section" id="commissions">
+  <div class="s-label"><span data-en>Commissions</span><span data-pt>Comissões</span></div>
+  <h2 class="s-title"><span data-en>Commission your art</span><span data-pt>Encomende sua arte</span></h2>
+  <div class="toggle-bar">
+    <button class="tgl-opt active" onclick="setCurrency('brl',this)">🇧🇷 Reais (BRL)</button>
+    <button class="tgl-opt" onclick="setCurrency('usd',this)">🇺🇸 Dollar (USD)</button>
+  </div>
+
+  <div class="comm-layout">
+    <!-- LEFT -->
+    <div>
+      <div class="highlight-card">
+        <div class="hl-label"><span data-en>Book Cover Illustration</span><span data-pt>Capa de Livro</span></div>
+        <div class="hl-title"><span data-en>Full cover illustration</span><span data-pt>Ilustração completa de capa</span></div>
+        <div class="hl-price"><span data-brl>a partir de R$300</span><span data-usd>from $100</span></div>
+        <div class="hl-note"><span data-en>Additional details may increase the final price.</span><span data-pt>Detalhes adicionais podem aumentar o valor final.</span></div>
+      </div>
+
+      <div class="price-block">
+        <div class="pb-head"><span data-en>Editorial Illustration</span><span data-pt>Ilustração Editorial</span><span class="pb-sub" data-en>page elements</span><span class="pb-sub" data-pt>elementos de página</span></div>
+        <div class="pb-row"><span class="pl" data-en>Small <small>— vignette, page corner</small></span><span class="pl" data-pt>Pequena <small>— vinheta, canto</small></span><span class="pv" data-brl>R$50</span><span class="pv" data-usd>$10</span></div>
+        <div class="pb-row"><span class="pl" data-en>Medium <small>— half page</small></span><span class="pl" data-pt>Média <small>— meia página</small></span><span class="pv" data-brl>R$100</span><span class="pv" data-usd>$20</span></div>
+        <div class="pb-row"><span class="pl" data-en>Full page — B&W</span><span class="pl" data-pt>Página inteira — P&B</span><span class="pv" data-brl>R$150</span><span class="pv" data-usd>$35</span></div>
+        <div class="pb-row"><span class="pl" data-en>Full page — Color</span><span class="pl" data-pt>Página inteira — Colorida</span><span class="pv" data-brl>R$190</span><span class="pv" data-usd>$50</span></div>
+      </div>
+
+      <div class="price-block">
+        <div class="pb-head"><span data-en>Character — Sketch</span><span data-pt>Personagem — Sketch</span><span class="pb-sub" data-en>base drawing</span><span class="pb-sub" data-pt>sem finalização</span></div>
+        <div class="pb-row"><span class="pl" data-en>Bust</span><span class="pl" data-pt>Busto</span><span class="pv" data-brl>R$30</span><span class="pv" data-usd>$10</span></div>
+        <div class="pb-row"><span class="pl" data-en>Half body</span><span class="pl" data-pt>Meio corpo</span><span class="pv" data-brl>R$40</span><span class="pv" data-usd>$12</span></div>
+        <div class="pb-row"><span class="pl" data-en>Full body</span><span class="pl" data-pt>Corpo inteiro</span><span class="pv" data-brl>R$50</span><span class="pv" data-usd>$15</span></div>
+      </div>
+
+      <div class="price-block">
+        <div class="pb-head"><span data-en>Character — Lineart + Base Color</span><span data-pt>Personagem — Cores Base</span><span class="pb-sub" data-en>flat colors, no detailed shading</span><span class="pb-sub" data-pt>cores chapadas</span></div>
+        <div class="pb-row"><span class="pl" data-en>Bust</span><span class="pl" data-pt>Busto</span><span class="pv" data-brl>R$70</span><span class="pv" data-usd>$20</span></div>
+        <div class="pb-row"><span class="pl" data-en>Half body</span><span class="pl" data-pt>Meio corpo</span><span class="pv" data-brl>R$80</span><span class="pv" data-usd>$25</span></div>
+        <div class="pb-row"><span class="pl" data-en>Full body</span><span class="pl" data-pt>Corpo inteiro</span><span class="pv" data-brl>R$90</span><span class="pv" data-usd>$30</span></div>
+      </div>
+
+      <div class="price-block">
+        <div class="pb-head"><span data-en>Character — 2D Coloring</span><span data-pt>Personagem — Flat Shading</span><span class="pb-sub" data-en>base color + shadow &amp; light</span><span class="pb-sub" data-pt>coloração simplificada</span></div>
+        <div class="pb-row"><span class="pl" data-en>Bust</span><span class="pl" data-pt>Busto</span><span class="pv" data-brl>R$100</span><span class="pv" data-usd>$30</span></div>
+        <div class="pb-row"><span class="pl" data-en>Half body</span><span class="pl" data-pt>Meio corpo</span><span class="pv" data-brl>R$120</span><span class="pv" data-usd>$35</span></div>
+        <div class="pb-row"><span class="pl" data-en>Full body</span><span class="pl" data-pt>Corpo inteiro</span><span class="pv" data-brl>R$130</span><span class="pv" data-usd>$40</span></div>
+      </div>
+
+      <div class="price-block">
+        <div class="pb-head"><span data-en>Character — Full Color</span><span data-pt>Personagem — Full Render</span><span class="pb-sub" data-en>refined lighting &amp; details</span><span class="pb-sub" data-pt>finalização detalhista</span></div>
+        <div class="pb-row"><span class="pl" data-en>Bust</span><span class="pl" data-pt>Busto</span><span class="pv" data-brl>R$200</span><span class="pv" data-usd>$50</span></div>
+        <div class="pb-row"><span class="pl" data-en>Half body</span><span class="pl" data-pt>Meio corpo</span><span class="pv" data-brl>R$225</span><span class="pv" data-usd>$60</span></div>
+        <div class="pb-row"><span class="pl" data-en>Full body</span><span class="pl" data-pt>Corpo inteiro</span><span class="pv" data-brl>R$250</span><span class="pv" data-usd>$70</span></div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div>
+      <div class="price-block">
+        <div class="pb-head"><span data-en>Reference Sheet — B&W</span><span data-pt>Folha de Ref — Lineart</span></div>
+        <div class="pb-row"><span class="pl" data-en>1 char + 3 expressions</span><span class="pl" data-pt>1 pers. + 3 expressões</span><span class="pv" data-brl>R$100</span><span class="pv" data-usd>$30</span></div>
+        <div class="pb-row"><span class="pl" data-en>Extra face</span><span class="pl" data-pt>Rosto extra</span><span class="pv" data-brl>+R$25</span><span class="pv" data-usd>+$10</span></div>
+        <div class="pb-row"><span class="pl" data-en>Extra pose</span><span class="pl" data-pt>Pose extra</span><span class="pv" data-brl>+R$30</span><span class="pv" data-usd>+$15</span></div>
+      </div>
+
+      <div class="price-block">
+        <div class="pb-head"><span data-en>Reference Sheet — Colored</span><span data-pt>Folha de Ref — Colorida</span></div>
+        <div class="pb-row"><span class="pl" data-en>1 char + 3 expressions</span><span class="pl" data-pt>1 pers. + 3 expressões</span><span class="pv" data-brl>R$150</span><span class="pv" data-usd>$60</span></div>
+        <div class="pb-row"><span class="pl" data-en>Extra face</span><span class="pl" data-pt>Rosto extra</span><span class="pv" data-brl>+R$30</span><span class="pv" data-usd>+$15</span></div>
+        <div class="pb-row"><span class="pl" data-en>Extra pose</span><span class="pl" data-pt>Pose extra</span><span class="pv" data-brl>+R$35</span><span class="pv" data-usd>+$20</span></div>
+      </div>
+
+      <div class="price-block">
+        <div class="pb-head"><span data-en>Comic Pages — per page</span><span data-pt>Quadrinho — por página</span></div>
+        <div class="pb-row"><span class="pl" data-en>Black &amp; white</span><span class="pl" data-pt>Preto e branco</span><span class="pv" data-brl>R$75</span><span class="pv" data-usd>$20</span></div>
+        <div class="pb-row"><span class="pl" data-en>Color</span><span class="pl" data-pt>Colorido</span><span class="pv" data-brl>R$100</span><span class="pv" data-usd>$30</span></div>
+      </div>
+
+      <div class="info-block">
+        <strong data-en>Volume discount — Comics</strong><strong data-pt>Desconto — Quadrinhos</strong>
+        <span data-en>4+ pages: 5–10% off depending on volume.</span><span data-pt>4+ páginas: 5–10% de desconto conforme o volume.</span>
+      </div>
+
+      <div class="s-label" style="margin-top:20px;"><span data-en>Add-ons</span><span data-pt>Adicionais</span></div>
+      <div class="extras-grid">
+        <div class="extra-pill"><div class="ep-name" data-en>Extra character</div><div class="ep-name" data-pt>Personagem adicional</div><div class="ep-val">+70%</div><div class="ep-note" data-en>of base price</div><div class="ep-note" data-pt>do valor base</div></div>
+        <div class="extra-pill"><div class="ep-name" data-en>Complex details</div><div class="ep-name" data-pt>Detalhes complexos</div><div class="ep-val"><span data-brl>+R$20</span><span data-usd>+$10</span></div><div class="ep-note" data-en>armor, weapons</div><div class="ep-note" data-pt>armaduras, armas</div></div>
+        <div class="extra-pill"><div class="ep-name" data-en>Simple background</div><div class="ep-name" data-pt>Cenário simples</div><div class="ep-val"><span data-brl>+R$50</span><span data-usd>+$20</span></div></div>
+        <div class="extra-pill"><div class="ep-name" data-en>Complex background</div><div class="ep-name" data-pt>Cenário complexo</div><div class="ep-val"><span data-brl>+R$100</span><span data-usd>+$50</span></div></div>
+        <div class="extra-pill"><div class="ep-name" data-en>Small animal</div><div class="ep-name" data-pt>Animal pequeno</div><div class="ep-val"><span data-brl>+R$50</span><span data-usd>+$20</span></div><div class="ep-note" data-en>cat, dog, bird</div><div class="ep-note" data-pt>gato, cachorro, pássaro</div></div>
+        <div class="extra-pill"><div class="ep-name" data-en>Large animal</div><div class="ep-name" data-pt>Animal grande</div><div class="ep-val"><span data-brl>+R$80</span><span data-usd>+$40</span></div><div class="ep-note" data-en>horse, dragon</div><div class="ep-note" data-pt>cavalo, dragão</div></div>
+      </div>
+
+      <div class="do-dont">
+        <div class="do-block"><div class="blk-title"><span data-en>I draw</span><span data-pt>Faço</span></div><ul class="blk-list"><li><span data-en>Original characters</span><span data-pt>Personagens originais</span></li><li>Fanarts</li><li><span data-en>Animals</span><span data-pt>Animais</span></li></ul></div>
+        <div class="dont-block"><div class="blk-title"><span data-en>I don't draw</span><span data-pt>Não faço</span></div><ul class="blk-list"><li>Mecha</li><li>Furry</li><li>Gore</li><li>NSFW</li></ul></div>
+      </div>
+
+      <div class="info-block"><strong data-en>Payment</strong><strong data-pt>Pagamento</strong><span data-en>Wise or PayPal. 100% upfront or 50%+50% on delivery. Refunds only before final rendering starts.</span><span data-pt>Pix. 100% na entrada ou 50%+50%. Reembolsos apenas se a finalização não tiver iniciado.</span></div>
+      <div class="info-block"><strong data-en>Timeline</strong><strong data-pt>Prazo</strong><span data-en>2–4 weeks on average. Let me know in advance if you have a deadline.</span><span data-pt>Prazo médio de 2–4 semanas. Avise com antecedência se tiver uma data específica.</span></div>
+      <div class="info-block"><strong data-en>WIPs & Approval</strong><strong data-pt>WIPs e Aprovação</strong><span data-en>Progress updates sent for approval. Changes welcome until lineart is approved.</span><span data-pt>Envio etapas para aprovação. Alterações bem-vindas até a lineart finalizada.</span></div>
+    </div>
+  </div>
+
+  <!-- QUOTE BUILDER -->
+  <div class="s-label" style="margin-top:40px;"><span data-en>Quote builder</span><span data-pt>Orçador</span></div>
+  <div class="calc-wrap">
+    <div class="calc-header">
+      <div class="calc-header-title"><span data-en>Build your quote</span><span data-pt>Monte seu orçamento</span></div>
+      <div class="calc-header-sub"><span data-en>Select options to get an estimate</span><span data-pt>Selecione as opções para calcular</span></div>
+    </div>
+    <div class="calc-body" id="calc-body">
+      <div class="calc-group">
+        <label data-en>Category</label><label data-pt>Categoria</label>
+        <div class="option-pills">
+          <button class="cpill" data-group="cat" data-val="personagem" onclick="pickOpt(this)"><span data-en>Character</span><span data-pt>Personagem</span></button>
+          <button class="cpill" data-group="cat" data-val="editorial" onclick="pickOpt(this)">Editorial</button>
+          <button class="cpill" data-group="cat" data-val="folha" onclick="pickOpt(this)"><span data-en>Ref Sheet</span><span data-pt>Folha de Ref</span></button>
+          <button class="cpill" data-group="cat" data-val="quadrinho" onclick="pickOpt(this)"><span data-en>Comic page</span><span data-pt>Quadrinho</span></button>
+          <button class="cpill" data-group="cat" data-val="capa" onclick="pickOpt(this)"><span data-en>Book cover</span><span data-pt>Capa de Livro</span></button>
+        </div>
+      </div>
+      <div id="calc-sub"></div>
+    </div>
+    <div class="calc-result">
+      <div>
+        <div class="r-label"><span data-en>Estimate</span><span data-pt>Estimativa</span></div>
+        <div class="r-price" id="calc-price">—</div>
+        <div class="r-note" id="calc-note"><span data-en>Select options above</span><span data-pt>Selecione as opções acima</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="s-label" style="margin-top:36px;"><span data-en>Send a request</span><span data-pt>Enviar pedido</span></div>
+  <div class="contact-layout">
+    <div class="contact-channels">
+      <button class="ch-btn email" onclick="openChannel('email')">
+        <span class="ch-icon">✉️</span>
+        <span><span class="ch-badge" data-en>Recommended</span><span class="ch-badge" data-pt>Recomendado</span><span class="ch-main">E-mail</span></span>
+      </button>
+      <div class="prefill-panel" id="panel-email">
+        <div class="f-row-2">
+          <div class="f-group"><label class="f-label" data-en>Your name</label><label class="f-label" data-pt>Seu nome</label><input class="f-input" type="text" id="f-name" placeholder="Name"></div>
+          <div class="f-group"><label class="f-label">E-mail</label><input class="f-input" type="email" id="f-email" placeholder="you@email.com"></div>
+        </div>
+        <div class="f-group"><label class="f-label" data-en>Estimated quote</label><label class="f-label" data-pt>Orçamento estimado</label><input class="f-input" type="text" id="f-quote" placeholder="—" readonly></div>
+        <div class="f-group"><label class="f-label" data-en>Description & references</label><label class="f-label" data-pt>Descrição e referências</label><textarea class="f-textarea" id="f-desc" placeholder="Describe your character, share reference links..."></textarea></div>
+        <button class="submit-btn" onclick="submitEmail()"><span data-en>✦ Send request</span><span data-pt>✦ Enviar pedido</span></button>
+      </div>
+    </div>
+    <div class="contact-channels">
+      <button class="ch-btn insta" onclick="openChannel('insta')">
+        <span class="ch-icon">📸</span>
+        <span><span class="ch-badge" data-en>Fast reply</span><span class="ch-badge" data-pt>Resposta rápida</span><span class="ch-main">Instagram DM · @0jem0</span></span>
+      </button>
+      <div class="prefill-panel" id="panel-insta">
+        <span class="pf-label" data-en>Copy & paste on Instagram DM</span><span class="pf-label" data-pt>Copie e cole no Instagram</span>
+        <div class="pf-msg" id="pf-insta-msg">—</div>
+        <button class="copy-btn" onclick="copyPrefill('insta')"><span data-en>⎘ Copy message</span><span data-pt>⎘ Copiar mensagem</span></button>
+        <p style="font-size:9px;color:var(--text-dim);margin-top:8px;"><a href="https://instagram.com/0jem0" style="color:var(--gold);text-decoration:none;">instagram.com/0jem0</a></p>
+      </div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SHOP -->
+<section class="section" id="shop">
+  <div class="s-label">Shop</div>
+  <h2 class="s-title"><span data-en>Prints & Products</span><span data-pt>Prints & Produtos</span></h2>
+  <p class="s-desc"><span data-en>Art prints, stickers, canvas and more. International shipping via Redbubble. Brazilian orders via Montink.</span><span data-pt>Art prints, adesivos, canvas e mais. Internacional via Redbubble. Brasil via Montink.</span></p>
+  <div class="toggle-bar">
+    <button class="tgl-opt active" onclick="setShop('int',this)">🌎 International — Redbubble</button>
+    <button class="tgl-opt" onclick="setShop('br',this)">🇧🇷 Brasil — Montink</button>
+  </div>
+  <div data-int>
+    <div class="shop-grid">
+      <div class="prod-card"><div class="prod-img"><img src="https://jemcomissao.carrd.co/assets/images/gallery01/882c113b.jpg?v=85d73096" alt="Nesta" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Nesta Archeron — ACOTAR</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank">Redbubble ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://jemcomissao.carrd.co/assets/images/gallery03/2f589bcc.jpg?v=85d73096" alt="Selestra" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Selestra Somniatis</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank">Redbubble ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://jemcomissao.carrd.co/assets/images/gallery01/4597e79a.jpg?v=85d73096" alt="Cardan" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Cardan & Oak — Folk of the Air</div><div class="prod-price">from $12</div><a class="prod-link" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank">Redbubble ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://jemcomissao.carrd.co/assets/images/gallery01/140883ab.jpg?v=85d73096" alt="Elide" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Elide & Lorcan — TOG</div><div class="prod-price">from $12</div><a class="prod-link" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank">Redbubble ↗</a></div></div>
+    </div>
+    <p style="text-align:center;font-size:10px;color:var(--text-dim);padding-bottom:8px;"><a href="https://www.redbubble.com/people/Jemerco/shop" style="color:var(--gold);text-decoration:none;" target="_blank"><span data-en>View all on Redbubble ↗</span><span data-pt>Ver todos no Redbubble ↗</span></a></p>
+  </div>
+  <div data-br>
+    <div class="info-block"><strong data-en>Brazilian store — Montink</strong><strong data-pt>Loja Brasileira — Montink</strong><span data-en>Print-on-demand, delivery via Correios across Brazil.</span><span data-pt>Print-on-demand com entrega pelos Correios em todo o Brasil.</span></div>
+    <div class="shop-grid">
+      <div class="prod-card"><div class="prod-img"><div class="prod-ph">🎨</div></div><div class="prod-info"><div class="prod-name">Nesta Archeron — ACOTAR</div><div class="prod-price">a partir de R$39</div><a class="prod-link" href="#" target="_blank">Montink ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><div class="prod-ph">🎨</div></div><div class="prod-info"><div class="prod-name">Selestra Somniatis</div><div class="prod-price">a partir de R$39</div><a class="prod-link" href="#" target="_blank">Montink ↗</a></div></div>
+    </div>
+    <div class="info-block" style="font-size:10px;"><span data-pt>⚙ Cadastre suas artes na <a href="https://montink.com">Montink</a> e atualize os links acima.</span><span data-en>⚙ Register your art on <a href="https://montink.com">Montink</a> and update the links above.</span></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="s-label"><span data-en>About</span><span data-pt>Sobre</span></div>
+  <div class="about-layout">
+    <div class="about-block">
+      <div class="about-name">Jéssica Merco</div>
+      <p class="about-bio" data-en>Brazilian illustrator specializing in fantasy book fanart and original character design. Passionate about the bookish community and bringing literary characters to life — especially from ACOTAR, Throne of Glass, and The Folk of the Air.</p>
+      <p class="about-bio" data-pt>Ilustradora brasileira especializada em fanart de livros de fantasia e design de personagens originais. Apaixonada pela comunidade bookish e por dar vida a personagens literários — especialmente ACOTAR, Throne of Glass e The Folk of the Air.</p>
+      <div class="about-tags"><span class="about-tag">Fantasy Art</span><span class="about-tag">Book Fanart</span><span class="about-tag">Character Design</span><span class="about-tag">Editorial</span><span class="about-tag">Comic Pages</span></div>
+    </div>
+    <div>
+      <div class="info-block"><strong data-en>Find me online</strong><strong data-pt>Encontre-me online</strong>
+        <span data-en>🎨 <a href="https://www.artstation.com/jem0">ArtStation</a> · <a href="https://www.deviantart.com/0jem0">DeviantArt</a><br>📸 <a href="https://instagram.com/0jem0">@0jem0</a> on Instagram<br>🛍 <a href="https://www.redbubble.com/people/Jemerco/shop">Redbubble</a></span>
+        <span data-pt>🎨 <a href="https://www.artstation.com/jem0">ArtStation</a> · <a href="https://www.deviantart.com/0jem0">DeviantArt</a><br>📸 <a href="https://instagram.com/0jem0">@0jem0</a> no Instagram<br>🛍 <a href="https://www.redbubble.com/people/Jemerco/shop">Redbubble</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page-body -->
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">J<em>em</em> Art</div>
+      <div class="footer-links">
+        <a class="footer-link" href="https://instagram.com/0jem0" target="_blank">Instagram</a>
+        <a class="footer-link" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank">Redbubble</a>
+        <a class="footer-link" href="https://www.artstation.com/jem0" target="_blank">ArtStation</a>
+        <a class="footer-link" href="https://www.deviantart.com/0jem0" target="_blank">DeviantArt</a>
+      </div>
+    </div>
+    <div class="footer-copy">✦ Jéssica Merco · Jem Art · 2025 ✦</div>
+  </div>
+</footer>
+
+<script>
+// LANG — syncs currency automatically: EN→USD, PT→BRL
+function setLang(l){
+  document.body.className=document.body.className.replace(/lang-\w+/,'lang-'+l);
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase()===l));
+  // auto-switch currency
+  const autoCur=l==='en'?'usd':'brl';
+  currentCur=autoCur;
+  document.body.className=document.body.className.replace(/cur-\w+/,'cur-'+autoCur);
+  document.querySelectorAll('.tgl-opt[onclick*="setCurrency"]').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes("'"+autoCur+"'")));
+  renderCalcSub();updateCalcResult();
+}
+// CURRENCY — can still be changed manually after language switch
+var currentCur='brl';
+function setCurrency(c,btn){currentCur=c;document.body.className=document.body.className.replace(/cur-\w+/,'cur-'+c);document.querySelectorAll('.tgl-opt[onclick*="setCurrency"]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');updateCalcResult();}
+// SHOP
+function setShop(r,btn){document.body.className=document.body.className.replace(/shop-\w+/,'shop-'+r);document.querySelectorAll('.tgl-opt[onclick*="setShop"]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+
+// PORTFOLIO
+const portfolioData=[
+  {title:'Nesta Archeron',meta:'ACOTAR · Full Color',tags:['acotar'],img:'https://jemcomissao.carrd.co/assets/images/gallery01/882c113b.jpg?v=85d73096'},
+  {title:'Selestra Somniatis',meta:'Princess of Souls · Full Color',tags:['fantasy'],img:'https://jemcomissao.carrd.co/assets/images/gallery03/2f589bcc.jpg?v=85d73096'},
+  {title:'Cardan & Oak',meta:'Folk of the Air · Character',tags:['fantasy'],img:'https://jemcomissao.carrd.co/assets/images/gallery01/4597e79a.jpg?v=85d73096'},
+  {title:'Elide & Lorcan',meta:'Throne of Glass · Editorial',tags:['tog'],img:'https://jemcomissao.carrd.co/assets/images/gallery01/140883ab.jpg?v=85d73096'},
+  {title:'Elain Archeron',meta:'ACOTAR · Character',tags:['acotar'],img:'https://jemcomissao.carrd.co/assets/images/gallery01/f1ff86e5.jpg?v=85d73096'},
+  {title:'Editorial Spread',meta:'Editorial · B&W',tags:['original'],img:'https://jemcomissao.carrd.co/assets/images/gallery03/a65e5d7e.jpg?v=85d73096'},
+  {title:'Comic Page',meta:'Comic · B&W',tags:['original'],img:'https://jemcomissao.carrd.co/assets/images/gallery02/f07dc710.jpg?v=85d73096'},
+  {title:'Reference Sheet',meta:'Character · Ref Sheet',tags:['original'],img:'https://jemcomissao.carrd.co/assets/images/gallery05/1ea4bafd.jpg?v=85d73096'},
+];
+let currentFilter='all';
+function filterPort(btn,tag){currentFilter=tag;document.querySelectorAll('.ftag').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderPortfolio();}
+function renderPortfolio(){const grid=document.getElementById('port-grid');const f=currentFilter==='all'?portfolioData:portfolioData.filter(p=>p.tags.includes(currentFilter));grid.innerHTML=f.map(p=>`<div class="port-card"><div class="port-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'"></div><div class="port-info"><div class="port-title">${p.title}</div><div class="port-meta">${p.meta}</div></div></div>`).join('');}
+renderPortfolio();
+
+// CALCULATOR DATA
+const pBRL={personagem:{sketch:{busto:30,meio:40,inteiro:50},cores:{busto:70,meio:80,inteiro:90},flat:{busto:100,meio:120,inteiro:130},full:{busto:200,meio:225,inteiro:250}},editorial:{pequena:50,media:100,pb:150,colorida:190},folha:{bw:{expr:100,rosto:25,pose:30},color:{expr:150,rosto:30,pose:35}},quadrinho:{pb:75,color:100},capa:300};
+const pUSD={personagem:{sketch:{busto:10,meio:12,inteiro:15},cores:{busto:20,meio:25,inteiro:30},flat:{busto:30,meio:35,inteiro:40},full:{busto:50,meio:60,inteiro:70}},editorial:{pequena:10,media:20,pb:35,colorida:50},folha:{bw:{expr:30,rosto:10,pose:15},color:{expr:60,rosto:15,pose:20}},quadrinho:{pb:20,color:30},capa:100};
+const eBRL={extra_char:{pct:70},detalhes:{flat:20},cen_s:{flat:50},cen_c:{flat:100},ani_p:{flat:50},ani_g:{flat:80}};
+const eUSD={extra_char:{pct:70},detalhes:{flat:10},cen_s:{flat:20},cen_c:{flat:50},ani_p:{flat:20},ani_g:{flat:40}};
+const state={cat:null,style:null,size:null,color:null,pages:null,extras:new Set()};
+const isEN=()=>document.body.classList.contains('lang-en');
+
+function pickOpt(btn){
+  const g=btn.dataset.group,v=btn.dataset.val;
+  if(g==='extra'){btn.classList.toggle('active');state.extras.has(v)?state.extras.delete(v):state.extras.add(v);updateCalcResult();return;}
+  document.querySelectorAll(`.cpill[data-group="${g}"]`).forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  if(g==='cat'){state.cat=v;state.style=null;state.size=null;state.color=null;state.pages=null;state.extras=new Set();}
+  else state[g]=v;
+  renderCalcSub();updateCalcResult();
+}
+
+const sL={sketch:['Sketch','Sketch'],cores:['Lineart + Base Color','Cores Base'],flat:['2D Coloring','Flat Shading'],full:['Full Color','Full Render']};
+const szL={busto:['Bust','Busto'],meio:['Half body','Meio corpo'],inteiro:['Full body','Corpo inteiro'],expr:['1 char + 3 expr.','1 pers. + 3 expr.']};
+const edL={pequena:['Small','Pequena'],media:['Medium','Média'],pb:['Full page B&W','Pág. inteira P&B'],colorida:['Full page Color','Pág. inteira colorida']};
+const clL={pb:['B&W','P&B'],color:['Color','Colorido']};
+const pgL={'1':['1 page','1 pág.'],'2':['2 pages','2 págs.'],'4':['4 pages (−5%)','4 págs. (−5%)'],'8':['8 pages (−10%)','8 págs. (−10%)']};
+function lbl(o,k){const e=isEN();return o[k]?o[k][e?0:1]:k;}
+function mkP(g,o,ks){return`<div class="option-pills">${ks.map(k=>`<button class="cpill${state[g]===k?' active':''}" data-group="${g}" data-val="${k}" onclick="pickOpt(this)">${lbl(o,k)}</button>`).join('')}</div>`;}
+function mkE(ks){const en=isEN();const eL={extra_char:en?'Extra char (+70%)':'Personagem adicional (+70%)',detalhes:en?'Complex details':'Detalhes complexos',cen_s:en?'Simple bg':'Cenário simples',cen_c:en?'Complex bg':'Cenário complexo',ani_p:en?'Small animal':'Animal pequeno',ani_g:en?'Large animal':'Animal grande'};return`<div class="calc-group"><label>${en?'Add-ons (optional)':'Adicionais (opcional)'}</label><div class="option-pills">${ks.map(k=>`<button class="cpill extra${state.extras.has(k)?' active':''}" data-group="extra" data-val="${k}" onclick="pickOpt(this)">${eL[k]}</button>`).join('')}</div></div>`;}
+function mkG(g,en,pt,pills){return`<div class="calc-group"><label>${isEN()?en:pt}</label>${pills}</div>`;}
+
+function renderCalcSub(){
+  const sub=document.getElementById('calc-sub');sub.innerHTML='';
+  const c=state.cat;if(!c)return;let h='';
+  if(c==='personagem'){
+    h+=mkG('style','Style','Estilo',mkP('style',sL,['sketch','cores','flat','full']));
+    if(state.style)h+=mkG('size','Framing','Enquadramento',mkP('size',szL,['busto','meio','inteiro']));
+    if(state.style&&state.size)h+=mkE(['extra_char','detalhes','cen_s','cen_c','ani_p','ani_g']);
+  }
+  if(c==='editorial'){h+=mkG('size','Size','Tamanho',mkP('size',edL,['pequena','media','pb','colorida']));if(state.size)h+=mkE(['extra_char','detalhes','cen_s','cen_c','ani_p','ani_g']);}
+  if(c==='folha'){
+    const en=isEN();
+    h+=mkG('style','Style','Estilo',`<div class="option-pills"><button class="cpill${state.style==='bw'?' active':''}" data-group="style" data-val="bw" onclick="pickOpt(this)">${en?'B&W (Lineart)':'Lineart P&B'}</button><button class="cpill${state.style==='color'?' active':''}" data-group="style" data-val="color" onclick="pickOpt(this)">${en?'Colored':'Colorida'}</button></div>`);
+    if(state.style)h+=mkG('size','Content','Conteúdo',mkP('size',szL,['expr']));
+  }
+  if(c==='quadrinho'){h+=mkG('color','Color','Colorização',mkP('color',clL,['pb','color']));h+=mkG('pages','Pages','Páginas',mkP('pages',pgL,['1','2','4','8']));}
+  if(c==='capa')h+=mkE(['extra_char','detalhes','cen_s','cen_c','ani_p','ani_g']);
+  sub.innerHTML=h;
+}
+
+function calcBase(){
+  const c=state.cat;const isBRL=currentCur==='brl';const P=isBRL?pBRL:pUSD;const sym=isBRL?'R$':'$';
+  if(!c)return null;
+  if(c==='capa')return{base:P.capa,sym};
+  if(c==='personagem'){if(!state.style||!state.size)return null;return{base:P.personagem[state.style][state.size],sym};}
+  if(c==='editorial'){if(!state.size)return null;return{base:P.editorial[state.size],sym};}
+  if(c==='folha'){if(!state.style||!state.size)return null;return{base:P.folha[state.style]['expr'],sym};}
+  if(c==='quadrinho'){if(!state.color||!state.pages)return null;const pp=P.quadrinho[state.color];const pg=parseInt(state.pages);const d=pg>=8?0.9:pg>=4?0.95:1;return{base:Math.round(pp*pg*d),sym};}
+  return null;
+}
+
+function updateCalcResult(){
+  const res=calcBase();const priceEl=document.getElementById('calc-price');const noteEl=document.getElementById('calc-note');
+  const E=currentCur==='brl'?eBRL:eUSD;
+  if(!res){priceEl.textContent='—';noteEl.textContent=isEN()?'Select options above':'Selecione as opções acima';document.getElementById('f-quote').value='';updatePrefills('—');return;}
+  let total=res.base;const notes=[];
+  state.extras.forEach(k=>{const e=E[k];if(e.pct){const add=Math.round(res.base*e.pct/100);total+=add;notes.push(`+${res.sym}${add}`);}else{total+=e.flat;notes.push(`+${res.sym}${e.flat}`);}});
+  const display=`${res.sym}${total}`;
+  priceEl.textContent=display;
+  noteEl.textContent=notes.length?notes.join(' · '):(state.cat==='capa'?(isEN()?'base price, may increase':'valor pode aumentar'):'');
+  document.getElementById('f-quote').value=display;
+  updatePrefills(display);
+}
+
+function buildMsg(price){
+  const en=isEN();
+  const cN={personagem:en?'Character':'Personagem',editorial:'Editorial',folha:en?'Ref Sheet':'Folha de Ref',quadrinho:en?'Comic Page':'Quadrinho',capa:en?'Book Cover':'Capa de Livro'};
+  const sN={sketch:'Sketch',cores:en?'Lineart + Base Color':'Cores Base',flat:en?'2D Coloring':'Flat Shading',full:en?'Full Color':'Full Render',bw:en?'B&W':'Lineart P&B',color:en?'Colored':'Colorida'};
+  const szN={busto:en?'Bust':'Busto',meio:en?'Half body':'Meio corpo',inteiro:en?'Full body':'Corpo inteiro',expr:en?'1 char + 3 expr.':'1 pers. + 3 expr.'};
+  let lines=en?["Hi Jem! I'd like to commission:"]:['Olá, Jem! Gostaria de encomendar:'];
+  if(state.cat)lines.push(`${en?'Category':'Categoria'}: ${cN[state.cat]}`);
+  if(state.style)lines.push(`${en?'Style':'Estilo'}: ${sN[state.style]}`);
+  if(state.size)lines.push(`${en?'Size':'Tamanho'}: ${szN[state.size]||state.size}`);
+  if(state.color)lines.push(`${en?'Color':'Colorização'}: ${state.color==='pb'?'B&W':'Color'}`);
+  if(state.pages)lines.push(`${en?'Pages':'Páginas'}: ${state.pages}`);
+  lines.push(`${en?'Estimated':'Estimativa'}: ${price}`,'',en?'[Describe your character + share references 🎨]':'[Descreva seu personagem e envie referências 🎨]');
+  return lines.join('\n');
+}
+function updatePrefills(price){const msg=buildMsg(price);document.getElementById('pf-insta-msg').textContent=msg;}
+
+// CHANNELS
+let openCh=null;
+function openChannel(ch){
+  if(openCh===ch){document.getElementById('panel-'+ch).classList.remove('open');document.querySelector('.ch-btn.'+ch).classList.remove('active');openCh=null;return;}
+  if(openCh){document.getElementById('panel-'+openCh).classList.remove('open');document.querySelector('.ch-btn.'+openCh).classList.remove('active');}
+  document.getElementById('panel-'+ch).classList.add('open');document.querySelector('.ch-btn.'+ch).classList.add('active');openCh=ch;
+}
+function copyPrefill(ch){const text=document.getElementById('pf-'+ch+'-msg').textContent;navigator.clipboard.writeText(text).then(()=>{const b=event.target;const orig=b.innerHTML;b.textContent=isEN()?'✓ Copied!':'✓ Copiado!';setTimeout(()=>b.innerHTML=orig,2000);});}
+function submitEmail(){
+  const name=document.getElementById('f-name').value.trim();const email=document.getElementById('f-email').value.trim();const quote=document.getElementById('f-quote').value;const desc=document.getElementById('f-desc').value.trim();
+  if(!name||!email||!desc){alert(isEN()?'Please fill in all fields.':'Preencha todos os campos.');return;}
+  const formId='xaqledda';
+  fetch(`https://formspree.io/f/${formId}`,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name,email,quote,description:desc})})
+  .then(r=>{if(r.ok)alert(isEN()?'✓ Sent! I\'ll reply within 1–3 business days.':'✓ Enviado! Responderei em 1–3 dias úteis.');else alert(isEN()?'Error. Try Instagram or WhatsApp.':'Erro. Tente pelo Instagram ou WhatsApp.');})
+  .catch(()=>alert(isEN()?'Error. Try Instagram or WhatsApp.':'Erro. Tente pelo Instagram ou WhatsApp.'));
+}
+
+// NAV scroll
+const sids=['portfolio','commissions','shop','about'];
+window.addEventListener('scroll',()=>{let cur='portfolio';sids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-80)cur=id;});document.querySelectorAll('.nav-link').forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur));},{passive:true});
+
+updateCalcResult();
+</script>
+</body>
+</html>
