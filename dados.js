@@ -170,6 +170,17 @@ const DADOS = {
     },
   ],
 
+  /* ── LABELS DOS FILTROS DO PORTFÓLIO ── */
+  /* Adicione aqui o nome de exibição para cada tag usada nas obras */
+  tagLabels: {
+    "acotar":   "ACOTAR",
+    "tog":      "TOG",
+    "fantasy":  "Fantasy",
+    "original": "Original",
+    "editorial":"Editorial",
+    "comic":    "Comic",
+  },
+
   /* ── SOBRE / ABOUT ── */
   sobre: {
     nome: "Jéssica Merco",
