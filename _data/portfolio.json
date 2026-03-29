@@ -20,8 +20,8 @@
   ],
   "editorial": [
     {
-      "title": "Elide & Lorcan",
-      "meta": "Throne of Glass · Editorial",
+      "title": "",
+      "meta": "",
       "img": ""
     },
     {
@@ -41,7 +41,11 @@
     {
       "title": "Cloud",
       "meta": "Original · Full Color",
-      "img": "/images/2.jpg"
+      "img": "/images/1.jpg"
+    },
+    {
+      "img": "/images/07-helena-alchemised-1-.jpg",
+      "title": "Landscape"
     }
   ],
   "landscape": [],
