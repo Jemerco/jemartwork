@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -239,7 +240,8 @@ body.shop-int [data-br]{display:none!important;}
   .hero-name{font-size:124px;}
 }
 </style>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="/dados.js"></script>
 </head>
 <body class="lang-en cur-brl shop-int">
 
@@ -549,27 +551,19 @@ function setCurrency(c,btn){currentCur=c;document.body.className=document.body.c
 // SHOP
 function setShop(r,btn){document.body.className=document.body.className.replace(/shop-\w+/,'shop-'+r);document.querySelectorAll('.tgl-opt[onclick*="setShop"]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
 
-// PORTFOLIO
-const portfolioData=[
-  {title:'Nesta Archeron',meta:'ACOTAR · Full Color',tags:['acotar'],img:'https://jemcomissao.carrd.co/assets/images/gallery01/882c113b.jpg?v=85d73096'},
-  {title:'Selestra Somniatis',meta:'Princess of Souls · Full Color',tags:['fantasy'],img:'https://jemcomissao.carrd.co/assets/images/gallery03/2f589bcc.jpg?v=85d73096'},
-  {title:'Cardan & Oak',meta:'Folk of the Air · Character',tags:['fantasy'],img:'https://jemcomissao.carrd.co/assets/images/gallery01/4597e79a.jpg?v=85d73096'},
-  {title:'Elide & Lorcan',meta:'Throne of Glass · Editorial',tags:['tog'],img:'https://jemcomissao.carrd.co/assets/images/gallery01/140883ab.jpg?v=85d73096'},
-  {title:'Elain Archeron',meta:'ACOTAR · Character',tags:['acotar'],img:'https://jemcomissao.carrd.co/assets/images/gallery01/f1ff86e5.jpg?v=85d73096'},
-  {title:'Editorial Spread',meta:'Editorial · B&W',tags:['original'],img:'https://jemcomissao.carrd.co/assets/images/gallery03/a65e5d7e.jpg?v=85d73096'},
-  {title:'Comic Page',meta:'Comic · B&W',tags:['original'],img:'https://jemcomissao.carrd.co/assets/images/gallery02/f07dc710.jpg?v=85d73096'},
-  {title:'Reference Sheet',meta:'Character · Ref Sheet',tags:['original'],img:'https://jemcomissao.carrd.co/assets/images/gallery05/1ea4bafd.jpg?v=85d73096'},
-];
+// PORTFOLIO — lê de dados.js
+const portfolioData = DADOS.portfolio;
 let currentFilter='all';
 function filterPort(btn,tag){currentFilter=tag;document.querySelectorAll('.ftag').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderPortfolio();}
 function renderPortfolio(){const grid=document.getElementById('port-grid');const f=currentFilter==='all'?portfolioData:portfolioData.filter(p=>p.tags.includes(currentFilter));grid.innerHTML=f.map(p=>`<div class="port-card"><div class="port-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'"></div><div class="port-info"><div class="port-title">${p.title}</div><div class="port-meta">${p.meta}</div></div></div>`).join('');}
 renderPortfolio();
 
 // CALCULATOR DATA
-const pBRL={personagem:{sketch:{busto:30,meio:40,inteiro:50},cores:{busto:70,meio:80,inteiro:90},flat:{busto:100,meio:120,inteiro:130},full:{busto:200,meio:225,inteiro:250}},editorial:{pequena:50,media:100,pb:150,colorida:190},folha:{bw:{expr:100,rosto:25,pose:30},color:{expr:150,rosto:30,pose:35}},quadrinho:{pb:75,color:100},capa:300};
-const pUSD={personagem:{sketch:{busto:10,meio:12,inteiro:15},cores:{busto:20,meio:25,inteiro:30},flat:{busto:30,meio:35,inteiro:40},full:{busto:50,meio:60,inteiro:70}},editorial:{pequena:10,media:20,pb:35,colorida:50},folha:{bw:{expr:30,rosto:10,pose:15},color:{expr:60,rosto:15,pose:20}},quadrinho:{pb:20,color:30},capa:100};
-const eBRL={extra_char:{pct:70},detalhes:{flat:20},cen_s:{flat:50},cen_c:{flat:100},ani_p:{flat:50},ani_g:{flat:80}};
-const eUSD={extra_char:{pct:70},detalhes:{flat:10},cen_s:{flat:20},cen_c:{flat:50},ani_p:{flat:20},ani_g:{flat:40}};
+// PREÇOS — lê de dados.js
+const pBRL={personagem:DADOS.brl.personagem,editorial:DADOS.brl.editorial,folha:DADOS.brl.folha,quadrinho:DADOS.brl.quadrinho,capa:DADOS.brl.capa};
+const pUSD={personagem:DADOS.usd.personagem,editorial:DADOS.usd.editorial,folha:DADOS.usd.folha,quadrinho:DADOS.usd.quadrinho,capa:DADOS.usd.capa};
+const eBRL={extra_char:{pct:70},detalhes:{flat:DADOS.brl.extras.detalhes},cen_s:{flat:DADOS.brl.extras.cen_s},cen_c:{flat:DADOS.brl.extras.cen_c},ani_p:{flat:DADOS.brl.extras.ani_p},ani_g:{flat:DADOS.brl.extras.ani_g}};
+const eUSD={extra_char:{pct:70},detalhes:{flat:DADOS.usd.extras.detalhes},cen_s:{flat:DADOS.usd.extras.cen_s},cen_c:{flat:DADOS.usd.extras.cen_c},ani_p:{flat:DADOS.usd.extras.ani_p},ani_g:{flat:DADOS.usd.extras.ani_g}};
 const state={cat:null,style:null,size:null,color:null,pages:null,extras:new Set()};
 const isEN=()=>document.body.classList.contains('lang-en');
 
