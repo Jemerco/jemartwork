@@ -222,7 +222,7 @@ collections:
     fields:
       - { label: "Título", name: "title", widget: "string", required: false }
       - { label: "Descrição / Série", name: "meta", widget: "string", required: false, hint: "Ex: ACOTAR · Full Color" }
-      - { label: "Imagem (URL ou upload)", name: "img", widget: "string", required: false, hint: "Cole a URL da imagem ou faça upload" }
+      - { label: "Imagem", name: "img", widget: "image", required: false }
       - label: "Tags / Categorias"
         name: "tags"
         widget: "list"
