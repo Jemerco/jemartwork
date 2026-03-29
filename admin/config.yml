@@ -1,7 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Jemerco/jemartwork
   branch: main
-  
+
 media_folder: public/images
 public_folder: /images
 
@@ -18,11 +19,11 @@ collections:
         label: "Contato & Redes Sociais"
         file: "_data/contato.json"
         fields:
-          - { label: "E-mail de contato", name: "email", widget: "string", hint: "Ex: jemartwork@gmail.com" }
-          - { label: "Instagram (usuário)", name: "instagram", widget: "string", hint: "Ex: 0jem0 (sem o @)" }
-          - { label: "Link ArtStation", name: "artstation", widget: "string" }
-          - { label: "Link DeviantArt", name: "deviantart", widget: "string" }
-          - { label: "Link Redbubble", name: "redbubble", widget: "string" }
+          - { label: "E-mail de contato", name: "email", widget: "string", required: false, hint: "Ex: jemartwork@gmail.com" }
+          - { label: "Instagram (usuário)", name: "instagram", widget: "string", required: false, hint: "Ex: 0jem0 (sem o @)" }
+          - { label: "Link ArtStation", name: "artstation", widget: "string", required: false }
+          - { label: "Link DeviantArt", name: "deviantart", widget: "string", required: false }
+          - { label: "Link Redbubble", name: "redbubble", widget: "string", required: false }
           - { label: "Link Montink (loja BR)", name: "montink", widget: "string", required: false }
 
   # ── PREÇOS ──
@@ -38,30 +39,30 @@ collections:
             name: sketch
             widget: object
             fields:
-              - { label: "Busto", name: busto, widget: number }
-              - { label: "Meio corpo", name: meio, widget: number }
-              - { label: "Corpo inteiro", name: inteiro, widget: number }
+              - { label: "Busto", name: busto, widget: number , required: false}
+              - { label: "Meio corpo", name: meio, widget: number , required: false}
+              - { label: "Corpo inteiro", name: inteiro, widget: number , required: false}
           - label: "Lineart + Cores Base"
             name: cores
             widget: object
             fields:
-              - { label: "Busto", name: busto, widget: number }
-              - { label: "Meio corpo", name: meio, widget: number }
-              - { label: "Corpo inteiro", name: inteiro, widget: number }
+              - { label: "Busto", name: busto, widget: number , required: false}
+              - { label: "Meio corpo", name: meio, widget: number , required: false}
+              - { label: "Corpo inteiro", name: inteiro, widget: number , required: false}
           - label: "Flat Shading / 2D Coloring"
             name: flat
             widget: object
             fields:
-              - { label: "Busto", name: busto, widget: number }
-              - { label: "Meio corpo", name: meio, widget: number }
-              - { label: "Corpo inteiro", name: inteiro, widget: number }
+              - { label: "Busto", name: busto, widget: number , required: false}
+              - { label: "Meio corpo", name: meio, widget: number , required: false}
+              - { label: "Corpo inteiro", name: inteiro, widget: number , required: false}
           - label: "Full Render / Full Color"
             name: full
             widget: object
             fields:
-              - { label: "Busto", name: busto, widget: number }
-              - { label: "Meio corpo", name: meio, widget: number }
-              - { label: "Corpo inteiro", name: inteiro, widget: number }
+              - { label: "Busto", name: busto, widget: number , required: false}
+              - { label: "Meio corpo", name: meio, widget: number , required: false}
+              - { label: "Corpo inteiro", name: inteiro, widget: number , required: false}
 
       - name: "personagem_usd"
         label: "Personagem — Dólar (USD)"
@@ -71,98 +72,98 @@ collections:
             name: sketch
             widget: object
             fields:
-              - { label: "Bust", name: busto, widget: number }
-              - { label: "Half body", name: meio, widget: number }
-              - { label: "Full body", name: inteiro, widget: number }
+              - { label: "Bust", name: busto, widget: number , required: false}
+              - { label: "Half body", name: meio, widget: number , required: false}
+              - { label: "Full body", name: inteiro, widget: number , required: false}
           - label: "Lineart + Base Color"
             name: cores
             widget: object
             fields:
-              - { label: "Bust", name: busto, widget: number }
-              - { label: "Half body", name: meio, widget: number }
-              - { label: "Full body", name: inteiro, widget: number }
+              - { label: "Bust", name: busto, widget: number , required: false}
+              - { label: "Half body", name: meio, widget: number , required: false}
+              - { label: "Full body", name: inteiro, widget: number , required: false}
           - label: "2D Coloring"
             name: flat
             widget: object
             fields:
-              - { label: "Bust", name: busto, widget: number }
-              - { label: "Half body", name: meio, widget: number }
-              - { label: "Full body", name: inteiro, widget: number }
+              - { label: "Bust", name: busto, widget: number , required: false}
+              - { label: "Half body", name: meio, widget: number , required: false}
+              - { label: "Full body", name: inteiro, widget: number , required: false}
           - label: "Full Color"
             name: full
             widget: object
             fields:
-              - { label: "Bust", name: busto, widget: number }
-              - { label: "Half body", name: meio, widget: number }
-              - { label: "Full body", name: inteiro, widget: number }
+              - { label: "Bust", name: busto, widget: number , required: false}
+              - { label: "Half body", name: meio, widget: number , required: false}
+              - { label: "Full body", name: inteiro, widget: number , required: false}
 
       - name: "outros_brl"
         label: "Outros Serviços — Reais (BRL)"
         file: "_data/precos_outros_brl.json"
         fields:
-          - { label: "Capa de Livro (base)", name: capa, widget: number }
+          - { label: "Capa de Livro (base)", name: capa, widget: number , required: false}
           - label: "Editorial"
             name: editorial
             widget: object
             fields:
-              - { label: "Pequena", name: pequena, widget: number }
-              - { label: "Média", name: media, widget: number }
-              - { label: "Página inteira P&B", name: pb, widget: number }
-              - { label: "Página inteira Colorida", name: colorida, widget: number }
+              - { label: "Pequena", name: pequena, widget: number , required: false}
+              - { label: "Média", name: media, widget: number , required: false}
+              - { label: "Página inteira P&B", name: pb, widget: number , required: false}
+              - { label: "Página inteira Colorida", name: colorida, widget: number , required: false}
           - label: "Quadrinho (por página)"
             name: quadrinho
             widget: object
             fields:
-              - { label: "Preto e branco", name: pb, widget: number }
-              - { label: "Colorido", name: color, widget: number }
+              - { label: "Preto e branco", name: pb, widget: number , required: false}
+              - { label: "Colorido", name: color, widget: number , required: false}
           - label: "Folha de Ref — Lineart"
             name: folha_bw
             widget: object
             fields:
-              - { label: "1 personagem + 3 expressões", name: expr, widget: number }
-              - { label: "Rosto extra", name: rosto, widget: number }
-              - { label: "Pose extra", name: pose, widget: number }
+              - { label: "1 personagem + 3 expressões", name: expr, widget: number , required: false}
+              - { label: "Rosto extra", name: rosto, widget: number , required: false}
+              - { label: "Pose extra", name: pose, widget: number , required: false}
           - label: "Folha de Ref — Colorida"
             name: folha_color
             widget: object
             fields:
-              - { label: "1 personagem + 3 expressões", name: expr, widget: number }
-              - { label: "Rosto extra", name: rosto, widget: number }
-              - { label: "Pose extra", name: pose, widget: number }
+              - { label: "1 personagem + 3 expressões", name: expr, widget: number , required: false}
+              - { label: "Rosto extra", name: rosto, widget: number , required: false}
+              - { label: "Pose extra", name: pose, widget: number , required: false}
 
       - name: "outros_usd"
         label: "Outros Serviços — Dólar (USD)"
         file: "_data/precos_outros_usd.json"
         fields:
-          - { label: "Book Cover (base)", name: capa, widget: number }
+          - { label: "Book Cover (base)", name: capa, widget: number , required: false}
           - label: "Editorial"
             name: editorial
             widget: object
             fields:
-              - { label: "Small", name: pequena, widget: number }
-              - { label: "Medium", name: media, widget: number }
-              - { label: "Full page B&W", name: pb, widget: number }
-              - { label: "Full page Color", name: colorida, widget: number }
+              - { label: "Small", name: pequena, widget: number , required: false}
+              - { label: "Medium", name: media, widget: number , required: false}
+              - { label: "Full page B&W", name: pb, widget: number , required: false}
+              - { label: "Full page Color", name: colorida, widget: number , required: false}
           - label: "Comic page (per page)"
             name: quadrinho
             widget: object
             fields:
-              - { label: "B&W", name: pb, widget: number }
-              - { label: "Color", name: color, widget: number }
+              - { label: "B&W", name: pb, widget: number , required: false}
+              - { label: "Color", name: color, widget: number , required: false}
           - label: "Ref Sheet — B&W"
             name: folha_bw
             widget: object
             fields:
-              - { label: "1 char + 3 expressions", name: expr, widget: number }
-              - { label: "Extra face", name: rosto, widget: number }
-              - { label: "Extra pose", name: pose, widget: number }
+              - { label: "1 char + 3 expressions", name: expr, widget: number , required: false}
+              - { label: "Extra face", name: rosto, widget: number , required: false}
+              - { label: "Extra pose", name: pose, widget: number , required: false}
           - label: "Ref Sheet — Colored"
             name: folha_color
             widget: object
             fields:
-              - { label: "1 char + 3 expressions", name: expr, widget: number }
-              - { label: "Extra face", name: rosto, widget: number }
-              - { label: "Extra pose", name: pose, widget: number }
+              - { label: "1 char + 3 expressions", name: expr, widget: number , required: false}
+              - { label: "Extra face", name: rosto, widget: number , required: false}
+              - { label: "Extra pose", name: pose, widget: number , required: false}
 
       - name: "extras"
         label: "Adicionais / Add-ons"
@@ -172,20 +173,20 @@ collections:
             name: brl
             widget: object
             fields:
-              - { label: "Detalhes complexos", name: detalhes, widget: number }
-              - { label: "Cenário simples", name: cen_s, widget: number }
-              - { label: "Cenário complexo", name: cen_c, widget: number }
-              - { label: "Animal pequeno", name: ani_p, widget: number }
-              - { label: "Animal grande", name: ani_g, widget: number }
+              - { label: "Detalhes complexos", name: detalhes, widget: number , required: false}
+              - { label: "Cenário simples", name: cen_s, widget: number , required: false}
+              - { label: "Cenário complexo", name: cen_c, widget: number , required: false}
+              - { label: "Animal pequeno", name: ani_p, widget: number , required: false}
+              - { label: "Animal grande", name: ani_g, widget: number , required: false}
           - label: "Dólar (USD)"
             name: usd
             widget: object
             fields:
-              - { label: "Complex details", name: detalhes, widget: number }
-              - { label: "Simple background", name: cen_s, widget: number }
-              - { label: "Complex background", name: cen_c, widget: number }
-              - { label: "Small animal", name: ani_p, widget: number }
-              - { label: "Large animal", name: ani_g, widget: number }
+              - { label: "Complex details", name: detalhes, widget: number , required: false}
+              - { label: "Simple background", name: cen_s, widget: number , required: false}
+              - { label: "Complex background", name: cen_c, widget: number , required: false}
+              - { label: "Small animal", name: ani_p, widget: number , required: false}
+              - { label: "Large animal", name: ani_g, widget: number , required: false}
 
   # ── PORTFÓLIO ──
   - name: "portfolio"
@@ -195,9 +196,9 @@ collections:
     slug: "{{slug}}"
     label_singular: "Obra"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Descrição / Série", name: "meta", widget: "string", hint: "Ex: ACOTAR · Full Color" }
-      - { label: "Imagem", name: "img", widget: "image" }
+      - { label: "Título", name: "title", widget: "string", required: false }
+      - { label: "Descrição / Série", name: "meta", widget: "string", required: false, hint: "Ex: ACOTAR · Full Color" }
+      - { label: "Imagem", name: "img", widget: "image", required: false }
       - label: "Categoria"
         name: "tags"
         widget: "select"
@@ -221,9 +222,9 @@ collections:
             label: Produtos
             widget: list
             fields:
-              - { label: "Nome da obra", name: name, widget: string }
-              - { label: "Preço (ex: from $14)", name: price, widget: string }
-              - { label: "Link Redbubble", name: link, widget: string }
+              - { label: "Nome da obra", name: name, widget: string , required: false}
+              - { label: "Preço (ex: from $14)", name: price, widget: string , required: false}
+              - { label: "Link Redbubble", name: link, widget: string , required: false}
               - { label: "Imagem", name: img, widget: image, required: false }
 
       - name: "produtos_br"
@@ -234,7 +235,7 @@ collections:
             label: Produtos
             widget: list
             fields:
-              - { label: "Nome da obra", name: name, widget: string }
-              - { label: "Preço (ex: a partir de R$39)", name: price, widget: string }
-              - { label: "Link Montink", name: link, widget: string }
+              - { label: "Nome da obra", name: name, widget: string , required: false}
+              - { label: "Preço (ex: a partir de R$39)", name: price, widget: string , required: false}
+              - { label: "Link Montink", name: link, widget: string , required: false}
               - { label: "Imagem", name: img, widget: image, required: false }
