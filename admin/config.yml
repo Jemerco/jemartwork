@@ -228,12 +228,17 @@ collections:
               - { label: "Título", name: "title", widget: "string", required: false }
               - { label: "Descrição / Série", name: "meta", widget: "string", required: false, hint: "Ex: ACOTAR · Full Color" }
               - { label: "Imagem", name: "img", widget: "image", required: false }
-              - label: "Tags / Categorias"
+              - label: "Categorias"
                 name: "tags"
-                widget: "list"
+                widget: "select"
                 required: false
-                hint: "fanart, editorial, comic, original, landscape"
-                field: { label: "Tag", name: "tag", widget: "string", required: false }
+                multiple: true
+                options:
+                  - { label: "Fanarts", value: "fanart" }
+                  - { label: "Editorial", value: "editorial" }
+                  - { label: "Comics / Quadrinhos", value: "comic" }
+                  - { label: "Original", value: "original" }
+                  - { label: "Landscape / Paisagem", value: "landscape" }
 
   # ── LOJA ──
   - name: "loja"
