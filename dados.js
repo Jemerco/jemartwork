@@ -181,6 +181,16 @@ const DADOS = {
     "comic":    "Comic",
   },
 
+  /* ── POLÍTICAS / POLICIES ── */
+  policies: {
+    payment_en: "Wise or PayPal. 100% upfront or 50%+50% on delivery. Refunds only before final rendering starts.",
+    payment_pt: "Pix. 100% na entrada ou 50%+50%. Reembolsos apenas se a finalização não tiver iniciado.",
+    timeline_en: "2–4 weeks on average. Let me know in advance if you have a deadline.",
+    timeline_pt: "Prazo médio de 2–4 semanas. Avise com antecedência se tiver uma data específica.",
+    wips_en: "Progress updates sent for approval. Changes welcome until lineart is approved.",
+    wips_pt: "Envio etapas para aprovação. Alterações bem-vindas até a lineart finalizada.",
+  },
+
   /* ── SOBRE / ABOUT ── */
   sobre: {
     nome: "Jéssica Merco",
