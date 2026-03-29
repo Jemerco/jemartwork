@@ -264,10 +264,10 @@ body.shop-int [data-br]{display:none!important;}
   <div class="nav-inner">
     <a class="nav-logo" href="#">J<em>em</em> Art</a>
     <div class="nav-links">
-      <a class="nav-link active" href="#portfolio">Portfolio</a>
-      <a class="nav-link" href="#commissions">Commissions</a>
-      <a class="nav-link" href="#shop">Shop</a>
-      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link active" href="#portfolio"><span data-en>Portfolio</span><span data-pt>Portfólio</span></a>
+      <a class="nav-link" href="#commissions"><span data-en>Commissions</span><span data-pt>Comissões</span></a>
+      <a class="nav-link" href="#shop"><span data-en>Shop</span><span data-pt>Loja</span></a>
+      <a class="nav-link" href="#about"><span data-en>About</span><span data-pt>Sobre</span></a>
     </div>
     <div class="lang-toggle">
       <button class="lang-btn" onclick="setLang('pt')">PT</button>
@@ -282,7 +282,7 @@ body.shop-int [data-br]{display:none!important;}
     <h1 class="hero-name">J<em>em</em> Art</h1>
     <div class="hero-tagline">
       <span data-en>Jéssica Merco · Illustrator<br>Open for commissions</span>
-      <span data-pt>Jéssica Merco · Ilustradora<br>Comissões abertas — BR & Internacional</span>
+      <span data-pt>Jéssica Merco · Ilustradora<br>Comissões abertas</span>
     </div>
     <div class="hero-cta">
       <a href="#commissions" class="btn-primary"><span data-en>Commission me</span><span data-pt>Encomendar</span></a>
@@ -487,8 +487,12 @@ body.shop-int [data-br]{display:none!important;}
     <button class="tgl-opt" onclick="setShop('br',this)">🇧🇷 Brasil — Montink</button>
   </div>
   <div data-int>
-    <script type="text/javascript" src="https://www.redbubble.com/assets/external_portfolio.js"></script>
-    <script id="rb-xzfcxvzx" type="text/javascript">new RBExternalPortfolio('www.redbubble.com', 'jemerco', 2, 2).renderIframe();</script>
+    <div class="shop-grid">
+      <div class="prod-card"><div class="prod-img"><img src="https://jemcomissao.carrd.co/assets/images/gallery01/882c113b.jpg?v=85d73096" alt="Nesta" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Nesta Archeron — ACOTAR</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank">Redbubble ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://jemcomissao.carrd.co/assets/images/gallery03/2f589bcc.jpg?v=85d73096" alt="Selestra" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Selestra Somniatis</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank">Redbubble ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://jemcomissao.carrd.co/assets/images/gallery01/4597e79a.jpg?v=85d73096" alt="Cardan" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Cardan & Oak — Folk of the Air</div><div class="prod-price">from $12</div><a class="prod-link" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank">Redbubble ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://jemcomissao.carrd.co/assets/images/gallery01/140883ab.jpg?v=85d73096" alt="Elide" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Elide & Lorcan — TOG</div><div class="prod-price">from $12</div><a class="prod-link" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank">Redbubble ↗</a></div></div>
+    </div>
     <p style="text-align:center;font-size:10px;color:var(--text-dim);padding-bottom:8px;"><a href="https://www.redbubble.com/people/Jemerco/shop" style="color:var(--gold);text-decoration:none;" target="_blank"><span data-en>View all on Redbubble ↗</span><span data-pt>Ver todos no Redbubble ↗</span></a></p>
   </div>
   <div data-br>
@@ -553,6 +557,7 @@ function setLang(l){
   document.body.className=document.body.className.replace(/cur-\w+/,'cur-'+autoCur);
   document.querySelectorAll('.tgl-opt[onclick*="setCurrency"]').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes("'"+autoCur+"'")));
   renderCalcSub();
+  buildFilters();
 }
 // COPY QUOTE
 function copyQuote(){
@@ -593,13 +598,14 @@ let currentFilter='all';
 
 // Build dynamic filter tags from dados.js
 function buildFilters(){
-  const allTags = [...new Set(portfolioData.flatMap(p=>p.tags))];
+  const allTags = [...new Set(portfolioData.flatMap(p=>p.tags))].sort();
   const row = document.getElementById('filter-row');
   const en = isEN();
   const tagLabels = DADOS.tagLabels || {};
   let html = `<button class="ftag active" onclick="filterPort(this,'all')">${en?'All':'Todos'}</button>`;
   allTags.forEach(t=>{
-    const label = tagLabels[t] || t.toUpperCase();
+    const lbl = tagLabels[t];
+    const label = lbl ? (typeof lbl==='object' ? (en?lbl.en:lbl.pt) : lbl) : t.toUpperCase();
     html += `<button class="ftag" onclick="filterPort(this,'${t}')">${label}</button>`;
   });
   row.innerHTML = html;

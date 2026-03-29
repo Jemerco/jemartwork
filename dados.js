@@ -95,37 +95,37 @@ const DADOS = {
     {
       title: "Nesta Archeron",
       meta:  "ACOTAR · Full Color",
-      tags:  ["acotar"],
+      tags:  ["fanart"],
       img:   "https://jemcomissao.carrd.co/assets/images/gallery01/882c113b.jpg?v=85d73096",
     },
     {
       title: "Selestra Somniatis",
       meta:  "Princess of Souls · Full Color",
-      tags:  ["fantasy"],
+      tags:  ["fanart"],
       img:   "https://jemcomissao.carrd.co/assets/images/gallery03/2f589bcc.jpg?v=85d73096",
     },
     {
       title: "Cardan & Oak",
       meta:  "Folk of the Air · Character",
-      tags:  ["fantasy"],
+      tags:  ["fanart"],
       img:   "https://jemcomissao.carrd.co/assets/images/gallery01/4597e79a.jpg?v=85d73096",
     },
     {
       title: "Elide & Lorcan",
       meta:  "Throne of Glass · Editorial",
-      tags:  ["tog"],
+      tags:  ["editorial"],
       img:   "https://jemcomissao.carrd.co/assets/images/gallery01/140883ab.jpg?v=85d73096",
     },
     {
       title: "Elain Archeron",
       meta:  "ACOTAR · Character",
-      tags:  ["acotar"],
+      tags:  ["fanart"],
       img:   "https://jemcomissao.carrd.co/assets/images/gallery01/f1ff86e5.jpg?v=85d73096",
     },
     {
       title: "Editorial Spread",
       meta:  "Editorial · B&W",
-      tags:  ["original"],
+      tags:  ["editorial"],
       img:   "https://jemcomissao.carrd.co/assets/images/gallery03/a65e5d7e.jpg?v=85d73096",
     },
     {
@@ -173,20 +173,18 @@ const DADOS = {
   /* ── LABELS DOS FILTROS DO PORTFÓLIO ── */
   /* Adicione aqui o nome de exibição para cada tag usada nas obras */
   tagLabels: {
-    "acotar":   "ACOTAR",
-    "tog":      "TOG",
-    "fantasy":  "Fantasy",
-    "original": "Original",
-    "editorial":"Editorial",
-    "comic":    "Comic",
+    "editorial":  { en: "Editorial",  pt: "Editorial"  },
+    "fanart":     { en: "Fanarts",    pt: "Fanarts"    },
+    "landscape":  { en: "Landscape",  pt: "Paisagem"   },
+    "original":   { en: "Original",   pt: "Original"   },
   },
 
   /* ── POLÍTICAS / POLICIES ── */
   policies: {
     payment_en: "Wise or PayPal. 100% upfront or 50%+50% on delivery. Refunds only before final rendering starts.",
     payment_pt: "Pix. 100% na entrada ou 50%+50%. Reembolsos apenas se a finalização não tiver iniciado.",
-    timeline_en: "2–4 weeks on average. Let me know in advance if you have a deadline.",
-    timeline_pt: "Prazo médio de 2–4 semanas. Avise com antecedência se tiver uma data específica.",
+    timeline_en: "1–4 weeks on average. Let me know in advance if you have a deadline.",
+    timeline_pt: "Prazo médio de 1–4 semanas. Avise com antecedência se tiver uma data específica.",
     wips_en: "Progress updates sent for approval. Changes welcome until lineart is approved.",
     wips_pt: "Envio etapas para aprovação. Alterações bem-vindas até a lineart finalizada.",
   },
