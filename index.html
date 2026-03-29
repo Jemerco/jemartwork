@@ -40,9 +40,9 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 
 /* PAGE BODY */
 .page-body{max-width:var(--max-w);margin:0 auto;padding:0 24px;}
-.section{padding:44px 0 0;}
+.section{padding:0;}
 
-.s-label{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.s-label{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;padding-top:44px;}
 .s-label::after{content:'';flex:1;height:1px;background:var(--border);}
 .s-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--cream);margin-bottom:8px;line-height:1.1;}
 .s-desc{font-size:11px;color:var(--text-mid);margin-bottom:22px;line-height:1.9;}
@@ -68,8 +68,8 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .tgl-opt.active{background:var(--surface);color:var(--gold);box-shadow:0 1px 4px rgba(0,0,0,.08);}
 
 /* PRICE BLOCKS */
-.price-block{background:var(--surface);border:1px solid var(--border);border-radius:2px;margin-bottom:10px;overflow:hidden;}
-.pb-head{padding:10px 16px;background:var(--bg2);border-bottom:1px solid var(--border);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;justify-content:space-between;align-items:center;}
+.price-block{background:#fff;border:1px solid var(--border);border-radius:2px;margin-bottom:10px;overflow:hidden;}
+.pb-head{padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;justify-content:space-between;align-items:center;}
 .pb-sub{font-size:9px;color:var(--text-dim);font-style:italic;text-transform:none;letter-spacing:0;}
 .pb-row{display:flex;justify-content:space-between;align-items:center;padding:9px 16px;border-bottom:1px solid var(--border);transition:background .12s;}
 .pb-row:last-child{border-bottom:none;}
@@ -78,7 +78,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .pl small{color:var(--text-dim);font-size:9px;}
 .pv{font-size:12px;color:var(--gold);}
 
-.highlight-card{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--gold-dim);border-radius:2px;padding:22px;margin-bottom:10px;position:relative;overflow:hidden;}
+.highlight-card{background:var(--surface);border:1px solid var(--gold-dim);border-radius:2px;padding:22px;margin-bottom:10px;position:relative;overflow:hidden;}
 .highlight-card::after{content:'✦';position:absolute;top:-10px;right:18px;font-size:64px;color:var(--gold);opacity:.06;}
 .hl-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:8px;}
 .hl-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--text);margin-bottom:6px;}
@@ -86,13 +86,13 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .hl-note{font-size:10px;color:var(--text-dim);margin-top:8px;font-style:italic;}
 
 .extras-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
-.extra-pill{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:12px;}
+.extra-pill{background:#fff;border:1px solid var(--border);border-radius:2px;padding:12px;}
 .ep-name{font-size:9px;color:var(--text-dim);letter-spacing:.08em;margin-bottom:4px;}
 .ep-val{font-size:14px;color:var(--gold);}
 .ep-note{font-size:9px;color:var(--text-dim);opacity:.7;margin-top:2px;}
 
 .do-dont{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
-.do-block,.dont-block{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:14px;}
+.do-block,.dont-block{background:#fff;border:1px solid var(--border);border-radius:2px;padding:14px;}
 .do-block{border-top:2px solid #5a7a4a88;}
 .dont-block{border-top:2px solid #c0887888;}
 .blk-title{font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;}
@@ -104,13 +104,13 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .do-block .blk-list li::before{content:'✓';color:var(--green);flex-shrink:0;font-size:10px;}
 .dont-block .blk-list li::before{content:'✗';color:var(--rose);flex-shrink:0;font-size:10px;}
 
-.info-block{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:2px;padding:14px 16px;margin-bottom:10px;font-size:11px;color:var(--text);line-height:1.9;}
+.info-block{background:#fff;border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:2px;padding:14px 16px;margin-bottom:10px;font-size:11px;color:var(--text);line-height:1.9;}
 .info-block strong{display:block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:6px;}
 .info-block a{color:var(--gold);text-decoration:none;}
 
 /* CALCULATOR */
-.calc-wrap{background:var(--surface);border:1px solid var(--border);border-radius:2px;overflow:hidden;margin-bottom:14px;}
-.calc-header{padding:16px 20px;background:var(--bg2);border-bottom:1px solid var(--border);}
+.calc-wrap{background:#fff;border:1px solid var(--border);border-radius:2px;overflow:hidden;margin-bottom:14px;}
+.calc-header{padding:16px 20px;background:var(--surface);border-bottom:1px solid var(--border);}
 .calc-header-title{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--text);margin-bottom:2px;}
 .calc-header-sub{font-size:10px;color:var(--text-dim);}
 .calc-body{padding:20px;display:flex;flex-direction:column;gap:16px;}
@@ -128,7 +128,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 
 /* CONTACT */
 .contact-channels{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
-.ch-btn{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:2px;border:1px solid var(--border);background:var(--surface);cursor:pointer;transition:all .2s;font-family:'DM Mono',monospace;text-align:left;width:100%;}
+.ch-btn{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:2px;border:1px solid var(--border);background:#fff;cursor:pointer;transition:all .2s;font-family:'DM Mono',monospace;text-align:left;width:100%;}
 .ch-btn:hover{transform:translateX(3px);}
 .ch-btn.email:hover,.ch-btn.active.email{border-color:var(--gold);background:#8a6f4208;}
 .ch-btn.insta:hover,.ch-btn.active.insta{border-color:#c77dff;background:#c77dff08;}
@@ -165,7 +165,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .prod-link:hover{border-color:var(--gold-dim);color:var(--gold);}
 
 /* ABOUT */
-.about-block{background:var(--surface);border:1px solid var(--border);border-radius:2px;padding:22px;margin-bottom:0;}
+.about-block{background:#fff;border:1px solid var(--border);border-radius:2px;padding:22px;margin-bottom:0;}
 .about-name{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--text);margin-bottom:10px;}
 .about-bio{font-size:11px;color:var(--text-mid);line-height:1.9;margin-bottom:16px;}
 .about-tags{display:flex;flex-wrap:wrap;gap:6px;}
@@ -208,7 +208,7 @@ body.shop-int [data-br]{display:none!important;}
   .btn-primary,.btn-outline{padding:14px 36px;font-size:10px;}
 
   .page-body{padding:0 40px;}
-  .section{padding:44px 0 0;}
+  .section{padding:0;}
 
   .s-title{font-size:40px;}
   .s-desc{font-size:12px;margin-bottom:28px;}
@@ -240,13 +240,20 @@ body.shop-int [data-br]{display:none!important;}
 }
 
 /* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(14,13,12,.92);align-items:center;justify-content:center;padding:20px;}
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,9,8,.94);align-items:center;justify-content:center;padding:20px;}
 .lightbox.open{display:flex;}
-.lightbox-inner{position:relative;max-width:90vw;max-height:90vh;}
-.lightbox-inner img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:2px;display:block;}
-.lightbox-close{position:absolute;top:-36px;right:0;background:none;border:none;color:#f0e8d8;font-size:22px;cursor:pointer;font-family:'DM Mono',monospace;letter-spacing:.1em;opacity:.7;transition:opacity .15s;}
+.lightbox-inner{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;}
+.lightbox-inner img{max-width:88vw;max-height:82vh;object-fit:contain;border-radius:2px;display:block;}
+.lightbox-close{position:absolute;top:-40px;right:0;background:none;border:none;color:#f0e8d8;font-size:13px;cursor:pointer;font-family:'DM Mono',monospace;letter-spacing:.15em;text-transform:uppercase;opacity:.6;transition:opacity .15s;padding:4px 0;}
 .lightbox-close:hover{opacity:1;}
-.lightbox-caption{margin-top:10px;text-align:center;font-family:'DM Mono',monospace;font-size:10px;color:#9a8c78;letter-spacing:.1em;}
+.lightbox-caption{margin-top:12px;text-align:center;font-family:'DM Mono',monospace;font-size:10px;color:#9a8c78;letter-spacing:.1em;}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:#f0e8d8;font-size:28px;cursor:pointer;padding:12px;opacity:.5;transition:opacity .15s;user-select:none;}
+.lightbox-nav:hover{opacity:1;}
+.lightbox-prev{left:-52px;}
+.lightbox-next{right:-52px;}
+.lightbox-counter{position:absolute;top:-40px;left:0;font-family:'DM Mono',monospace;font-size:10px;color:#9a8c78;letter-spacing:.1em;}
+.copy-quote-btn{padding:10px 16px;background:transparent;border:1px solid var(--gold-dim);border-radius:2px;color:var(--gold);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0;}
+.copy-quote-btn:hover{background:#8a6f4210;}
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="/dados.js"></script>
@@ -399,9 +406,9 @@ body.shop-int [data-br]{display:none!important;}
         <div class="dont-block"><div class="blk-title"><span data-en>I don't draw</span><span data-pt>Não faço</span></div><ul class="blk-list"><li>Mecha</li><li>Furry</li><li>Gore</li><li>NSFW</li></ul></div>
       </div>
 
-      <div class="info-block"><strong data-en>Payment</strong><strong data-pt>Pagamento</strong><span data-en>Wise or PayPal. 100% upfront or 50%+50% on delivery. Refunds only before final rendering starts.</span><span data-pt>Pix. 100% na entrada ou 50%+50%. Reembolsos apenas se a finalização não tiver iniciado.</span></div>
-      <div class="info-block"><strong data-en>Timeline</strong><strong data-pt>Prazo</strong><span data-en>2–4 weeks on average. Let me know in advance if you have a deadline.</span><span data-pt>Prazo médio de 2–4 semanas. Avise com antecedência se tiver uma data específica.</span></div>
-      <div class="info-block"><strong data-en>WIPs & Approval</strong><strong data-pt>WIPs e Aprovação</strong><span data-en>Progress updates sent for approval. Changes welcome until lineart is approved.</span><span data-pt>Envio etapas para aprovação. Alterações bem-vindas até a lineart finalizada.</span></div>
+      <div class="info-block" id="info-payment"><strong data-en>Payment</strong><strong data-pt>Pagamento</strong><span id="info-payment-en" data-en></span><span id="info-payment-pt" data-pt></span></div>
+      <div class="info-block" id="info-timeline"><strong data-en>Timeline</strong><strong data-pt>Prazo</strong><span id="info-timeline-en" data-en></span><span id="info-timeline-pt" data-pt></span></div>
+      <div class="info-block" id="info-wips"><strong data-en>WIPs & Approval</strong><strong data-pt>WIPs e Aprovação</strong><span id="info-wips-en" data-en></span><span id="info-wips-pt" data-pt></span></div>
     </div>
   </div>
 
@@ -431,6 +438,9 @@ body.shop-int [data-br]{display:none!important;}
         <div class="r-price" id="calc-price">—</div>
         <div class="r-note" id="calc-note"><span data-en>Select options above</span><span data-pt>Selecione as opções acima</span></div>
       </div>
+      <button class="copy-quote-btn" id="copy-quote-btn" onclick="copyQuote()" style="display:none;">
+        <span data-en>⎘ Copy quote</span><span data-pt>⎘ Copiar orçamento</span>
+      </button>
     </div>
   </div>
 
@@ -511,8 +521,11 @@ body.shop-int [data-br]{display:none!important;}
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <div class="lightbox-inner">
-    <button class="lightbox-close" onclick="closeLightbox()">✕ close</button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+    <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';">✕ fechar</button>
+    <button class="lightbox-nav lightbox-prev" onclick="event.stopPropagation();lightboxNav(-1);">&#8592;</button>
     <img id="lightbox-img" src="" alt="">
+    <button class="lightbox-nav lightbox-next" onclick="event.stopPropagation();lightboxNav(1);">&#8594;</button>
     <div class="lightbox-caption" id="lightbox-caption"></div>
   </div>
 </div>
@@ -543,7 +556,34 @@ function setLang(l){
   currentCur=autoCur;
   document.body.className=document.body.className.replace(/cur-\w+/,'cur-'+autoCur);
   document.querySelectorAll('.tgl-opt[onclick*="setCurrency"]').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes("'"+autoCur+"'")));
-  renderCalcSub();updateCalcResult();
+  renderCalcSub();// COPY QUOTE
+function copyQuote(){
+  const en = isEN();
+  const price = document.getElementById('calc-price').textContent;
+  const note = document.getElementById('calc-note').textContent;
+  const msg = buildMsg(price);
+  navigator.clipboard.writeText(msg).then(()=>{
+    const btn = document.getElementById('copy-quote-btn');
+    const orig = btn.innerHTML;
+    btn.textContent = en ? '✓ Copied!' : '✓ Copiado!';
+    setTimeout(()=>btn.innerHTML=orig, 2000);
+  });
+}
+
+// POLICIES — lê de dados.js
+function renderPolicies(){
+  const p = DADOS.policies;
+  if(!p) return;
+  if(document.getElementById('info-payment-en')) document.getElementById('info-payment-en').textContent = p.payment_en || '';
+  if(document.getElementById('info-payment-pt')) document.getElementById('info-payment-pt').textContent = p.payment_pt || '';
+  if(document.getElementById('info-timeline-en')) document.getElementById('info-timeline-en').textContent = p.timeline_en || '';
+  if(document.getElementById('info-timeline-pt')) document.getElementById('info-timeline-pt').textContent = p.timeline_pt || '';
+  if(document.getElementById('info-wips-en')) document.getElementById('info-wips-en').textContent = p.wips_en || '';
+  if(document.getElementById('info-wips-pt')) document.getElementById('info-wips-pt').textContent = p.wips_pt || '';
+}
+renderPolicies();
+
+updateCalcResult();
 }
 // CURRENCY — can still be changed manually after language switch
 var currentCur='brl';
@@ -581,19 +621,50 @@ function renderPortfolio(){
     </div>`).join('');
 }
 
-// Lightbox
-function openLightbox(img,title,meta){
-  document.getElementById('lightbox-img').src=img;
-  document.getElementById('lightbox-caption').textContent=title+' — '+meta;
+// Lightbox with navigation
+let lbIndex = 0;
+let lbItems = [];
+
+function openLightbox(img, title, meta){
+  // Build list from current filtered portfolio
+  const cards = document.querySelectorAll('#port-grid .port-card');
+  lbItems = Array.from(cards).map(c => ({
+    img: c.querySelector('img')?.src || '',
+    title: c.querySelector('.port-title')?.textContent || '',
+    meta: c.querySelector('.port-meta')?.textContent || ''
+  }));
+  lbIndex = lbItems.findIndex(i => i.img === img || i.title === title);
+  if(lbIndex < 0) lbIndex = 0;
+  showLightboxItem();
   document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow='hidden';
+  document.body.style.overflow = 'hidden';
 }
+
+function showLightboxItem(){
+  const item = lbItems[lbIndex];
+  if(!item) return;
+  document.getElementById('lightbox-img').src = item.img;
+  document.getElementById('lightbox-caption').textContent = item.title + (item.meta ? ' — ' + item.meta : '');
+  document.getElementById('lightbox-counter').textContent = (lbIndex+1) + ' / ' + lbItems.length;
+}
+
+function lightboxNav(dir){
+  lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
+  showLightboxItem();
+}
+
 function closeLightbox(e){
-  if(e&&e.target!==document.getElementById('lightbox')&&!e.target.closest('.lightbox-close'))return;
+  if(e && e.target !== document.getElementById('lightbox') && !e.target.closest('.lightbox-close')) return;
   document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow='';
+  document.body.style.overflow = '';
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox({target:document.getElementById('lightbox')});});
+
+document.addEventListener('keydown', e => {
+  if(!document.getElementById('lightbox').classList.contains('open')) return;
+  if(e.key === 'Escape') { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+  if(e.key === 'ArrowLeft') lightboxNav(-1);
+  if(e.key === 'ArrowRight') lightboxNav(1);
+});
 
 buildFilters();
 renderPortfolio();
@@ -665,6 +736,8 @@ function updateCalcResult(){
   state.extras.forEach(k=>{const e=E[k];if(e.pct){const add=Math.round(res.base*e.pct/100);total+=add;notes.push(`+${res.sym}${add}`);}else{total+=e.flat;notes.push(`+${res.sym}${e.flat}`);}});
   const display=`${res.sym}${total}`;
   priceEl.textContent=display;
+  const copyBtn=document.getElementById('copy-quote-btn');
+  if(copyBtn) copyBtn.style.display='block';
   noteEl.textContent=notes.length?notes.join(' · '):(state.cat==='capa'?(isEN()?'base price, may increase':'valor pode aumentar'):'');
   document.getElementById('f-quote').value=display;
   updatePrefills(display);
