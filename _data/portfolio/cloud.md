@@ -1,6 +1,6 @@
 ---
 title: Cloud
-img: /images/2.jpg
+img: /images/story.jpg
 tags:
   - original
 ---
