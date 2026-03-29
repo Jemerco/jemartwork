@@ -239,6 +239,7 @@ collections:
                   - { label: "Comics / Quadrinhos", value: "comic" }
                   - { label: "Original", value: "original" }
                   - { label: "Landscape / Paisagem", value: "landscape" }
+                  - { label: "Character Sheet / Folha de Personagem", value: "character_sheet" }
 
   # ── LOJA ──
   - name: "loja"

@@ -137,7 +137,7 @@ const DADOS = {
     {
       title: "Reference Sheet",
       meta:  "Character · Ref Sheet",
-      tags:  ["original"],
+      tags:  ["character_sheet"],
       img:   "https://jemcomissao.carrd.co/assets/images/gallery05/1ea4bafd.jpg?v=85d73096",
     },
   ],
@@ -173,11 +173,12 @@ const DADOS = {
   /* ── LABELS DOS FILTROS DO PORTFÓLIO ── */
   /* Adicione aqui o nome de exibição para cada tag usada nas obras */
   tagLabels: {
-    "comic":      { en: "Comics",     pt: "Quadrinhos" },
-    "editorial":  { en: "Editorial",  pt: "Editorial"  },
-    "fanart":     { en: "Fanarts",    pt: "Fanarts"    },
-    "landscape":  { en: "Landscape",  pt: "Paisagem"   },
-    "original":   { en: "Original",   pt: "Original"   },
+    "character_sheet": { en: "Character Sheet", pt: "Folha de Personagem" },
+    "comic":           { en: "Comics",           pt: "Quadrinhos"         },
+    "editorial":       { en: "Editorial",        pt: "Editorial"          },
+    "fanart":          { en: "Fanarts",          pt: "Fanarts"            },
+    "landscape":       { en: "Landscape",        pt: "Paisagem"           },
+    "original":        { en: "Original",         pt: "Original"           },
   },
 
   /* ── POLÍTICAS / POLICIES ── */

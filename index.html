@@ -64,6 +64,9 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .port-arrow:hover{background:var(--gold);color:var(--surface);border-color:var(--gold);}
 .port-arrow:disabled{opacity:.2;cursor:default;pointer-events:none;}
 .port-prev{left:0;}.port-next{right:0;}
+.port-group{margin-bottom:36px;}
+.port-group-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.port-group-label::after{content:'';flex:1;height:1px;background:var(--border);}
 .port-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 @keyframes portCardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .port-card{animation:portCardIn .2s ease both;}
@@ -320,12 +323,7 @@ body.shop-int [data-br]{display:none!important;}
 <!-- PORTFOLIO -->
 <section class="section" id="portfolio">
   <div class="s-label"><span data-en>Portfolio</span><span data-pt>Portfólio</span></div>
-  <div class="filter-row" id="filter-row"></div>
-  <div class="port-slider-wrap">
-    <button class="port-arrow port-prev" id="port-prev" onclick="slidePort(-1)" style="display:none;">&#8592;</button>
-    <div class="port-grid" id="port-grid"></div>
-    <button class="port-arrow port-next" id="port-next" onclick="slidePort(1)" style="display:none;">&#8594;</button>
-  </div>
+  <div id="port-sections"></div>
   <p style="font-size:10px;color:var(--text-dim);text-align:center;padding-bottom:8px;">
     <span data-en>↗ More on</span><span data-pt>↗ Mais no</span>
     <a href="https://www.artstation.com/jem0" style="color:var(--gold);text-decoration:none;"> ArtStation</a> &
@@ -589,7 +587,7 @@ function setLang(l){
   document.body.className=document.body.className.replace(/cur-\w+/,'cur-'+autoCur);
   document.querySelectorAll('.tgl-opt[onclick*="setCurrency"]').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes("'"+autoCur+"'")));
   renderCalcSub();
-  buildFilters();
+  renderPortfolio();
 }
 // COPY QUOTE
 function copyQuote(){
@@ -624,58 +622,37 @@ function setCurrency(c,btn){currentCur=c;document.body.className=document.body.c
 // SHOP
 function setShop(r,btn){document.body.className=document.body.className.replace(/shop-\w+/,'shop-'+r);document.querySelectorAll('.tgl-opt[onclick*="setShop"]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
 
-// PORTFOLIO — lê de dados.js (ou _data/portfolio.json via CMS)
-let currentFilter='all';
-let portPage=0;
-const PORT_PER_PAGE=8;
-
-// Build dynamic filter tags from dados.js
-function buildFilters(){
-  const allTags = [...new Set(DADOS.portfolio.flatMap(p=>p.tags))].sort();
-  const row = document.getElementById('filter-row');
-  const en = isEN();
-  const tagLabels = DADOS.tagLabels || {};
-  if(!allTags.length){row.innerHTML='';return;}
-  if(currentFilter==='all'||!allTags.includes(currentFilter)) currentFilter=allTags[0];
-  let html = '';
-  allTags.forEach(t=>{
-    const lbl = tagLabels[t];
-    const label = lbl ? (typeof lbl==='object' ? (en?lbl.en:lbl.pt) : lbl) : t.toUpperCase();
-    html += `<button class="ftag${currentFilter===t?' active':''}" onclick="filterPort(this,'${t}')">${label}</button>`;
-  });
-  row.innerHTML = html;
-}
-
-function filterPort(btn,tag){portPage=0;currentFilter=tag;document.querySelectorAll('.ftag').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderPortfolio();}
-
+// PORTFOLIO — exibe obras agrupadas por categoria
 function renderPortfolio(){
-  const grid=document.getElementById('port-grid');
-  const all=currentFilter==='all'?DADOS.portfolio:DADOS.portfolio.filter(p=>p.tags.includes(currentFilter));
-  const total=all.length;
-  const maxPage=Math.max(0,Math.ceil(total/PORT_PER_PAGE)-1);
-  portPage=Math.min(portPage,maxPage);
-  const f=all.slice(portPage*PORT_PER_PAGE,(portPage+1)*PORT_PER_PAGE);
-  grid.innerHTML=f.map(p=>`
-    <div class="port-card" onclick="openLightbox('${p.img}','${p.title}','${p.meta}')">
-      <div class="port-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'"></div>
-      <div class="port-info"><div class="port-title">${p.title}</div><div class="port-meta">${p.meta}</div></div>
-    </div>`).join('');
-  const prev=document.getElementById('port-prev');
-  const next=document.getElementById('port-next');
-  const showArrows=total>PORT_PER_PAGE;
-  if(prev){prev.style.display=showArrows?'flex':'none';prev.disabled=portPage===0;}
-  if(next){next.style.display=showArrows?'flex':'none';next.disabled=portPage>=maxPage;}
+  const container=document.getElementById('port-sections');
+  const en=isEN();
+  const tagLabels=DADOS.tagLabels||{};
+  const allTags=[...new Set(DADOS.portfolio.flatMap(p=>p.tags))].sort();
+  let html='';
+  allTags.forEach(tag=>{
+    const items=DADOS.portfolio.filter(p=>p.tags.includes(tag));
+    if(!items.length)return;
+    const lbl=tagLabels[tag];
+    const label=lbl?(typeof lbl==='object'?(en?lbl.en:lbl.pt):lbl):tag.toUpperCase();
+    html+=`<div class="port-group">
+      <div class="port-group-label">${label}</div>
+      <div class="port-grid">${items.map(p=>`
+        <div class="port-card" onclick="openLightbox('${p.img}','${p.title}','${p.meta}','${tag}')">
+          <div class="port-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="port-info"><div class="port-title">${p.title}</div><div class="port-meta">${p.meta}</div></div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+  });
+  container.innerHTML=html;
 }
-
-function slidePort(dir){portPage+=dir;renderPortfolio();}
 
 // Lightbox with navigation
 let lbIndex = 0;
 let lbItems = [];
 
-function openLightbox(img, title, meta){
-  // Use full filtered list (not just current page)
-  lbItems = currentFilter==='all'?DADOS.portfolio:DADOS.portfolio.filter(p=>p.tags.includes(currentFilter));
+function openLightbox(img, title, meta, tag){
+  lbItems = tag ? DADOS.portfolio.filter(p=>p.tags.includes(tag)) : DADOS.portfolio;
   lbIndex = lbItems.findIndex(i => i.img === img || i.title === title);
   if(lbIndex < 0) lbIndex = 0;
   showLightboxItem();
@@ -709,7 +686,6 @@ document.addEventListener('keydown', e => {
   if(e.key === 'ArrowRight') lightboxNav(1);
 });
 
-buildFilters();
 renderPortfolio();
 
 // CALCULATOR DATA
@@ -846,7 +822,7 @@ Promise.all([
 ]).then(([sobre,policies,portfolio])=>{
   if(sobre && (sobre.bio_en||sobre.bio_pt||sobre.nome)) { DADOS.sobre=Object.assign({},DADOS.sobre,sobre); renderAbout(); }
   if(policies && (policies.payment_en||policies.payment_pt)) { DADOS.policies=Object.assign({},DADOS.policies,policies); renderPolicies(); }
-  if(portfolio && Array.isArray(portfolio.obras) && portfolio.obras.length) { DADOS.portfolio=portfolio.obras; currentFilter='all'; buildFilters(); renderPortfolio(); }
+  if(portfolio && Array.isArray(portfolio.obras) && portfolio.obras.length) { DADOS.portfolio=portfolio.obras; renderPortfolio(); }
 });
 </script>
 </body>
