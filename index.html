@@ -52,7 +52,15 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .ftag{padding:6px 14px;border:1px solid var(--border);border-radius:2px;font-size:9px;letter-spacing:.1em;color:var(--text-dim);background:transparent;cursor:pointer;transition:all .15s;font-family:'DM Mono',monospace;}
 .ftag:hover{border-color:var(--gold-dim);color:var(--gold);}
 .ftag.active{background:var(--gold);color:var(--surface);border-color:var(--gold);}
-.port-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+.port-slider-wrap{position:relative;padding:0 44px;margin-bottom:14px;}
+.port-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--surface);border:1px solid var(--border);color:var(--text-mid);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .15s;z-index:2;padding:0;}
+.port-arrow:hover{background:var(--gold);color:var(--surface);border-color:var(--gold);}
+.port-arrow:disabled{opacity:.2;cursor:default;pointer-events:none;}
+.port-prev{left:0;}.port-next{right:0;}
+.port-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@keyframes portCardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.port-card{animation:portCardIn .2s ease both;}
+.policies-grid{display:grid;gap:10px;}
 .port-card{background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s;}
 .port-card:hover{border-color:var(--gold-dim);transform:translateY(-2px);}
 .port-img{aspect-ratio:3/4;background:var(--bg3);overflow:hidden;}
@@ -230,6 +238,8 @@ body.shop-int [data-br]{display:none!important;}
 
   /* About — 2 cols */
   .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+  /* Policies — 3 cols */
+  .policies-grid{grid-template-columns:repeat(3,1fr);}
 
   .r-price{font-size:48px;}
   .footer{padding:44px 40px;}
@@ -297,7 +307,11 @@ body.shop-int [data-br]{display:none!important;}
 <section class="section" id="portfolio">
   <div class="s-label"><span data-en>Portfolio</span><span data-pt>Portfólio</span></div>
   <div class="filter-row" id="filter-row"></div>
-  <div class="port-grid" id="port-grid"></div>
+  <div class="port-slider-wrap">
+    <button class="port-arrow port-prev" id="port-prev" onclick="slidePort(-1)" style="display:none;">&#8592;</button>
+    <div class="port-grid" id="port-grid"></div>
+    <button class="port-arrow port-next" id="port-next" onclick="slidePort(1)" style="display:none;">&#8594;</button>
+  </div>
   <p style="font-size:10px;color:var(--text-dim);text-align:center;padding-bottom:8px;">
     <span data-en>↗ More on</span><span data-pt>↗ Mais no</span>
     <a href="https://www.artstation.com/jem0" style="color:var(--gold);text-decoration:none;"> ArtStation</a> &
@@ -404,10 +418,6 @@ body.shop-int [data-br]{display:none!important;}
         <div class="dont-block"><div class="blk-title"><span data-en>I don't draw</span><span data-pt>Não faço</span></div><ul class="blk-list"><li>Mecha</li><li>Furry</li><li>Gore</li><li>NSFW</li></ul></div>
       </div>
 
-      <div class="s-label" style="margin-top:20px;"><span data-en>Policies</span><span data-pt>Políticas</span></div>
-      <div class="info-block" id="info-payment"><strong data-en>Payment</strong><strong data-pt>Pagamento</strong><span id="info-payment-en" data-en></span><span id="info-payment-pt" data-pt></span></div>
-      <div class="info-block" id="info-timeline"><strong data-en>Timeline</strong><strong data-pt>Prazo</strong><span id="info-timeline-en" data-en></span><span id="info-timeline-pt" data-pt></span></div>
-      <div class="info-block" id="info-wips"><strong data-en>WIPs & Approval</strong><strong data-pt>WIPs e Aprovação</strong><span id="info-wips-en" data-en></span><span id="info-wips-pt" data-pt></span></div>
     </div>
   </div>
 
@@ -472,6 +482,17 @@ body.shop-int [data-br]{display:none!important;}
         <button class="copy-btn" onclick="copyPrefill('insta')"><span data-en>⎘ Copy message</span><span data-pt>⎘ Copiar mensagem</span></button>
         <p style="font-size:9px;color:var(--text-dim);margin-top:8px;"><a href="https://instagram.com/0jem0" style="color:var(--gold);text-decoration:none;">instagram.com/0jem0</a></p>
       </div></div>
+  </div>
+</section>
+
+
+<!-- POLICIES -->
+<section class="section" id="policies">
+  <div class="s-label"><span data-en>Policies</span><span data-pt>Políticas</span></div>
+  <div class="policies-grid">
+    <div class="info-block" id="info-payment"><strong data-en>Payment</strong><strong data-pt>Pagamento</strong><span id="info-payment-en" data-en></span><span id="info-payment-pt" data-pt></span></div>
+    <div class="info-block" id="info-timeline"><strong data-en>Timeline</strong><strong data-pt>Prazo</strong><span id="info-timeline-en" data-en></span><span id="info-timeline-pt" data-pt></span></div>
+    <div class="info-block" id="info-wips"><strong data-en>WIPs & Approval</strong><strong data-pt>WIPs e Aprovação</strong><span id="info-wips-en" data-en></span><span id="info-wips-pt" data-pt></span></div>
   </div>
 </section>
 
@@ -593,6 +614,8 @@ function setShop(r,btn){document.body.className=document.body.className.replace(
 
 // PORTFOLIO — lê de dados.js (ou _data/portfolio.json via CMS)
 let currentFilter='all';
+let portPage=0;
+const PORT_PER_PAGE=8;
 
 // Build dynamic filter tags from dados.js
 function buildFilters(){
@@ -609,30 +632,36 @@ function buildFilters(){
   row.innerHTML = html;
 }
 
-function filterPort(btn,tag){currentFilter=tag;document.querySelectorAll('.ftag').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderPortfolio();}
+function filterPort(btn,tag){portPage=0;currentFilter=tag;document.querySelectorAll('.ftag').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderPortfolio();}
 
 function renderPortfolio(){
   const grid=document.getElementById('port-grid');
-  const f=currentFilter==='all'?DADOS.portfolio:DADOS.portfolio.filter(p=>p.tags.includes(currentFilter));
+  const all=currentFilter==='all'?DADOS.portfolio:DADOS.portfolio.filter(p=>p.tags.includes(currentFilter));
+  const total=all.length;
+  const maxPage=Math.max(0,Math.ceil(total/PORT_PER_PAGE)-1);
+  portPage=Math.min(portPage,maxPage);
+  const f=all.slice(portPage*PORT_PER_PAGE,(portPage+1)*PORT_PER_PAGE);
   grid.innerHTML=f.map(p=>`
     <div class="port-card" onclick="openLightbox('${p.img}','${p.title}','${p.meta}')">
       <div class="port-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'"></div>
       <div class="port-info"><div class="port-title">${p.title}</div><div class="port-meta">${p.meta}</div></div>
     </div>`).join('');
+  const prev=document.getElementById('port-prev');
+  const next=document.getElementById('port-next');
+  const showArrows=total>PORT_PER_PAGE;
+  if(prev){prev.style.display=showArrows?'flex':'none';prev.disabled=portPage===0;}
+  if(next){next.style.display=showArrows?'flex':'none';next.disabled=portPage>=maxPage;}
 }
+
+function slidePort(dir){portPage+=dir;renderPortfolio();}
 
 // Lightbox with navigation
 let lbIndex = 0;
 let lbItems = [];
 
 function openLightbox(img, title, meta){
-  // Build list from current filtered portfolio
-  const cards = document.querySelectorAll('#port-grid .port-card');
-  lbItems = Array.from(cards).map(c => ({
-    img: c.querySelector('img')?.src || '',
-    title: c.querySelector('.port-title')?.textContent || '',
-    meta: c.querySelector('.port-meta')?.textContent || ''
-  }));
+  // Use full filtered list (not just current page)
+  lbItems = currentFilter==='all'?DADOS.portfolio:DADOS.portfolio.filter(p=>p.tags.includes(currentFilter));
   lbIndex = lbItems.findIndex(i => i.img === img || i.title === title);
   if(lbIndex < 0) lbIndex = 0;
   showLightboxItem();
