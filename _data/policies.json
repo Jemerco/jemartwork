@@ -1,4 +1,8 @@
 {
   "payment_en": "Wise or PayPal. 100% upfront or 50% + 50% on delivery. Refunds only before final rendering starts.",
-  "payment_pt": "Pix. 100% na entrada ou 50%+50%. Reembolsos apenas se a finalização não tiver iniciado."
+  "payment_pt": "Pix. 100% na entrada ou 50%+50%. Reembolsos apenas se a finalização não tiver iniciado.",
+  "timeline_en": "1-4 weeks on average. Let me now in advance if you have a deadline.",
+  "wips_en": "Progress updates sent for approval. Changes welcome until lineart is approved.",
+  "timeline_pt": "1–4 semanas em média. Avise-me com antecedência se você tiver um prazo.",
+  "wips_pt": "Atualizações de progresso serão enviadas para aprovação. Alterações são bem-vindas até a aprovação do lineart."
 }
