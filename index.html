@@ -52,11 +52,11 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .ftag{padding:6px 14px;border:1px solid var(--border);border-radius:2px;font-size:9px;letter-spacing:.1em;color:var(--text-dim);background:transparent;cursor:pointer;transition:all .15s;font-family:'DM Mono',monospace;}
 .ftag:hover{border-color:var(--gold-dim);color:var(--gold);}
 .ftag.active{background:var(--gold);color:var(--surface);border-color:var(--gold);}
-.port-slider-wrap{position:relative;padding:0 44px;margin-bottom:14px;}
-.port-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:var(--surface);border:1px solid var(--border);color:var(--text-mid);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:all .15s;z-index:2;padding:0;}
+.port-slider-wrap{position:relative;margin-bottom:14px;}
+.port-arrow{position:absolute;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:var(--surface);border:1px solid var(--border);color:var(--text-mid);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;transition:all .15s;z-index:2;padding:0;}
 .port-arrow:hover{background:var(--gold);color:var(--surface);border-color:var(--gold);}
 .port-arrow:disabled{opacity:.2;cursor:default;pointer-events:none;}
-.port-prev{left:0;}.port-next{right:0;}
+.port-prev{left:-14px;}.port-next{right:-14px;}
 .port-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 @keyframes portCardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .port-card{animation:portCardIn .2s ease both;}
@@ -223,6 +223,8 @@ body.shop-int [data-br]{display:none!important;}
 
   /* Portfolio — 4 cols */
   .port-grid{grid-template-columns:repeat(4,1fr);gap:14px;}
+  .port-arrow{width:36px;height:36px;font-size:16px;}
+  .port-prev{left:-20px;}.port-next{right:-20px;}
 
   /* Commissions — 2 cols */
   .comm-layout{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
