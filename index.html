@@ -40,8 +40,8 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 
 /* PAGE BODY */
 .page-body{max-width:var(--max-w);margin:0 auto;padding:0 24px;}
-.section{padding:8px 0 0;}
-.divider{height:1px;background:var(--border);margin:36px 0 0;}
+.section{padding:44px 0 0;}
+
 .s-label{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
 .s-label::after{content:'';flex:1;height:1px;background:var(--border);}
 .s-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--cream);margin-bottom:8px;line-height:1.1;}
@@ -208,8 +208,8 @@ body.shop-int [data-br]{display:none!important;}
   .btn-primary,.btn-outline{padding:14px 36px;font-size:10px;}
 
   .page-body{padding:0 40px;}
-  .section{padding:8px 0 0;}
-  .divider{margin:44px 0 0;}
+  .section{padding:44px 0 0;}
+
   .s-title{font-size:40px;}
   .s-desc{font-size:12px;margin-bottom:28px;}
 
@@ -238,6 +238,15 @@ body.shop-int [data-br]{display:none!important;}
 @media(min-width:1100px){
   .hero-name{font-size:124px;}
 }
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(14,13,12,.92);align-items:center;justify-content:center;padding:20px;}
+.lightbox.open{display:flex;}
+.lightbox-inner{position:relative;max-width:90vw;max-height:90vh;}
+.lightbox-inner img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:2px;display:block;}
+.lightbox-close{position:absolute;top:-36px;right:0;background:none;border:none;color:#f0e8d8;font-size:22px;cursor:pointer;font-family:'DM Mono',monospace;letter-spacing:.1em;opacity:.7;transition:opacity .15s;}
+.lightbox-close:hover{opacity:1;}
+.lightbox-caption{margin-top:10px;text-align:center;font-family:'DM Mono',monospace;font-size:10px;color:#9a8c78;letter-spacing:.1em;}
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="/dados.js"></script>
@@ -282,13 +291,7 @@ body.shop-int [data-br]{display:none!important;}
   <div class="s-label"><span data-en>Portfolio</span><span data-pt>Portfólio</span></div>
   <h2 class="s-title"><span data-en>Selected Works</span><span data-pt>Trabalhos Selecionados</span></h2>
   <p class="s-desc"><span data-en>Fantasy book illustration, original characters and editorial art.</span><span data-pt>Ilustrações de livros de fantasia, personagens originais e arte editorial.</span></p>
-  <div class="filter-row">
-    <button class="ftag active" onclick="filterPort(this,'all')">All</button>
-    <button class="ftag" onclick="filterPort(this,'acotar')">ACOTAR</button>
-    <button class="ftag" onclick="filterPort(this,'tog')">TOG</button>
-    <button class="ftag" onclick="filterPort(this,'fantasy')">Fantasy</button>
-    <button class="ftag" onclick="filterPort(this,'original')">Original</button>
-  </div>
+  <div class="filter-row" id="filter-row"></div>
   <div class="port-grid" id="port-grid"></div>
   <p style="font-size:10px;color:var(--text-dim);text-align:center;padding-bottom:8px;">
     <span data-en>↗ More on</span><span data-pt>↗ Mais no</span>
@@ -297,7 +300,6 @@ body.shop-int [data-br]{display:none!important;}
   </p>
 </section>
 
-<div class="divider"></div>
 
 <!-- COMMISSIONS -->
 <section class="section" id="commissions">
@@ -464,7 +466,6 @@ body.shop-int [data-br]{display:none!important;}
   </div>
 </section>
 
-<div class="divider"></div>
 
 <!-- SHOP -->
 <section class="section" id="shop">
@@ -494,7 +495,6 @@ body.shop-int [data-br]{display:none!important;}
   </div>
 </section>
 
-<div class="divider"></div>
 
 <!-- ABOUT -->
 <section class="section" id="about">
@@ -507,6 +507,15 @@ body.shop-int [data-br]{display:none!important;}
   </div>
 </section>
 
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">✕ close</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
 </div><!-- /page-body -->
 
 <footer class="footer">
@@ -545,8 +554,48 @@ function setShop(r,btn){document.body.className=document.body.className.replace(
 // PORTFOLIO — lê de dados.js
 const portfolioData = DADOS.portfolio;
 let currentFilter='all';
+
+// Build dynamic filter tags from dados.js
+function buildFilters(){
+  const allTags = [...new Set(portfolioData.flatMap(p=>p.tags))];
+  const row = document.getElementById('filter-row');
+  const en = isEN();
+  const tagLabels = DADOS.tagLabels || {};
+  let html = `<button class="ftag active" onclick="filterPort(this,'all')">${en?'All':'Todos'}</button>`;
+  allTags.forEach(t=>{
+    const label = tagLabels[t] || t.toUpperCase();
+    html += `<button class="ftag" onclick="filterPort(this,'${t}')">${label}</button>`;
+  });
+  row.innerHTML = html;
+}
+
 function filterPort(btn,tag){currentFilter=tag;document.querySelectorAll('.ftag').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderPortfolio();}
-function renderPortfolio(){const grid=document.getElementById('port-grid');const f=currentFilter==='all'?portfolioData:portfolioData.filter(p=>p.tags.includes(currentFilter));grid.innerHTML=f.map(p=>`<div class="port-card"><div class="port-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'"></div><div class="port-info"><div class="port-title">${p.title}</div><div class="port-meta">${p.meta}</div></div></div>`).join('');}
+
+function renderPortfolio(){
+  const grid=document.getElementById('port-grid');
+  const f=currentFilter==='all'?portfolioData:portfolioData.filter(p=>p.tags.includes(currentFilter));
+  grid.innerHTML=f.map(p=>`
+    <div class="port-card" onclick="openLightbox('${p.img}','${p.title}','${p.meta}')">
+      <div class="port-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="port-info"><div class="port-title">${p.title}</div><div class="port-meta">${p.meta}</div></div>
+    </div>`).join('');
+}
+
+// Lightbox
+function openLightbox(img,title,meta){
+  document.getElementById('lightbox-img').src=img;
+  document.getElementById('lightbox-caption').textContent=title+' — '+meta;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(e&&e.target!==document.getElementById('lightbox')&&!e.target.closest('.lightbox-close'))return;
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox({target:document.getElementById('lightbox')});});
+
+buildFilters();
 renderPortfolio();
 
 // CALCULATOR DATA
