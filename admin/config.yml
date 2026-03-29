@@ -15,6 +15,19 @@ collections:
     label: "⚙ Informações Gerais"
     files:
 
+      - name: "sobre"
+        label: "Sobre / About"
+        file: "_data/sobre.json"
+        fields:
+          - { label: "Nome", name: "nome", widget: "string", required: false }
+          - { label: "Bio em Português", name: "bio_pt", widget: "text", required: false }
+          - { label: "Bio em Inglês", name: "bio_en", widget: "text", required: false }
+          - label: "Tags"
+            name: "tags"
+            widget: "list"
+            required: false
+            field: { label: "Tag", name: "tag", widget: "string", required: false }
+
       - name: "contato"
         label: "Contato & Redes Sociais"
         file: "_data/contato.json"
