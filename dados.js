@@ -1,6 +1,6 @@
 /* ============================================================
    DADOS DO SITE — JEM ART
-   Edite este arquivo para atualizar preços, links e textos.
+   Edite este arquivo para atualizar preços, links e textos. 
    Após salvar (commit), o site atualiza em ~1 minuto.
    ============================================================ */
 
