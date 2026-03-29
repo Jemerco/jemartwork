@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: Jemerco/jemartwork
   branch: main
 
@@ -211,16 +211,13 @@ collections:
     fields:
       - { label: "Título", name: "title", widget: "string", required: false }
       - { label: "Descrição / Série", name: "meta", widget: "string", required: false, hint: "Ex: ACOTAR · Full Color" }
-      - { label: "Imagem", name: "img", widget: "image", required: false }
-      - label: "Categoria"
+      - { label: "Imagem (URL ou upload)", name: "img", widget: "string", required: false, hint: "Cole a URL da imagem ou faça upload" }
+      - label: "Tags / Categorias"
         name: "tags"
-        widget: "select"
-        multiple: true
-        options:
-          - { label: "ACOTAR", value: "acotar" }
-          - { label: "Throne of Glass (TOG)", value: "tog" }
-          - { label: "Fantasy", value: "fantasy" }
-          - { label: "Original", value: "original" }
+        widget: "list"
+        required: false
+        hint: "Adicione as categorias desta obra. Ex: acotar, fantasy, original"
+        field: { label: "Tag", name: "tag", widget: "string", required: false }
 
   # ── LOJA ──
   - name: "loja"
