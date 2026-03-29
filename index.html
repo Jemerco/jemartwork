@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -500,19 +499,11 @@ body.shop-int [data-br]{display:none!important;}
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="s-label"><span data-en>About</span><span data-pt>Sobre</span></div>
-  <div class="about-layout">
-    <div class="about-block">
-      <div class="about-name">Jéssica Merco</div>
-      <p class="about-bio" data-en>Brazilian illustrator specializing in fantasy book fanart and original character design. Passionate about the bookish community and bringing literary characters to life — especially from ACOTAR, Throne of Glass, and The Folk of the Air.</p>
-      <p class="about-bio" data-pt>Ilustradora brasileira especializada em fanart de livros de fantasia e design de personagens originais. Apaixonada pela comunidade bookish e por dar vida a personagens literários — especialmente ACOTAR, Throne of Glass e The Folk of the Air.</p>
-      <div class="about-tags"><span class="about-tag">Fantasy Art</span><span class="about-tag">Book Fanart</span><span class="about-tag">Character Design</span><span class="about-tag">Editorial</span><span class="about-tag">Comic Pages</span></div>
-    </div>
-    <div>
-      <div class="info-block"><strong data-en>Find me online</strong><strong data-pt>Encontre-me online</strong>
-        <span data-en>🎨 <a href="https://www.artstation.com/jem0">ArtStation</a> · <a href="https://www.deviantart.com/0jem0">DeviantArt</a><br>📸 <a href="https://instagram.com/0jem0">@0jem0</a> on Instagram<br>🛍 <a href="https://www.redbubble.com/people/Jemerco/shop">Redbubble</a></span>
-        <span data-pt>🎨 <a href="https://www.artstation.com/jem0">ArtStation</a> · <a href="https://www.deviantart.com/0jem0">DeviantArt</a><br>📸 <a href="https://instagram.com/0jem0">@0jem0</a> no Instagram<br>🛍 <a href="https://www.redbubble.com/people/Jemerco/shop">Redbubble</a></span>
-      </div>
-    </div>
+  <div class="about-block" id="about-block">
+      <div class="about-name" id="about-name"></div>
+      <p class="about-bio" id="about-bio-en" data-en></p>
+      <p class="about-bio" id="about-bio-pt" data-pt></p>
+      <div class="about-tags" id="about-tags"></div>
   </div>
 </section>
 
@@ -668,6 +659,16 @@ const sids=['portfolio','commissions','shop','about'];
 window.addEventListener('scroll',()=>{let cur='portfolio';sids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-80)cur=id;});document.querySelectorAll('.nav-link').forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+cur));},{passive:true});
 
 updateCalcResult();
+
+// ABOUT — lê de dados.js
+function renderAbout() {
+  const s = DADOS.sobre;
+  document.getElementById('about-name').textContent = s.nome;
+  document.getElementById('about-bio-en').textContent = s.bio_en;
+  document.getElementById('about-bio-pt').textContent = s.bio_pt;
+  document.getElementById('about-tags').innerHTML = s.tags.map(t => `<span class="about-tag">${t}</span>`).join('');
+}
+renderAbout();
 </script>
 </body>
 </html>
