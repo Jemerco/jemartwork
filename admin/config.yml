@@ -215,20 +215,25 @@ collections:
   # ── PORTFÓLIO ──
   - name: "portfolio"
     label: "🎨 Portfólio"
-    folder: "_data/portfolio"
-    create: true
-    slug: "{{slug}}"
-    label_singular: "Obra"
-    fields:
-      - { label: "Título", name: "title", widget: "string", required: false }
-      - { label: "Descrição / Série", name: "meta", widget: "string", required: false, hint: "Ex: ACOTAR · Full Color" }
-      - { label: "Imagem", name: "img", widget: "image", required: false }
-      - label: "Tags / Categorias"
-        name: "tags"
-        widget: "list"
-        required: false
-        hint: "Adicione as categorias desta obra. Ex: acotar, fantasy, original"
-        field: { label: "Tag", name: "tag", widget: "string", required: false }
+    files:
+      - name: "obras"
+        label: "Obras do Portfólio"
+        file: "_data/portfolio.json"
+        fields:
+          - name: "obras"
+            label: "Obras"
+            label_singular: "Obra"
+            widget: "list"
+            fields:
+              - { label: "Título", name: "title", widget: "string", required: false }
+              - { label: "Descrição / Série", name: "meta", widget: "string", required: false, hint: "Ex: ACOTAR · Full Color" }
+              - { label: "Imagem", name: "img", widget: "image", required: false }
+              - label: "Tags / Categorias"
+                name: "tags"
+                widget: "list"
+                required: false
+                hint: "fanart, editorial, comic, original, landscape"
+                field: { label: "Tag", name: "tag", widget: "string", required: false }
 
   # ── LOJA ──
   - name: "loja"

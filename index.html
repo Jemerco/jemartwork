@@ -591,13 +591,12 @@ function setCurrency(c,btn){currentCur=c;document.body.className=document.body.c
 // SHOP
 function setShop(r,btn){document.body.className=document.body.className.replace(/shop-\w+/,'shop-'+r);document.querySelectorAll('.tgl-opt[onclick*="setShop"]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
 
-// PORTFOLIO — lê de dados.js
-const portfolioData = DADOS.portfolio;
+// PORTFOLIO — lê de dados.js (ou _data/portfolio.json via CMS)
 let currentFilter='all';
 
 // Build dynamic filter tags from dados.js
 function buildFilters(){
-  const allTags = [...new Set(portfolioData.flatMap(p=>p.tags))].sort();
+  const allTags = [...new Set(DADOS.portfolio.flatMap(p=>p.tags))].sort();
   const row = document.getElementById('filter-row');
   const en = isEN();
   const tagLabels = DADOS.tagLabels || {};
@@ -614,7 +613,7 @@ function filterPort(btn,tag){currentFilter=tag;document.querySelectorAll('.ftag'
 
 function renderPortfolio(){
   const grid=document.getElementById('port-grid');
-  const f=currentFilter==='all'?portfolioData:portfolioData.filter(p=>p.tags.includes(currentFilter));
+  const f=currentFilter==='all'?DADOS.portfolio:DADOS.portfolio.filter(p=>p.tags.includes(currentFilter));
   grid.innerHTML=f.map(p=>`
     <div class="port-card" onclick="openLightbox('${p.img}','${p.title}','${p.meta}')">
       <div class="port-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'"></div>
@@ -792,6 +791,17 @@ function renderAbout() {
   document.getElementById('about-tags').innerHTML = s.tags.map(t => `<span class="about-tag">${t}</span>`).join('');
 }
 renderAbout();
+
+// Busca dados salvos pelo admin (/_data/*.json) e re-renderiza
+Promise.all([
+  fetch('/_data/sobre.json').then(r=>r.json()).catch(()=>null),
+  fetch('/_data/policies.json').then(r=>r.json()).catch(()=>null),
+  fetch('/_data/portfolio.json').then(r=>r.json()).catch(()=>null),
+]).then(([sobre,policies,portfolio])=>{
+  if(sobre && (sobre.bio_en||sobre.bio_pt||sobre.nome)) { DADOS.sobre=Object.assign({},DADOS.sobre,sobre); renderAbout(); }
+  if(policies && (policies.payment_en||policies.payment_pt)) { DADOS.policies=Object.assign({},DADOS.policies,policies); renderPolicies(); }
+  if(portfolio && Array.isArray(portfolio.obras) && portfolio.obras.length) { DADOS.portfolio=portfolio.obras; currentFilter='all'; buildFilters(); renderPortfolio(); }
+});
 </script>
 </body>
 </html>
