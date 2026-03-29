@@ -32,21 +32,20 @@
       "img": "https://jemcomissao.carrd.co/assets/images/gallery02/f07dc710.jpg?v=85d73096"
     }
   ],
-  "original": [
-    {
-      "title": "Cloud",
-      "meta": "Original · Full Color",
-      "img": "public/images/1.jpg"
-    },
-    {
-      "img": "public/images/07-helena-alchemised-1-.jpg",
-      "title": "Landscape"
-    }
-  ],
+  "original": [],
   "landscape": [
     {
-      "title": "",
+      "title": "Field",
       "img": "public/images/07-helena-alchemised-1-.jpg"
+    },
+    {
+      "img": "public/images/09-landscape2.jpg"
+    },
+    {
+      "img": "public/images/3.jpg"
+    },
+    {
+      "img": "public/images/1.jpg"
     }
   ],
   "character_sheet": [
