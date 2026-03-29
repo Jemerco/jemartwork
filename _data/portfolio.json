@@ -41,10 +41,10 @@
     {
       "title": "Cloud",
       "meta": "Original · Full Color",
-      "img": "/images/1.jpg"
+      "img": "public/images/1.jpg"
     },
     {
-      "img": "/images/07-helena-alchemised-1-.jpg",
+      "img": "public/images/07-helena-alchemised-1-.jpg",
       "title": "Landscape"
     }
   ],
