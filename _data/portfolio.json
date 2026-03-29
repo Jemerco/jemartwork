@@ -1,9 +1,9 @@
 {
   "fanart": [
     {
-      "title": "Nesta Archeron",
-      "meta": "ACOTAR · Full Color",
-      "img": "https://jemcomissao.carrd.co/assets/images/gallery01/882c113b.jpg?v=85d73096"
+      "title": "The Ruinous Love",
+      "meta": "",
+      "img": "public/images/06-the-ruinous-love-couples.png"
     },
     {
       "title": "Rowan & Aelin - Throne of Glass",
@@ -19,11 +19,6 @@
     }
   ],
   "editorial": [
-    {
-      "title": "",
-      "meta": "",
-      "img": ""
-    },
     {
       "title": "Key",
       "meta": "Editorial · B&W",
@@ -48,7 +43,12 @@
       "title": "Landscape"
     }
   ],
-  "landscape": [],
+  "landscape": [
+    {
+      "title": "",
+      "img": "public/images/07-helena-alchemised-1-.jpg"
+    }
+  ],
   "character_sheet": [
     {
       "title": "Reference Sheet",
