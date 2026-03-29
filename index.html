@@ -67,7 +67,8 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .port-group{margin-bottom:36px;}
 .port-group-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
 .port-group-label::after{content:'';flex:1;height:1px;background:var(--border);}
-.port-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.port-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+@media(max-width:600px){.port-grid{grid-template-columns:1fr 1fr;}}
 @keyframes portCardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .port-card{animation:portCardIn .2s ease both;}
 .policies-grid{display:grid;gap:10px;}
@@ -264,10 +265,10 @@ body.shop-int [data-br]{display:none!important;}
 }
 
 /* LIGHTBOX */
-.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,9,8,.94);align-items:center;justify-content:center;padding:20px;}
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(10,9,8,.96);align-items:center;justify-content:center;padding:0;}
 .lightbox.open{display:flex;}
-.lightbox-inner{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;}
-.lightbox-inner img{max-width:88vw;max-height:82vh;object-fit:contain;border-radius:2px;display:block;}
+.lightbox-inner{position:relative;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.lightbox-inner img{max-width:96vw;max-height:90vh;object-fit:contain;border-radius:2px;display:block;}
 .lightbox-close{position:absolute;top:-40px;right:0;background:none;border:none;color:#f0e8d8;font-size:13px;cursor:pointer;font-family:'DM Mono',monospace;letter-spacing:.15em;text-transform:uppercase;opacity:.6;transition:opacity .15s;padding:4px 0;}
 .lightbox-close:hover{opacity:1;}
 .lightbox-caption{margin-top:12px;text-align:center;font-family:'DM Mono',monospace;font-size:10px;color:#9a8c78;letter-spacing:.1em;}
@@ -323,7 +324,12 @@ body.shop-int [data-br]{display:none!important;}
 <!-- PORTFOLIO -->
 <section class="section" id="portfolio">
   <div class="s-label"><span data-en>Portfolio</span><span data-pt>Portfólio</span></div>
-  <div id="port-sections"></div>
+  <div class="filter-row" id="filter-row"></div>
+  <div class="port-slider-wrap">
+    <button class="port-arrow port-prev" id="port-prev" onclick="slidePort(-1)">&#8592;</button>
+    <div class="port-grid" id="port-grid"></div>
+    <button class="port-arrow port-next" id="port-next" onclick="slidePort(1)">&#8594;</button>
+  </div>
   <p style="font-size:10px;color:var(--text-dim);text-align:center;padding-bottom:8px;">
     <span data-en>↗ More on</span><span data-pt>↗ Mais no</span>
     <a href="https://www.artstation.com/jem0" style="color:var(--gold);text-decoration:none;"> ArtStation</a> &
@@ -622,30 +628,50 @@ function setCurrency(c,btn){currentCur=c;document.body.className=document.body.c
 // SHOP
 function setShop(r,btn){document.body.className=document.body.className.replace(/shop-\w+/,'shop-'+r);document.querySelectorAll('.tgl-opt[onclick*="setShop"]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
 
-// PORTFOLIO — exibe obras agrupadas por categoria
-function renderPortfolio(){
-  const container=document.getElementById('port-sections');
+// PORTFOLIO — filter buttons + paginated grid
+var currentFilter=null;
+var portPage=0;
+const PORT_PER_PAGE=8;
+
+function buildFilters(){
   const en=isEN();
   const tagLabels=DADOS.tagLabels||{};
-  const allTags=[...new Set(DADOS.portfolio.flatMap(p=>p.tags))].sort();
-  let html='';
-  allTags.forEach(tag=>{
-    const items=DADOS.portfolio.filter(p=>p.tags.includes(tag));
-    if(!items.length)return;
-    const lbl=tagLabels[tag];
-    const label=lbl?(typeof lbl==='object'?(en?lbl.en:lbl.pt):lbl):tag.toUpperCase();
-    html+=`<div class="port-group">
-      <div class="port-group-label">${label}</div>
-      <div class="port-grid">${items.map(p=>`
-        <div class="port-card" onclick="openLightbox('${p.img}','${p.title}','${p.meta}','${tag}')">
-          <div class="port-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'"></div>
-          <div class="port-info"><div class="port-title">${p.title}</div><div class="port-meta">${p.meta}</div></div>
-        </div>`).join('')}
-      </div>
-    </div>`;
+  const allTags=[...new Set(DADOS.portfolio.flatMap(p=>p.tags))].sort((a,b)=>{
+    const la=(tagLabels[a]?(typeof tagLabels[a]==='object'?(en?tagLabels[a].en:tagLabels[a].pt):tagLabels[a]):a);
+    const lb=(tagLabels[b]?(typeof tagLabels[b]==='object'?(en?tagLabels[b].en:tagLabels[b].pt):tagLabels[b]):b);
+    return la.localeCompare(lb);
   });
-  container.innerHTML=html;
+  if(!currentFilter&&allTags.length)currentFilter=allTags[0];
+  const filterRow=document.getElementById('filter-row');
+  if(filterRow)filterRow.innerHTML=allTags.map(tag=>{
+    const lbl=tagLabels[tag];
+    const label=lbl?(typeof lbl==='object'?(en?lbl.en:lbl.pt):lbl):tag;
+    return`<button class="ftag${currentFilter===tag?' active':''}" onclick="filterPort('${tag}')">${label}</button>`;
+  }).join('');
+  renderGrid();
 }
+
+function filterPort(tag){currentFilter=tag;portPage=0;buildFilters();}
+
+function renderGrid(){
+  const items=currentFilter?DADOS.portfolio.filter(p=>p.tags.includes(currentFilter)):DADOS.portfolio;
+  const start=portPage*PORT_PER_PAGE;
+  const page=items.slice(start,start+PORT_PER_PAGE);
+  const grid=document.getElementById('port-grid');
+  if(grid)grid.innerHTML=page.map(p=>`
+    <div class="port-card" onclick="openLightbox('${p.img}','${p.title}','${p.meta}','${currentFilter}')">
+      <div class="port-img"><img src="${p.img}" alt="${p.title}" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="port-info"><div class="port-title">${p.title}</div><div class="port-meta">${p.meta}</div></div>
+    </div>`).join('');
+  const prev=document.getElementById('port-prev');
+  const next=document.getElementById('port-next');
+  if(prev)prev.disabled=portPage===0;
+  if(next)next.disabled=start+PORT_PER_PAGE>=items.length;
+}
+
+function slidePort(dir){portPage+=dir;renderGrid();}
+
+function renderPortfolio(){buildFilters();}
 
 // Lightbox with navigation
 let lbIndex = 0;
@@ -822,7 +848,12 @@ Promise.all([
 ]).then(([sobre,policies,portfolio])=>{
   if(sobre && (sobre.bio_en||sobre.bio_pt||sobre.nome)) { DADOS.sobre=Object.assign({},DADOS.sobre,sobre); renderAbout(); }
   if(policies && (policies.payment_en||policies.payment_pt)) { DADOS.policies=Object.assign({},DADOS.policies,policies); renderPolicies(); }
-  if(portfolio && Array.isArray(portfolio.obras) && portfolio.obras.length) { DADOS.portfolio=portfolio.obras; renderPortfolio(); }
+  if(portfolio){
+    const cats=['fanart','capa','editorial','comic','original','landscape','character_sheet'];
+    const items=[];cats.forEach(tag=>{if(Array.isArray(portfolio[tag]))portfolio[tag].forEach(p=>items.push({...p,tags:[tag]}));});
+    if(items.length){DADOS.portfolio=items;renderPortfolio();}
+    else if(Array.isArray(portfolio.obras)&&portfolio.obras.length){DADOS.portfolio=portfolio.obras;renderPortfolio();}
+  }
 });
 </script>
 </body>

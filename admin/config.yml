@@ -220,26 +220,62 @@ collections:
         label: "Obras do Portfólio"
         file: "_data/portfolio.json"
         fields:
-          - name: "obras"
-            label: "Obras"
-            label_singular: "Obra"
+          - name: "fanart"
+            label: "Fanarts"
             widget: "list"
+            required: false
             fields:
               - { label: "Título", name: "title", widget: "string", required: false }
               - { label: "Descrição / Série", name: "meta", widget: "string", required: false, hint: "Ex: ACOTAR · Full Color" }
               - { label: "Imagem", name: "img", widget: "image", required: false }
-              - label: "Categorias"
-                name: "tags"
-                widget: "select"
-                required: false
-                multiple: true
-                options:
-                  - { label: "Fanarts", value: "fanart" }
-                  - { label: "Editorial", value: "editorial" }
-                  - { label: "Comics / Quadrinhos", value: "comic" }
-                  - { label: "Original", value: "original" }
-                  - { label: "Landscape / Paisagem", value: "landscape" }
-                  - { label: "Character Sheet / Folha de Personagem", value: "character_sheet" }
+          - name: "capa"
+            label: "Book Covers / Capas de Livro"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Título", name: "title", widget: "string", required: false }
+              - { label: "Descrição / Série", name: "meta", widget: "string", required: false, hint: "Ex: Princess of Souls · Full Color" }
+              - { label: "Imagem", name: "img", widget: "image", required: false }
+          - name: "editorial"
+            label: "Editorial"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Título", name: "title", widget: "string", required: false }
+              - { label: "Descrição / Série", name: "meta", widget: "string", required: false }
+              - { label: "Imagem", name: "img", widget: "image", required: false }
+          - name: "comic"
+            label: "Comics / Quadrinhos"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Título", name: "title", widget: "string", required: false }
+              - { label: "Descrição / Série", name: "meta", widget: "string", required: false }
+              - { label: "Imagem", name: "img", widget: "image", required: false }
+          - name: "original"
+            label: "Original"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Título", name: "title", widget: "string", required: false }
+              - { label: "Descrição / Série", name: "meta", widget: "string", required: false }
+              - { label: "Imagem", name: "img", widget: "image", required: false }
+          - name: "landscape"
+            label: "Landscape / Paisagem"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Título", name: "title", widget: "string", required: false }
+              - { label: "Descrição / Série", name: "meta", widget: "string", required: false }
+              - { label: "Imagem", name: "img", widget: "image", required: false }
+          - name: "character_sheet"
+            label: "Character Sheet / Folha de Personagem"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Título", name: "title", widget: "string", required: false }
+              - { label: "Descrição / Série", name: "meta", widget: "string", required: false }
+              - { label: "Imagem", name: "img", widget: "image", required: false }
 
   # ── LOJA ──
   - name: "loja"

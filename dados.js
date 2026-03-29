@@ -101,7 +101,7 @@ const DADOS = {
     {
       title: "Selestra Somniatis",
       meta:  "Princess of Souls · Full Color",
-      tags:  ["fanart"],
+      tags:  ["capa"],
       img:   "https://jemcomissao.carrd.co/assets/images/gallery03/2f589bcc.jpg?v=85d73096",
     },
     {
@@ -173,7 +173,8 @@ const DADOS = {
   /* ── LABELS DOS FILTROS DO PORTFÓLIO ── */
   /* Adicione aqui o nome de exibição para cada tag usada nas obras */
   tagLabels: {
-    "character_sheet": { en: "Character Sheet", pt: "Folha de Personagem" },
+    "capa":            { en: "Book Covers",      pt: "Capas de Livro"     },
+    "character_sheet": { en: "Character Sheet",  pt: "Folha de Personagem"},
     "comic":           { en: "Comics",           pt: "Quadrinhos"         },
     "editorial":       { en: "Editorial",        pt: "Editorial"          },
     "fanart":          { en: "Fanarts",          pt: "Fanarts"            },
