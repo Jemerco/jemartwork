@@ -11,10 +11,14 @@
       "img": "https://jemcomissao.carrd.co/assets/images/gallery01/f1ff86e5.jpg?v=85d73096"
     },
     {
-      "img": "azriel_and_gwyn____acosf_by_0jem0_deqac3q-fullview.jpg"
+      "img": "azriel_and_gwyn____acosf_by_0jem0_deqac3q-fullview.jpg",
+      "title": "Azriel and Gwyn",
+      "meta": "Full render"
     },
     {
-      "img": "olive_e_adam___the_love_hipothesys_by_0jem0_dfe0dza-375w-2x.jpg"
+      "img": "olive_e_adam___the_love_hipothesys_by_0jem0_dfe0dza-375w-2x.jpg",
+      "title": "The Love Hipothesis",
+      "meta": "Adam & Olive"
     }
   ],
   "capa": [
@@ -24,7 +28,9 @@
       "img": "public/images/30.03.2026_13.47.07_rec.png"
     },
     {
-      "img": "btomaz___commission_by_0jem0_dfkp73p-fullview.jpg"
+      "img": "btomaz___commission_by_0jem0_dfkp73p-fullview.jpg",
+      "title": "Commission",
+      "meta": "Full render "
     }
   ],
   "editorial": [
@@ -48,13 +54,16 @@
       "img": "public/images/07-helena-alchemised-1-.jpg"
     },
     {
-      "img": "public/images/09-landscape2.jpg"
+      "img": "public/images/09-landscape2.jpg",
+      "title": "Desert practice"
     },
     {
-      "img": "public/images/3.jpg"
+      "img": "public/images/3.jpg",
+      "title": "Clouds"
     },
     {
-      "img": "public/images/1.jpg"
+      "img": "public/images/1.jpg",
+      "title": "Sky practice"
     }
   ],
   "character_sheet": [
