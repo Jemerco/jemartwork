@@ -7,7 +7,7 @@
 <meta name="description" content="Fantasy book illustration, commissions and prints by Jéssica Merco. ACOTAR, Throne of Glass, original characters.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f7f2ea;--bg2:#f0ead8;--bg3:#e8e0cc;--surface:#faf7f2;--border:#ddd5c0;--border2:#ccc3aa;--gold:#8a6f42;--gold-lt:#b8966a;--gold-dim:#c8b090;--sky:#8faabb;--cream:#2a2018;--text:#3d3020;--text-mid:#6a5c48;--text-dim:#9a8c78;--green:#5a7a4a;--rose:#c08878;--max-w:1100px;}
+:root{--bg:#f2ece0;--bg2:#ece5d4;--bg3:#e2dbc9;--surface:#f9f5ee;--border:#ddd4be;--border2:#c8bfa8;--gold:#8a6f42;--gold-lt:#b8966a;--gold-dim:#c8b090;--sky:#8faabb;--cream:#1a1410;--text:#1e1810;--text-mid:#5c5040;--text-dim:#8c7e6c;--green:#5a7a4a;--rose:#c08878;--max-w:1100px;}
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;}
@@ -22,9 +22,10 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .nav-link{padding:13px 24px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-left:2px solid transparent;border-bottom:1px solid var(--border);transition:color .15s,border-color .15s;white-space:nowrap;}
 .nav-link:last-child{border-bottom:none;}
 .nav-link:hover,.nav-link.active{color:var(--gold);border-left-color:var(--gold);}
-.lang-toggle{margin-left:14px;display:flex;background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden;flex-shrink:0;}
-.lang-btn{padding:5px 10px;font-size:9px;letter-spacing:.1em;color:var(--text-dim);cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;transition:all .15s;}
-.lang-btn.active{background:var(--gold);color:var(--surface);}
+.lang-toggle{margin-left:14px;display:flex;border:1px solid #1a140c;border-radius:2px;overflow:hidden;flex-shrink:0;background:transparent;}
+.lang-btn{padding:5px 12px;font-size:9px;letter-spacing:.12em;color:#1a140c;cursor:pointer;border:none;background:transparent;font-family:'DM Sans',sans-serif;transition:background .18s,color .18s;}
+.lang-btn:not(.active):hover{background:#1a140c22;}
+.lang-btn.active{background:#1a140c;color:#f2ece0;}
 .hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:6px;margin-left:8px;flex-shrink:0;}
 .hamburger span{display:block;width:100%;height:1.5px;background:var(--text-mid);transition:all .2s;}
 .nav.open .hamburger span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
