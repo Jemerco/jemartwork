@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jem Art — Fantasy Illustration & Commissions</title>
 <meta name="description" content="Fantasy book illustration, commissions and prints by Jéssica Merco. ACOTAR, Throne of Glass, original characters.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f7f2ea;--bg2:#f0ead8;--bg3:#e8e0cc;--surface:#faf7f2;--border:#ddd5c0;--border2:#ccc3aa;--gold:#8a6f42;--gold-lt:#b8966a;--gold-dim:#c8b090;--sky:#8faabb;--cream:#2a2018;--text:#3d3020;--text-mid:#6a5c48;--text-dim:#9a8c78;--green:#5a7a4a;--rose:#c08878;--max-w:1100px;}
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font-size:13px;line-height:1.7;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.7;}
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;}
@@ -23,7 +23,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .nav-link:last-child{border-bottom:none;}
 .nav-link:hover,.nav-link.active{color:var(--gold);border-left-color:var(--gold);}
 .lang-toggle{margin-left:14px;display:flex;background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden;flex-shrink:0;}
-.lang-btn{padding:5px 10px;font-size:9px;letter-spacing:.1em;color:var(--text-dim);cursor:pointer;border:none;background:none;font-family:'DM Mono',monospace;transition:all .15s;}
+.lang-btn{padding:5px 10px;font-size:9px;letter-spacing:.1em;color:var(--text-dim);cursor:pointer;border:none;background:none;font-family:'DM Sans',sans-serif;transition:all .15s;}
 .lang-btn.active{background:var(--gold);color:var(--surface);}
 .hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:6px;margin-left:8px;flex-shrink:0;}
 .hamburger span{display:block;width:100%;height:1.5px;background:var(--text-mid);transition:all .2s;}
@@ -47,9 +47,9 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .hero-name em{font-style:italic;color:var(--gold);}
 .hero-tagline{font-size:11px;color:var(--text-mid);letter-spacing:.12em;margin-bottom:32px;line-height:2;}
 .hero-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-.btn-primary{padding:12px 28px;background:var(--gold);color:var(--surface);border:none;border-radius:2px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background .2s;}
+.btn-primary{padding:12px 28px;background:var(--gold);color:var(--surface);border:none;border-radius:2px;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background .2s;}
 .btn-primary:hover{background:var(--gold-lt);}
-.btn-outline{padding:12px 28px;background:transparent;color:var(--sky);border:1px solid var(--sky);border-radius:2px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .2s;}
+.btn-outline{padding:12px 28px;background:transparent;color:var(--sky);border:1px solid var(--sky);border-radius:2px;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .2s;}
 .btn-outline:hover{background:var(--sky);color:var(--surface);}
 
 /* PAGE BODY */
@@ -63,7 +63,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 
 /* PORTFOLIO */
 .filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
-.ftag{padding:6px 14px;border:1px solid var(--border);border-radius:2px;font-size:9px;letter-spacing:.1em;color:var(--text-dim);background:transparent;cursor:pointer;transition:all .15s;font-family:'DM Mono',monospace;}
+.ftag{padding:6px 14px;border:1px solid var(--border);border-radius:2px;font-size:9px;letter-spacing:.1em;color:var(--text-dim);background:transparent;cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;}
 .ftag:hover{border-color:var(--gold-dim);color:var(--gold);}
 .ftag.active{background:var(--gold);color:var(--surface);border-color:var(--gold);}
 .port-slider-wrap{position:relative;padding:0 44px;margin-bottom:14px;}
@@ -79,8 +79,8 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 @keyframes portCardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .port-card{animation:portCardIn .2s ease both;}
 .policies-grid{display:grid;gap:10px;}
-.port-card{background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden;cursor:pointer;transition:border-color .2s,transform .2s;}
-.port-card:hover{border-color:var(--gold-dim);transform:translateY(-2px);}
+.port-card{background:var(--bg2);border-radius:4px;overflow:hidden;cursor:pointer;transition:box-shadow .2s,transform .2s;box-shadow:0 1px 4px rgba(0,0,0,.07);}
+.port-card:hover{box-shadow:0 4px 16px rgba(138,111,66,.13);transform:translateY(-2px);}
 .port-img{aspect-ratio:3/4;background:var(--bg3);overflow:hidden;}
 .port-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
 .port-card:hover .port-img img{transform:scale(1.04);}
@@ -90,21 +90,21 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 
 /* TOGGLE */
 .toggle-bar{display:flex;background:var(--bg3);border:1px solid var(--border);border-radius:2px;padding:3px;gap:3px;margin-bottom:24px;}
-.tgl-opt{flex:1;padding:9px 6px;text-align:center;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;border-radius:1px;transition:all .15s;font-family:'DM Mono',monospace;border:none;background:none;}
+.tgl-opt{flex:1;padding:9px 6px;text-align:center;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;border-radius:1px;transition:all .15s;font-family:'DM Sans',sans-serif;border:none;background:none;}
 .tgl-opt.active{background:var(--surface);color:var(--gold);box-shadow:0 1px 4px rgba(0,0,0,.08);}
 
 /* PRICE BLOCKS */
-.price-block{background:#fff;border:1px solid var(--border);border-radius:2px;margin-bottom:10px;overflow:hidden;}
-.pb-head{padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;justify-content:space-between;align-items:center;}
+.price-block{background:#fff;border-radius:4px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.pb-head{padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--bg3);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;justify-content:space-between;align-items:center;}
 .pb-sub{font-size:9px;color:var(--text-dim);font-style:italic;text-transform:none;letter-spacing:0;}
-.pb-row{display:flex;justify-content:space-between;align-items:center;padding:9px 16px;border-bottom:1px solid var(--border);transition:background .12s;}
+.pb-row{display:flex;justify-content:space-between;align-items:center;padding:9px 16px;border-bottom:1px solid var(--bg3);transition:background .12s;}
 .pb-row:last-child{border-bottom:none;}
 .pb-row:hover{background:var(--bg2);}
 .pl{font-size:11px;color:var(--text);}
 .pl small{color:var(--text-dim);font-size:9px;}
 .pv{font-size:12px;color:var(--gold);}
 
-.highlight-card{background:var(--surface);border:1px solid var(--gold-dim);border-radius:2px;padding:22px;margin-bottom:10px;position:relative;overflow:hidden;}
+.highlight-card{background:var(--surface);border-radius:4px;padding:22px;margin-bottom:10px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(138,111,66,.1);}
 .highlight-card::after{content:'✦';position:absolute;top:-10px;right:18px;font-size:64px;color:var(--gold);opacity:.06;}
 .hl-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:8px;}
 .hl-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--text);margin-bottom:6px;}
@@ -112,90 +112,90 @@ body{background:var(--bg);color:var(--text);font-family:'DM Mono',monospace;font
 .hl-note{font-size:10px;color:var(--text-dim);margin-top:8px;font-style:italic;}
 
 .extras-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
-.extra-pill{background:#fff;border:1px solid var(--border);border-radius:2px;padding:12px;}
+.extra-pill{background:var(--surface);border-radius:4px;padding:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);}
 .ep-name{font-size:9px;color:var(--text-dim);letter-spacing:.08em;margin-bottom:4px;}
 .ep-val{font-size:14px;color:var(--gold);}
 .ep-note{font-size:9px;color:var(--text-dim);opacity:.7;margin-top:2px;}
 
 .do-dont{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
-.do-block,.dont-block{background:#fff;border:1px solid var(--border);border-radius:2px;padding:14px;}
+.do-block,.dont-block{background:var(--surface);border-radius:4px;padding:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);}
 .do-block{border-top:2px solid #5a7a4a88;}
 .dont-block{border-top:2px solid #c0887888;}
 .blk-title{font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;}
 .do-block .blk-title{color:var(--green);}
 .dont-block .blk-title{color:var(--rose);}
 .blk-list{list-style:none;}
-.blk-list li{font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px solid var(--border);display:flex;gap:6px;align-items:flex-start;}
+.blk-list li{font-size:10px;color:var(--text);padding:3px 0;border-bottom:1px solid var(--bg3);display:flex;gap:6px;align-items:flex-start;}
 .blk-list li:last-child{border-bottom:none;}
 .do-block .blk-list li::before{content:'✓';color:var(--green);flex-shrink:0;font-size:10px;}
 .dont-block .blk-list li::before{content:'✗';color:var(--rose);flex-shrink:0;font-size:10px;}
 
-.info-block{background:#fff;border:1px solid var(--border);border-left:2px solid var(--gold-dim);border-radius:2px;padding:14px 16px;margin-bottom:10px;font-size:11px;color:var(--text);line-height:1.9;}
+.info-block{background:var(--surface);border-left:2px solid var(--gold-dim);border-radius:4px;padding:14px 16px;margin-bottom:10px;font-size:13px;color:var(--text);line-height:1.9;box-shadow:0 1px 3px rgba(0,0,0,.05);}
 .info-block strong{display:block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:6px;}
 .info-block a{color:var(--gold);text-decoration:none;}
 
 /* CALCULATOR */
-.calc-wrap{background:#fff;border:1px solid var(--border);border-radius:2px;overflow:hidden;margin-bottom:14px;}
-.calc-header{padding:16px 20px;background:var(--surface);border-bottom:1px solid var(--border);}
+.calc-wrap{background:#fff;border-radius:4px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+.calc-header{padding:16px 20px;background:var(--surface);border-bottom:1px solid var(--bg3);}
 .calc-header-title{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--text);margin-bottom:2px;}
 .calc-header-sub{font-size:10px;color:var(--text-dim);}
 .calc-body{padding:20px;display:flex;flex-direction:column;gap:16px;}
 .calc-group label{display:block;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
 .option-pills{display:flex;flex-wrap:wrap;gap:6px;}
-.cpill{padding:7px 13px;border:1px solid var(--border);border-radius:2px;font-family:'DM Mono',monospace;font-size:10px;color:var(--text-mid);background:transparent;cursor:pointer;transition:all .15s;letter-spacing:.05em;}
+.cpill{padding:7px 13px;border:1px solid var(--border);border-radius:2px;font-family:'DM Sans',sans-serif;font-size:10px;color:var(--text-mid);background:transparent;cursor:pointer;transition:all .15s;letter-spacing:.05em;}
 .cpill:hover{border-color:var(--gold-dim);color:var(--gold);}
 .cpill.active{border-color:var(--gold);color:var(--gold);background:#8a6f4210;}
 .cpill.extra{border-style:dashed;}
 .cpill.extra.active{border-style:solid;}
-.calc-result{border-top:1px solid var(--border);padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-start;}
+.calc-result{border-top:1px solid var(--bg3);padding:18px 20px;display:flex;justify-content:space-between;align-items:flex-start;}
 .r-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-bottom:2px;}
 .r-price{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);line-height:1;}
 .r-note{font-size:9px;color:var(--gold-dim);margin-top:4px;max-width:200px;line-height:1.5;}
 
 /* CONTACT */
 .contact-channels{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
-.ch-btn{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:2px;border:1px solid var(--border);background:#fff;cursor:pointer;transition:all .2s;font-family:'DM Mono',monospace;text-align:left;width:100%;}
+.ch-btn{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:4px;border:none;background:var(--surface);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;text-align:left;width:100%;box-shadow:0 1px 4px rgba(0,0,0,.07);}
 .ch-btn:hover{transform:translateX(3px);}
-.ch-btn.email:hover,.ch-btn.active.email{border-color:var(--gold);background:#8a6f4208;}
-.ch-btn.insta:hover,.ch-btn.active.insta{border-color:#c77dff;background:#c77dff08;}
+.ch-btn.email:hover,.ch-btn.active.email{box-shadow:0 2px 8px rgba(138,111,66,.15);background:#8a6f4208;}
+.ch-btn.insta:hover,.ch-btn.active.insta{box-shadow:0 2px 8px rgba(199,125,255,.15);background:#c77dff08;}
 
 .ch-icon{font-size:18px;flex-shrink:0;}
 .ch-badge{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);display:block;margin-bottom:2px;}
 .ch-main{font-size:11px;color:var(--text);}
-.prefill-panel{display:none;background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:14px;margin-top:8px;}
+.prefill-panel{display:none;background:var(--bg2);border-radius:4px;padding:14px;margin-top:8px;}
 .prefill-panel.open{display:block;}
 .pf-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px;display:block;}
-.pf-msg{font-size:10px;color:var(--text);line-height:1.85;white-space:pre-wrap;font-family:'DM Mono',monospace;}
-.copy-btn{display:block;width:100%;margin-top:10px;padding:9px;background:transparent;border:1px solid var(--border);color:var(--text-dim);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .15s;}
+.pf-msg{font-size:10px;color:var(--text);line-height:1.85;white-space:pre-wrap;font-family:'DM Sans',sans-serif;}
+.copy-btn{display:block;width:100%;margin-top:10px;padding:9px;background:transparent;border:1px solid var(--border);color:var(--text-dim);font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .15s;}
 .copy-btn:hover{border-color:var(--gold-dim);color:var(--gold);}
 .f-group{margin-bottom:12px;}
 .f-label{display:block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:6px;}
-.f-input,.f-textarea{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:10px 12px;font-size:11px;color:var(--text);font-family:'DM Mono',monospace;transition:border-color .15s;outline:none;}
+.f-input,.f-textarea{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:2px;padding:10px 12px;font-size:11px;color:var(--text);font-family:'DM Sans',sans-serif;transition:border-color .15s;outline:none;}
 .f-input:focus,.f-textarea:focus{border-color:var(--gold-dim);}
 .f-textarea{height:80px;resize:vertical;}
 .f-row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
-.submit-btn{display:block;width:100%;padding:14px;background:var(--gold);border:none;border-radius:2px;color:var(--surface);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+.submit-btn{display:block;width:100%;padding:14px;background:var(--gold);border:none;border-radius:2px;color:var(--surface);font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
 .submit-btn:hover{background:var(--gold-lt);}
 
 /* SHOP */
 .shop-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
-.prod-card{background:var(--surface);border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color .2s,transform .2s;cursor:pointer;}
-.prod-card:hover{border-color:var(--gold-dim);transform:translateY(-2px);}
+.prod-card{background:var(--surface);border-radius:4px;overflow:hidden;transition:box-shadow .2s,transform .2s;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.07);}
+.prod-card:hover{box-shadow:0 4px 16px rgba(138,111,66,.13);transform:translateY(-2px);}
 .prod-img{aspect-ratio:1/1;background:var(--bg3);overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .prod-img img{width:100%;height:100%;object-fit:cover;display:block;}
 .prod-ph{font-size:28px;opacity:.3;}
 .prod-info{padding:10px 12px;}
 .prod-name{font-size:10px;color:var(--text);margin-bottom:3px;line-height:1.4;}
 .prod-price{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold);margin-bottom:7px;}
-.prod-link{display:block;width:100%;padding:6px;background:transparent;border:1px solid var(--border);color:var(--text-dim);font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.15em;text-transform:uppercase;text-align:center;text-decoration:none;border-radius:2px;transition:all .15s;}
+.prod-link{display:block;width:100%;padding:6px;background:transparent;border:1px solid var(--border);color:var(--text-dim);font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.15em;text-transform:uppercase;text-align:center;text-decoration:none;border-radius:2px;transition:all .15s;}
 .prod-link:hover{border-color:var(--gold-dim);color:var(--gold);}
 
 /* ABOUT */
-.about-block{background:#fff;border:1px solid var(--border);border-radius:2px;padding:22px;margin-bottom:0;}
+.about-block{background:var(--surface);border-radius:4px;padding:22px;margin-bottom:0;box-shadow:0 1px 4px rgba(0,0,0,.06);}
 .about-name{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--text);margin-bottom:10px;}
 .about-bio{font-size:11px;color:var(--text-mid);line-height:1.9;margin-bottom:16px;}
 .about-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.about-tag{padding:4px 10px;background:var(--bg2);border:1px solid var(--border);border-radius:2px;font-size:9px;color:var(--text-dim);}
+.about-tag{padding:4px 10px;background:var(--bg2);border-radius:2px;font-size:9px;color:var(--text-dim);}
 
 /* FOOTER */
 .footer{padding:32px 24px;border-top:1px solid var(--border);background:var(--bg2);margin-top:44px;}
@@ -276,16 +276,33 @@ body.shop-int [data-br]{display:none!important;}
 .lightbox.open{display:flex;}
 .lightbox-inner{position:relative;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .lightbox-inner img{max-width:88vw;max-height:88vh;object-fit:contain;border-radius:2px;display:block;}
-.lightbox-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--text);font-size:13px;cursor:pointer;font-family:'DM Mono',monospace;letter-spacing:.15em;text-transform:uppercase;opacity:.7;transition:opacity .15s;padding:4px 0;}
+.lightbox-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--text);font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.15em;text-transform:uppercase;opacity:.7;transition:opacity .15s;padding:4px 0;}
 .lightbox-close:hover{opacity:1;}
-.lightbox-caption{margin-top:12px;text-align:center;font-family:'DM Mono',monospace;font-size:10px;color:var(--text-mid);letter-spacing:.1em;}
+.lightbox-caption{margin-top:12px;text-align:center;font-family:'DM Sans',sans-serif;font-size:10px;color:var(--text-mid);letter-spacing:.1em;}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:var(--surface);border:1px solid var(--border);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--text);font-size:20px;cursor:pointer;padding:0;opacity:.8;transition:opacity .15s,background .15s;user-select:none;}
 .lightbox-nav:hover{opacity:1;background:var(--gold);color:var(--surface);border-color:var(--gold);}
 .lightbox-prev{left:20px;}
 .lightbox-next{right:20px;}
-.lightbox-counter{position:absolute;top:20px;left:24px;font-family:'DM Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:.1em;}
-.copy-quote-btn{padding:10px 16px;background:transparent;border:1px solid var(--gold-dim);border-radius:2px;color:var(--gold);font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0;}
+.lightbox-counter{position:absolute;top:20px;left:24px;font-family:'DM Sans',sans-serif;font-size:10px;color:var(--text-dim);letter-spacing:.1em;}
+.copy-quote-btn{padding:10px 16px;background:transparent;border:1px solid var(--gold-dim);border-radius:2px;color:var(--gold);font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0;}
 .copy-quote-btn:hover{background:#8a6f4210;}
+
+/* PRICE TABLE */
+.price-table{width:100%;border-collapse:collapse;margin-bottom:28px;}
+.price-table thead th{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);padding:0 0 10px;text-align:left;border-bottom:1px solid var(--border);}
+.price-table thead th:last-child{text-align:right;}
+.price-table .pt-section td{padding:18px 0 4px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-mid);}
+.price-table tbody tr:not(.pt-section) td{padding:7px 0;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--text);}
+.price-table tbody tr:not(.pt-section):last-child td,.price-table tbody tr:not(.pt-section) + .pt-section ~ tr:first-of-type td{border-bottom:none;}
+.price-table .pt-price{text-align:right;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:16px;white-space:nowrap;padding-left:16px;}
+
+/* COMMISSION NEW LAYOUT */
+.comm-new-layout{display:grid;grid-template-columns:1fr;gap:32px;align-items:start;}
+.comm-right-sticky{position:static;}
+@media(min-width:768px){
+  .comm-new-layout{grid-template-columns:3fr 2fr;gap:48px;}
+  .comm-right-sticky{position:sticky;top:72px;}
+}
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="/dados.js"></script>
@@ -347,142 +364,128 @@ body.shop-int [data-br]{display:none!important;}
 
 <!-- COMMISSIONS -->
 <section class="section" id="commissions">
-  <div class="s-label"><span data-en>Commissions</span><span data-pt>Comissões</span></div>
+<div class="comm-new-layout">
 
-  <div class="comm-layout">
-    <!-- LEFT -->
-    <div>
-      <div class="highlight-card">
-        <div class="hl-label"><span data-en>Book Cover Illustration</span><span data-pt>Capa de Livro</span></div>
-        <div class="hl-title"><span data-en>Full cover illustration</span><span data-pt>Ilustração completa de capa</span></div>
-        <div class="hl-price"><span data-brl>a partir de R$300</span><span data-usd>from $100</span></div>
-        <div class="hl-note"><span data-en>Additional details may increase the final price.</span><span data-pt>Detalhes adicionais podem aumentar o valor final.</span></div>
-      </div>
+  <!-- LEFT: price table + details -->
+  <div>
+    <div class="s-label"><span data-en>Commissions</span><span data-pt>Comissões</span></div>
+    <h2 class="s-title"><span data-en>Commission your art</span><span data-pt>Encomende sua arte</span></h2>
+    <p class="s-desc"><span data-en>Original characters, fanart, book covers, editorial and more. Use the builder on the right to get your estimate.</span><span data-pt>Personagens originais, fanart, capas de livro, editorial e mais. Use o orçador ao lado para calcular.</span></p>
 
-      <div class="price-block">
-        <div class="pb-head"><span data-en>Editorial Illustration</span><span data-pt>Ilustração Editorial</span><span class="pb-sub" data-en>page elements</span><span class="pb-sub" data-pt>elementos de página</span></div>
-        <div class="pb-row"><span class="pl" data-en>Small <small>— vignette, page corner</small></span><span class="pl" data-pt>Pequena <small>— vinheta, canto</small></span><span class="pv" data-brl>R$50</span><span class="pv" data-usd>$10</span></div>
-        <div class="pb-row"><span class="pl" data-en>Medium <small>— half page</small></span><span class="pl" data-pt>Média <small>— meia página</small></span><span class="pv" data-brl>R$100</span><span class="pv" data-usd>$20</span></div>
-        <div class="pb-row"><span class="pl" data-en>Full page — B&W</span><span class="pl" data-pt>Página inteira — P&B</span><span class="pv" data-brl>R$150</span><span class="pv" data-usd>$35</span></div>
-        <div class="pb-row"><span class="pl" data-en>Full page — Color</span><span class="pl" data-pt>Página inteira — Colorida</span><span class="pv" data-brl>R$190</span><span class="pv" data-usd>$50</span></div>
-      </div>
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th><span data-en>Service</span><span data-pt>Serviço</span></th>
+          <th><span data-en>Price reference</span><span data-pt>Referência de preço</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pt-section"><td colspan="2"><span data-en>Book Cover Illustration</span><span data-pt>Capa de Livro</span></td></tr>
+        <tr><td><span data-en>Full cover</span><span data-pt>Ilustração completa</span></td><td class="pt-price"><span data-brl>a partir de R$300</span><span data-usd>from $100</span></td></tr>
 
-      <div class="price-block">
-        <div class="pb-head"><span data-en>Character — Sketch</span><span data-pt>Personagem — Sketch</span><span class="pb-sub" data-en>base drawing</span><span class="pb-sub" data-pt>sem finalização</span></div>
-        <div class="pb-row"><span class="pl" data-en>Bust</span><span class="pl" data-pt>Busto</span><span class="pv" data-brl>R$30</span><span class="pv" data-usd>$10</span></div>
-        <div class="pb-row"><span class="pl" data-en>Half body</span><span class="pl" data-pt>Meio corpo</span><span class="pv" data-brl>R$40</span><span class="pv" data-usd>$12</span></div>
-        <div class="pb-row"><span class="pl" data-en>Full body</span><span class="pl" data-pt>Corpo inteiro</span><span class="pv" data-brl>R$50</span><span class="pv" data-usd>$15</span></div>
-      </div>
+        <tr class="pt-section"><td colspan="2"><span data-en>Editorial Illustration</span><span data-pt>Ilustração Editorial</span></td></tr>
+        <tr><td><span data-en>Small — vignette, corner</span><span data-pt>Pequena — vinheta, canto</span></td><td class="pt-price"><span data-brl>R$50</span><span data-usd>$10</span></td></tr>
+        <tr><td><span data-en>Medium — half page</span><span data-pt>Média — meia página</span></td><td class="pt-price"><span data-brl>R$100</span><span data-usd>$20</span></td></tr>
+        <tr><td><span data-en>Full page — B&amp;W</span><span data-pt>Página inteira — P&amp;B</span></td><td class="pt-price"><span data-brl>R$150</span><span data-usd>$35</span></td></tr>
+        <tr><td><span data-en>Full page — Color</span><span data-pt>Página inteira — Colorida</span></td><td class="pt-price"><span data-brl>R$190</span><span data-usd>$50</span></td></tr>
 
-      <div class="price-block">
-        <div class="pb-head"><span data-en>Character — Lineart + Base Color</span><span data-pt>Personagem — Cores Base</span><span class="pb-sub" data-en>flat colors, no detailed shading</span><span class="pb-sub" data-pt>cores chapadas</span></div>
-        <div class="pb-row"><span class="pl" data-en>Bust</span><span class="pl" data-pt>Busto</span><span class="pv" data-brl>R$70</span><span class="pv" data-usd>$20</span></div>
-        <div class="pb-row"><span class="pl" data-en>Half body</span><span class="pl" data-pt>Meio corpo</span><span class="pv" data-brl>R$80</span><span class="pv" data-usd>$25</span></div>
-        <div class="pb-row"><span class="pl" data-en>Full body</span><span class="pl" data-pt>Corpo inteiro</span><span class="pv" data-brl>R$90</span><span class="pv" data-usd>$30</span></div>
-      </div>
+        <tr class="pt-section"><td colspan="2"><span data-en>Character — Sketch</span><span data-pt>Personagem — Sketch</span></td></tr>
+        <tr><td><span data-en>Bust</span><span data-pt>Busto</span></td><td class="pt-price"><span data-brl>R$30</span><span data-usd>$10</span></td></tr>
+        <tr><td><span data-en>Half body</span><span data-pt>Meio corpo</span></td><td class="pt-price"><span data-brl>R$40</span><span data-usd>$12</span></td></tr>
+        <tr><td><span data-en>Full body</span><span data-pt>Corpo inteiro</span></td><td class="pt-price"><span data-brl>R$50</span><span data-usd>$15</span></td></tr>
 
-      <div class="price-block">
-        <div class="pb-head"><span data-en>Character — 2D Coloring</span><span data-pt>Personagem — Flat Shading</span><span class="pb-sub" data-en>base color + shadow &amp; light</span><span class="pb-sub" data-pt>coloração simplificada</span></div>
-        <div class="pb-row"><span class="pl" data-en>Bust</span><span class="pl" data-pt>Busto</span><span class="pv" data-brl>R$100</span><span class="pv" data-usd>$30</span></div>
-        <div class="pb-row"><span class="pl" data-en>Half body</span><span class="pl" data-pt>Meio corpo</span><span class="pv" data-brl>R$120</span><span class="pv" data-usd>$35</span></div>
-        <div class="pb-row"><span class="pl" data-en>Full body</span><span class="pl" data-pt>Corpo inteiro</span><span class="pv" data-brl>R$130</span><span class="pv" data-usd>$40</span></div>
-      </div>
+        <tr class="pt-section"><td colspan="2"><span data-en>Character — Lineart + Base Color</span><span data-pt>Personagem — Cores Base</span></td></tr>
+        <tr><td><span data-en>Bust</span><span data-pt>Busto</span></td><td class="pt-price"><span data-brl>R$70</span><span data-usd>$20</span></td></tr>
+        <tr><td><span data-en>Half body</span><span data-pt>Meio corpo</span></td><td class="pt-price"><span data-brl>R$80</span><span data-usd>$25</span></td></tr>
+        <tr><td><span data-en>Full body</span><span data-pt>Corpo inteiro</span></td><td class="pt-price"><span data-brl>R$90</span><span data-usd>$30</span></td></tr>
 
-      <div class="price-block">
-        <div class="pb-head"><span data-en>Character — Full Color</span><span data-pt>Personagem — Full Render</span><span class="pb-sub" data-en>refined lighting &amp; details</span><span class="pb-sub" data-pt>finalização detalhista</span></div>
-        <div class="pb-row"><span class="pl" data-en>Bust</span><span class="pl" data-pt>Busto</span><span class="pv" data-brl>R$200</span><span class="pv" data-usd>$50</span></div>
-        <div class="pb-row"><span class="pl" data-en>Half body</span><span class="pl" data-pt>Meio corpo</span><span class="pv" data-brl>R$225</span><span class="pv" data-usd>$60</span></div>
-        <div class="pb-row"><span class="pl" data-en>Full body</span><span class="pl" data-pt>Corpo inteiro</span><span class="pv" data-brl>R$250</span><span class="pv" data-usd>$70</span></div>
-      </div>
+        <tr class="pt-section"><td colspan="2"><span data-en>Character — 2D Coloring</span><span data-pt>Personagem — Flat Shading</span></td></tr>
+        <tr><td><span data-en>Bust</span><span data-pt>Busto</span></td><td class="pt-price"><span data-brl>R$100</span><span data-usd>$30</span></td></tr>
+        <tr><td><span data-en>Half body</span><span data-pt>Meio corpo</span></td><td class="pt-price"><span data-brl>R$120</span><span data-usd>$35</span></td></tr>
+        <tr><td><span data-en>Full body</span><span data-pt>Corpo inteiro</span></td><td class="pt-price"><span data-brl>R$130</span><span data-usd>$40</span></td></tr>
+
+        <tr class="pt-section"><td colspan="2"><span data-en>Character — Full Color</span><span data-pt>Personagem — Full Render</span></td></tr>
+        <tr><td><span data-en>Bust</span><span data-pt>Busto</span></td><td class="pt-price"><span data-brl>R$200</span><span data-usd>$50</span></td></tr>
+        <tr><td><span data-en>Half body</span><span data-pt>Meio corpo</span></td><td class="pt-price"><span data-brl>R$225</span><span data-usd>$60</span></td></tr>
+        <tr><td><span data-en>Full body</span><span data-pt>Corpo inteiro</span></td><td class="pt-price"><span data-brl>R$250</span><span data-usd>$70</span></td></tr>
+
+        <tr class="pt-section"><td colspan="2"><span data-en>Reference Sheet — B&amp;W</span><span data-pt>Folha de Ref — Lineart</span></td></tr>
+        <tr><td><span data-en>1 char + 3 expressions</span><span data-pt>1 pers. + 3 expressões</span></td><td class="pt-price"><span data-brl>R$100</span><span data-usd>$30</span></td></tr>
+        <tr><td><span data-en>+ Extra face</span><span data-pt>+ Rosto extra</span></td><td class="pt-price"><span data-brl>+R$25</span><span data-usd>+$10</span></td></tr>
+        <tr><td><span data-en>+ Extra pose</span><span data-pt>+ Pose extra</span></td><td class="pt-price"><span data-brl>+R$30</span><span data-usd>+$15</span></td></tr>
+
+        <tr class="pt-section"><td colspan="2"><span data-en>Reference Sheet — Colored</span><span data-pt>Folha de Ref — Colorida</span></td></tr>
+        <tr><td><span data-en>1 char + 3 expressions</span><span data-pt>1 pers. + 3 expressões</span></td><td class="pt-price"><span data-brl>R$150</span><span data-usd>$60</span></td></tr>
+        <tr><td><span data-en>+ Extra face</span><span data-pt>+ Rosto extra</span></td><td class="pt-price"><span data-brl>+R$30</span><span data-usd>+$15</span></td></tr>
+        <tr><td><span data-en>+ Extra pose</span><span data-pt>+ Pose extra</span></td><td class="pt-price"><span data-brl>+R$35</span><span data-usd>+$20</span></td></tr>
+
+        <tr class="pt-section"><td colspan="2"><span data-en>Comic Pages — per page</span><span data-pt>Quadrinho — por página</span></td></tr>
+        <tr><td><span data-en>Black &amp; white</span><span data-pt>Preto e branco</span></td><td class="pt-price"><span data-brl>R$75</span><span data-usd>$20</span></td></tr>
+        <tr><td><span data-en>Color</span><span data-pt>Colorido</span></td><td class="pt-price"><span data-brl>R$100</span><span data-usd>$30</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="s-label"><span data-en>Add-ons</span><span data-pt>Adicionais</span></div>
+    <div class="extras-grid">
+      <div class="extra-pill"><div class="ep-name" data-en>Extra character</div><div class="ep-name" data-pt>Personagem adicional</div><div class="ep-val">+70%</div><div class="ep-note" data-en>of base price</div><div class="ep-note" data-pt>do valor base</div></div>
+      <div class="extra-pill"><div class="ep-name" data-en>Complex details</div><div class="ep-name" data-pt>Detalhes complexos</div><div class="ep-val"><span data-brl>+R$20</span><span data-usd>+$10</span></div><div class="ep-note" data-en>armor, weapons</div><div class="ep-note" data-pt>armaduras, armas</div></div>
+      <div class="extra-pill"><div class="ep-name" data-en>Simple background</div><div class="ep-name" data-pt>Cenário simples</div><div class="ep-val"><span data-brl>+R$50</span><span data-usd>+$20</span></div></div>
+      <div class="extra-pill"><div class="ep-name" data-en>Complex background</div><div class="ep-name" data-pt>Cenário complexo</div><div class="ep-val"><span data-brl>+R$100</span><span data-usd>+$50</span></div></div>
+      <div class="extra-pill"><div class="ep-name" data-en>Small animal</div><div class="ep-name" data-pt>Animal pequeno</div><div class="ep-val"><span data-brl>+R$50</span><span data-usd>+$20</span></div><div class="ep-note" data-en>cat, dog, bird</div><div class="ep-note" data-pt>gato, cachorro, pássaro</div></div>
+      <div class="extra-pill"><div class="ep-name" data-en>Large animal</div><div class="ep-name" data-pt>Animal grande</div><div class="ep-val"><span data-brl>+R$80</span><span data-usd>+$40</span></div><div class="ep-note" data-en>horse, dragon</div><div class="ep-note" data-pt>cavalo, dragão</div></div>
     </div>
 
-    <!-- RIGHT -->
-    <div>
-      <div class="price-block">
-        <div class="pb-head"><span data-en>Reference Sheet — B&W</span><span data-pt>Folha de Ref — Lineart</span></div>
-        <div class="pb-row"><span class="pl" data-en>1 char + 3 expressions</span><span class="pl" data-pt>1 pers. + 3 expressões</span><span class="pv" data-brl>R$100</span><span class="pv" data-usd>$30</span></div>
-        <div class="pb-row"><span class="pl" data-en>Extra face</span><span class="pl" data-pt>Rosto extra</span><span class="pv" data-brl>+R$25</span><span class="pv" data-usd>+$10</span></div>
-        <div class="pb-row"><span class="pl" data-en>Extra pose</span><span class="pl" data-pt>Pose extra</span><span class="pv" data-brl>+R$30</span><span class="pv" data-usd>+$15</span></div>
-      </div>
+    <div class="info-block">
+      <strong data-en>Volume discount — Comics</strong><strong data-pt>Desconto — Quadrinhos</strong>
+      <span data-en>4+ pages: 5–10% off depending on volume.</span><span data-pt>4+ páginas: 5–10% de desconto conforme o volume.</span>
+    </div>
 
-      <div class="price-block">
-        <div class="pb-head"><span data-en>Reference Sheet — Colored</span><span data-pt>Folha de Ref — Colorida</span></div>
-        <div class="pb-row"><span class="pl" data-en>1 char + 3 expressions</span><span class="pl" data-pt>1 pers. + 3 expressões</span><span class="pv" data-brl>R$150</span><span class="pv" data-usd>$60</span></div>
-        <div class="pb-row"><span class="pl" data-en>Extra face</span><span class="pl" data-pt>Rosto extra</span><span class="pv" data-brl>+R$30</span><span class="pv" data-usd>+$15</span></div>
-        <div class="pb-row"><span class="pl" data-en>Extra pose</span><span class="pl" data-pt>Pose extra</span><span class="pv" data-brl>+R$35</span><span class="pv" data-usd>+$20</span></div>
-      </div>
+    <div class="do-dont">
+      <div class="do-block"><div class="blk-title"><span data-en>I draw</span><span data-pt>Faço</span></div><ul class="blk-list"><li><span data-en>Original characters</span><span data-pt>Personagens originais</span></li><li>Fanarts</li><li><span data-en>Animals</span><span data-pt>Animais</span></li></ul></div>
+      <div class="dont-block"><div class="blk-title"><span data-en>I don't draw</span><span data-pt>Não faço</span></div><ul class="blk-list"><li>Mecha</li><li>Furry</li><li>Gore</li><li>NSFW</li></ul></div>
+    </div>
 
-      <div class="price-block">
-        <div class="pb-head"><span data-en>Comic Pages — per page</span><span data-pt>Quadrinho — por página</span></div>
-        <div class="pb-row"><span class="pl" data-en>Black &amp; white</span><span class="pl" data-pt>Preto e branco</span><span class="pv" data-brl>R$75</span><span class="pv" data-usd>$20</span></div>
-        <div class="pb-row"><span class="pl" data-en>Color</span><span class="pl" data-pt>Colorido</span><span class="pv" data-brl>R$100</span><span class="pv" data-usd>$30</span></div>
-      </div>
-
-      <div class="info-block">
-        <strong data-en>Volume discount — Comics</strong><strong data-pt>Desconto — Quadrinhos</strong>
-        <span data-en>4+ pages: 5–10% off depending on volume.</span><span data-pt>4+ páginas: 5–10% de desconto conforme o volume.</span>
-      </div>
-
-      <div class="s-label" style="margin-top:20px;"><span data-en>Add-ons</span><span data-pt>Adicionais</span></div>
-      <div class="extras-grid">
-        <div class="extra-pill"><div class="ep-name" data-en>Extra character</div><div class="ep-name" data-pt>Personagem adicional</div><div class="ep-val">+70%</div><div class="ep-note" data-en>of base price</div><div class="ep-note" data-pt>do valor base</div></div>
-        <div class="extra-pill"><div class="ep-name" data-en>Complex details</div><div class="ep-name" data-pt>Detalhes complexos</div><div class="ep-val"><span data-brl>+R$20</span><span data-usd>+$10</span></div><div class="ep-note" data-en>armor, weapons</div><div class="ep-note" data-pt>armaduras, armas</div></div>
-        <div class="extra-pill"><div class="ep-name" data-en>Simple background</div><div class="ep-name" data-pt>Cenário simples</div><div class="ep-val"><span data-brl>+R$50</span><span data-usd>+$20</span></div></div>
-        <div class="extra-pill"><div class="ep-name" data-en>Complex background</div><div class="ep-name" data-pt>Cenário complexo</div><div class="ep-val"><span data-brl>+R$100</span><span data-usd>+$50</span></div></div>
-        <div class="extra-pill"><div class="ep-name" data-en>Small animal</div><div class="ep-name" data-pt>Animal pequeno</div><div class="ep-val"><span data-brl>+R$50</span><span data-usd>+$20</span></div><div class="ep-note" data-en>cat, dog, bird</div><div class="ep-note" data-pt>gato, cachorro, pássaro</div></div>
-        <div class="extra-pill"><div class="ep-name" data-en>Large animal</div><div class="ep-name" data-pt>Animal grande</div><div class="ep-val"><span data-brl>+R$80</span><span data-usd>+$40</span></div><div class="ep-note" data-en>horse, dragon</div><div class="ep-note" data-pt>cavalo, dragão</div></div>
-      </div>
-
-      <div class="do-dont">
-        <div class="do-block"><div class="blk-title"><span data-en>I draw</span><span data-pt>Faço</span></div><ul class="blk-list"><li><span data-en>Original characters</span><span data-pt>Personagens originais</span></li><li>Fanarts</li><li><span data-en>Animals</span><span data-pt>Animais</span></li></ul></div>
-        <div class="dont-block"><div class="blk-title"><span data-en>I don't draw</span><span data-pt>Não faço</span></div><ul class="blk-list"><li>Mecha</li><li>Furry</li><li>Gore</li><li>NSFW</li></ul></div>
-      </div>
-
+    <div class="s-label" style="margin-top:20px;"><span data-en>Policies</span><span data-pt>Políticas</span></div>
+    <div class="policies-grid">
+      <div class="info-block" id="info-payment"><strong data-en>Payment</strong><strong data-pt>Pagamento</strong><span id="info-payment-en" data-en></span><span id="info-payment-pt" data-pt></span></div>
+      <div class="info-block" id="info-timeline"><strong data-en>Timeline</strong><strong data-pt>Prazo</strong><span id="info-timeline-en" data-en></span><span id="info-timeline-pt" data-pt></span></div>
+      <div class="info-block" id="info-wips"><strong data-en>WIPs &amp; Approval</strong><strong data-pt>WIPs e Aprovação</strong><span id="info-wips-en" data-en></span><span id="info-wips-pt" data-pt></span></div>
     </div>
   </div>
 
-  <div class="s-label" style="margin-top:20px;"><span data-en>Policies</span><span data-pt>Políticas</span></div>
-  <div class="policies-grid">
-    <div class="info-block" id="info-payment"><strong data-en>Payment</strong><strong data-pt>Pagamento</strong><span id="info-payment-en" data-en></span><span id="info-payment-pt" data-pt></span></div>
-    <div class="info-block" id="info-timeline"><strong data-en>Timeline</strong><strong data-pt>Prazo</strong><span id="info-timeline-en" data-en></span><span id="info-timeline-pt" data-pt></span></div>
-    <div class="info-block" id="info-wips"><strong data-en>WIPs & Approval</strong><strong data-pt>WIPs e Aprovação</strong><span id="info-wips-en" data-en></span><span id="info-wips-pt" data-pt></span></div>
-  </div>
-
-  <!-- QUOTE BUILDER -->
-  <div class="s-label" style="margin-top:20px;"><span data-en>Quote builder</span><span data-pt>Orçador</span></div>
-  <div class="calc-wrap">
-    <div class="calc-header">
-      <div class="calc-header-title"><span data-en>Build your quote</span><span data-pt>Monte seu orçamento</span></div>
-      <div class="calc-header-sub"><span data-en>Select options to get an estimate</span><span data-pt>Selecione as opções para calcular</span></div>
-    </div>
-    <div class="calc-body" id="calc-body">
-      <div class="calc-group">
-        <label data-en>Category</label><label data-pt>Categoria</label>
-        <div class="option-pills">
-          <button class="cpill" data-group="cat" data-val="personagem" onclick="pickOpt(this)"><span data-en>Character</span><span data-pt>Personagem</span></button>
-          <button class="cpill" data-group="cat" data-val="editorial" onclick="pickOpt(this)">Editorial</button>
-          <button class="cpill" data-group="cat" data-val="folha" onclick="pickOpt(this)"><span data-en>Ref Sheet</span><span data-pt>Folha de Ref</span></button>
-          <button class="cpill" data-group="cat" data-val="quadrinho" onclick="pickOpt(this)"><span data-en>Comic page</span><span data-pt>Quadrinho</span></button>
-          <button class="cpill" data-group="cat" data-val="capa" onclick="pickOpt(this)"><span data-en>Book cover</span><span data-pt>Capa de Livro</span></button>
+  <!-- RIGHT: sticky calc + contact -->
+  <div class="comm-right-sticky">
+    <div class="calc-wrap">
+      <div class="calc-header">
+        <div class="calc-header-title"><span data-en>Build your quote</span><span data-pt>Monte seu orçamento</span></div>
+        <div class="calc-header-sub"><span data-en>Select options to get an estimate</span><span data-pt>Selecione as opções para calcular</span></div>
+      </div>
+      <div class="calc-body" id="calc-body">
+        <div class="calc-group">
+          <label data-en>Category</label><label data-pt>Categoria</label>
+          <div class="option-pills">
+            <button class="cpill" data-group="cat" data-val="personagem" onclick="pickOpt(this)"><span data-en>Character</span><span data-pt>Personagem</span></button>
+            <button class="cpill" data-group="cat" data-val="editorial" onclick="pickOpt(this)">Editorial</button>
+            <button class="cpill" data-group="cat" data-val="folha" onclick="pickOpt(this)"><span data-en>Ref Sheet</span><span data-pt>Folha de Ref</span></button>
+            <button class="cpill" data-group="cat" data-val="quadrinho" onclick="pickOpt(this)"><span data-en>Comic page</span><span data-pt>Quadrinho</span></button>
+            <button class="cpill" data-group="cat" data-val="capa" onclick="pickOpt(this)"><span data-en>Book cover</span><span data-pt>Capa de Livro</span></button>
+          </div>
         </div>
+        <div id="calc-sub"></div>
       </div>
-      <div id="calc-sub"></div>
-    </div>
-    <div class="calc-result">
-      <div>
-        <div class="r-label"><span data-en>Estimate</span><span data-pt>Estimativa</span></div>
-        <div class="r-price" id="calc-price">—</div>
-        <div class="r-note" id="calc-note"><span data-en>Select options above</span><span data-pt>Selecione as opções acima</span></div>
+      <div class="calc-result">
+        <div>
+          <div class="r-label"><span data-en>Estimate</span><span data-pt>Estimativa</span></div>
+          <div class="r-price" id="calc-price">—</div>
+          <div class="r-note" id="calc-note"><span data-en>Select options above</span><span data-pt>Selecione as opções acima</span></div>
+        </div>
+        <button class="copy-quote-btn" id="copy-quote-btn" onclick="copyQuote()" style="display:none;">
+          <span data-en>⎘ Copy quote</span><span data-pt>⎘ Copiar orçamento</span>
+        </button>
       </div>
-      <button class="copy-quote-btn" id="copy-quote-btn" onclick="copyQuote()" style="display:none;">
-        <span data-en>⎘ Copy quote</span><span data-pt>⎘ Copiar orçamento</span>
-      </button>
     </div>
-  </div>
 
-  <!-- CONTACT -->
-  <div class="s-label" style="margin-top:20px;"><span data-en>Send a request</span><span data-pt>Enviar pedido</span></div>
-  <div class="contact-layout">
+    <div class="s-label" style="margin-top:20px;"><span data-en>Send a request</span><span data-pt>Enviar pedido</span></div>
     <div class="contact-channels">
       <button class="ch-btn email" onclick="openChannel('email')">
         <span class="ch-icon">✉️</span>
@@ -494,22 +497,23 @@ body.shop-int [data-br]{display:none!important;}
           <div class="f-group"><label class="f-label">E-mail</label><input class="f-input" type="email" id="f-email" placeholder="you@email.com"></div>
         </div>
         <div class="f-group"><label class="f-label" data-en>Estimated quote</label><label class="f-label" data-pt>Orçamento estimado</label><input class="f-input" type="text" id="f-quote" placeholder="—" readonly></div>
-        <div class="f-group"><label class="f-label" data-en>Description & references</label><label class="f-label" data-pt>Descrição e referências</label><textarea class="f-textarea" id="f-desc" placeholder="Describe your character, share reference links..."></textarea></div>
+        <div class="f-group"><label class="f-label" data-en>Description &amp; references</label><label class="f-label" data-pt>Descrição e referências</label><textarea class="f-textarea" id="f-desc" placeholder="Describe your character, share reference links..."></textarea></div>
         <button class="submit-btn" onclick="submitEmail()"><span data-en>✦ Send request</span><span data-pt>✦ Enviar pedido</span></button>
       </div>
-    </div>
-    <div class="contact-channels">
       <button class="ch-btn insta" onclick="openChannel('insta')">
         <span class="ch-icon">📸</span>
         <span><span class="ch-badge" data-en>Fast reply</span><span class="ch-badge" data-pt>Resposta rápida</span><span class="ch-main">Instagram DM · @0jem0</span></span>
       </button>
       <div class="prefill-panel" id="panel-insta">
-        <span class="pf-label" data-en>Copy & paste on Instagram DM</span><span class="pf-label" data-pt>Copie e cole no Instagram</span>
+        <span class="pf-label" data-en>Copy &amp; paste on Instagram DM</span><span class="pf-label" data-pt>Copie e cole no Instagram</span>
         <div class="pf-msg" id="pf-insta-msg">—</div>
         <button class="copy-btn" onclick="copyPrefill('insta')"><span data-en>⎘ Copy message</span><span data-pt>⎘ Copiar mensagem</span></button>
         <p style="font-size:9px;color:var(--text-dim);margin-top:8px;"><a href="https://instagram.com/0jem0" style="color:var(--gold);text-decoration:none;">instagram.com/0jem0</a></p>
-      </div></div>
+      </div>
+    </div>
   </div>
+
+</div>
 </section>
 
 
