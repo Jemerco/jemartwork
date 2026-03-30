@@ -203,16 +203,16 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .about-tag{padding:4px 10px;background:var(--bg2);border-radius:2px;font-size:9px;color:var(--text-dim);}
 
 /* FOOTER */
-.footer{padding:32px 24px;border-top:1px solid var(--border);background:var(--bg2);margin-top:44px;}
-.footer-inner{max-width:var(--max-w);margin:0 auto;}
-.footer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;gap:16px;flex-wrap:wrap;}
-@media(max-width:767px){.footer-top{flex-direction:column;align-items:flex-start;}}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--text);}
-.footer-logo em{font-style:italic;color:var(--gold);}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
-.footer-link{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .15s;}
-.footer-link:hover{color:var(--gold);}
-.footer-copy{font-size:9px;color:var(--border2);letter-spacing:.1em;text-align:center;padding-top:16px;border-top:1px solid var(--border);}
+.footer{padding:28px 24px;background:#1a140c;margin-top:44px;}
+.footer-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#d4c4a8;flex-shrink:0;}
+.footer-logo em{font-style:italic;color:var(--gold-lt);}
+.footer-copy{font-size:10px;color:#5a4e3c;letter-spacing:.08em;text-align:center;flex:1;}
+.footer-socials{display:flex;gap:18px;align-items:center;flex-shrink:0;}
+.footer-social{color:#5a4e3c;text-decoration:none;display:flex;align-items:center;transition:color .2s,transform .2s;}
+.footer-social:hover{color:var(--gold-lt);transform:translateY(-3px);}
+.footer-social svg{width:18px;height:18px;fill:currentColor;display:block;}
+@media(max-width:600px){.footer-inner{flex-direction:column;align-items:center;gap:14px;}.footer-copy{text-align:center;}}
 
 /* VISIBILITY CLASSES */
 body.lang-en [data-pt]{display:none!important;}
@@ -581,16 +581,29 @@ body.shop-int [data-br]{display:none!important;}
 
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-logo">J<em>em</em> Art</div>
-      <div class="footer-links">
-        <a class="footer-link" href="https://instagram.com/0jem0" target="_blank">Instagram</a>
-        <a class="footer-link" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank">Redbubble</a>
-        <a class="footer-link" href="https://www.artstation.com/jem0" target="_blank">ArtStation</a>
-        <a class="footer-link" href="https://www.deviantart.com/0jem0" target="_blank">DeviantArt</a>
-      </div>
+    <div class="footer-logo">J<em>em</em> Art</div>
+    <div class="footer-copy">
+      <span data-en>© 2026 Jem Art — All rights reserved.</span>
+      <span data-pt>© 2026 Jem Art — Todos os direitos reservados.</span>
     </div>
-    <div class="footer-copy">✦ Jéssica Merco · Jem Art · 2026 ✦</div>
+    <div class="footer-socials">
+      <!-- Instagram -->
+      <a class="footer-social" href="https://instagram.com/0jem0" target="_blank" title="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <!-- ArtStation -->
+      <a class="footer-social" href="https://www.artstation.com/jem0" target="_blank" title="ArtStation">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 17.723l2.027 3.505h.001a2.424 2.424 0 0 0 2.164 1.333h13.457l-2.792-4.838H0zm24 .025c0-.484-.143-.935-.388-1.314L15.728 2.728a2.424 2.424 0 0 0-2.142-1.289H9.419L21.598 22.54l1.92-3.325c.378-.538.482-.956.482-1.467zm-11.129-3.462L7.428 4.858l-5.444 9.428h10.887z"/></svg>
+      </a>
+      <!-- DeviantArt -->
+      <a class="footer-social" href="https://www.deviantart.com/0jem0" target="_blank" title="DeviantArt">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.207 4.794l.23-.43V0h-4.169l-.436.44-2.021 3.771-.646.383H4.58v5.504h4.104l.32.446-4.424 8.218-.23.43V24h4.169l.437-.44 2.02-3.771.647-.383h7.585v-5.503h-4.104l-.32-.447 4.423-8.662z"/></svg>
+      </a>
+      <!-- Redbubble -->
+      <a class="footer-social" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank" title="Redbubble">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5c2.25 0 4.174.985 5.497 2.544L15.3 9.241A4.484 4.484 0 0 0 12 7.5a4.5 4.5 0 0 0-4.5 4.5 4.5 4.5 0 0 0 4.5 4.5 4.484 4.484 0 0 0 3.3-1.741l2.197 2.197A7.476 7.476 0 0 1 12 19.5 7.5 7.5 0 0 1 4.5 12 7.5 7.5 0 0 1 12 4.5zm0 3a4.5 4.5 0 0 1 0 9 4.5 4.5 0 0 1 0-9z"/></svg>
+      </a>
+    </div>
   </div>
 </footer>
 
