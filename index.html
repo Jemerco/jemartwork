@@ -293,13 +293,15 @@ body.cur-brl [data-usd]{display:none!important;}
 .copy-quote-btn:hover{background:#8a6f4210;}
 
 /* PRICE TABLE */
-.price-table{width:100%;border-collapse:collapse;margin-bottom:28px;}
-.price-table thead th{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);padding:0 0 10px;text-align:left;border-bottom:1px solid var(--border);}
-.price-table thead th:last-child{text-align:right;}
-.price-table .pt-section td{padding:18px 0 4px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-mid);}
-.price-table tbody tr:not(.pt-section) td{padding:7px 0;border-bottom:1px solid var(--bg3);font-size:15px;color:var(--text);}
-.price-table tbody tr:not(.pt-section):last-child td,.price-table tbody tr:not(.pt-section) + .pt-section ~ tr:first-of-type td{border-bottom:none;}
-.price-table .pt-price{text-align:right;color:var(--gold);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;white-space:nowrap;padding-left:16px;}
+.price-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px;}
+@media(max-width:900px){.price-cards{grid-template-columns:1fr;}}
+.price-card{background:var(--surface);border-radius:4px;padding:14px 16px;box-shadow:0 1px 3px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s;}
+.price-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(138,111,66,.1);}
+.pc-title{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--bg3);}
+.pc-row{display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--bg3);font-size:14px;}
+.pc-row:last-child{border-bottom:none;padding-bottom:0;}
+.pc-service{color:var(--text);}
+.pc-price{color:var(--gold);font-weight:500;white-space:nowrap;padding-left:12px;font-size:14px;}
 
 /* COMMISSION NEW LAYOUT */
 .comm-new-layout{display:grid;grid-template-columns:1fr;gap:32px;align-items:start;}
@@ -377,58 +379,70 @@ body.cur-brl [data-usd]{display:none!important;}
 
   <!-- LEFT: price table + details -->
   <div>
-    <table class="price-table">
-      <thead>
-        <tr>
-          <th><span data-en>Service</span><span data-pt>Serviço</span></th>
-          <th><span data-en>Price reference</span><span data-pt>Referência de preço</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="pt-section"><td colspan="2"><span data-en>Book Cover Illustration</span><span data-pt>Capa de Livro</span></td></tr>
-        <tr><td><span data-en>Full cover</span><span data-pt>Ilustração completa</span></td><td class="pt-price"><span data-brl>a partir de R$300</span><span data-usd>from $100</span></td></tr>
+    <div class="price-cards">
 
-        <tr class="pt-section"><td colspan="2"><span data-en>Editorial Illustration</span><span data-pt>Ilustração Editorial</span></td></tr>
-        <tr><td><span data-en>Small — vignette, corner</span><span data-pt>Pequena — vinheta, canto</span></td><td class="pt-price"><span data-brl>R$50</span><span data-usd>$10</span></td></tr>
-        <tr><td><span data-en>Medium — half page</span><span data-pt>Média — meia página</span></td><td class="pt-price"><span data-brl>R$100</span><span data-usd>$20</span></td></tr>
-        <tr><td><span data-en>Full page — B&amp;W</span><span data-pt>Página inteira — P&amp;B</span></td><td class="pt-price"><span data-brl>R$150</span><span data-usd>$35</span></td></tr>
-        <tr><td><span data-en>Full page — Color</span><span data-pt>Página inteira — Colorida</span></td><td class="pt-price"><span data-brl>R$190</span><span data-usd>$50</span></td></tr>
+      <div class="price-card">
+        <div class="pc-title"><span data-en>Book Cover</span><span data-pt>Capa de Livro</span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Full cover</span><span data-pt>Ilustração completa</span></span><span class="pc-price"><span data-brl>a partir de R$300</span><span data-usd>from $100</span></span></div>
+      </div>
 
-        <tr class="pt-section"><td colspan="2"><span data-en>Character — Sketch</span><span data-pt>Personagem — Sketch</span></td></tr>
-        <tr><td><span data-en>Bust</span><span data-pt>Busto</span></td><td class="pt-price"><span data-brl>R$30</span><span data-usd>$10</span></td></tr>
-        <tr><td><span data-en>Half body</span><span data-pt>Meio corpo</span></td><td class="pt-price"><span data-brl>R$40</span><span data-usd>$12</span></td></tr>
-        <tr><td><span data-en>Full body</span><span data-pt>Corpo inteiro</span></td><td class="pt-price"><span data-brl>R$50</span><span data-usd>$15</span></td></tr>
+      <div class="price-card">
+        <div class="pc-title"><span data-en>Editorial</span><span data-pt>Editorial</span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Small — vignette</span><span data-pt>Pequena — vinheta</span></span><span class="pc-price"><span data-brl>R$50</span><span data-usd>$10</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Medium — half page</span><span data-pt>Média — meia página</span></span><span class="pc-price"><span data-brl>R$100</span><span data-usd>$20</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Full page — B&amp;W</span><span data-pt>Página inteira — P&amp;B</span></span><span class="pc-price"><span data-brl>R$150</span><span data-usd>$35</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Full page — Color</span><span data-pt>Página inteira — Colorida</span></span><span class="pc-price"><span data-brl>R$190</span><span data-usd>$50</span></span></div>
+      </div>
 
-        <tr class="pt-section"><td colspan="2"><span data-en>Character — Lineart + Base Color</span><span data-pt>Personagem — Cores Base</span></td></tr>
-        <tr><td><span data-en>Bust</span><span data-pt>Busto</span></td><td class="pt-price"><span data-brl>R$70</span><span data-usd>$20</span></td></tr>
-        <tr><td><span data-en>Half body</span><span data-pt>Meio corpo</span></td><td class="pt-price"><span data-brl>R$80</span><span data-usd>$25</span></td></tr>
-        <tr><td><span data-en>Full body</span><span data-pt>Corpo inteiro</span></td><td class="pt-price"><span data-brl>R$90</span><span data-usd>$30</span></td></tr>
+      <div class="price-card">
+        <div class="pc-title"><span data-en>Character — Sketch</span><span data-pt>Personagem — Sketch</span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Bust</span><span data-pt>Busto</span></span><span class="pc-price"><span data-brl>R$30</span><span data-usd>$10</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Half body</span><span data-pt>Meio corpo</span></span><span class="pc-price"><span data-brl>R$40</span><span data-usd>$12</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Full body</span><span data-pt>Corpo inteiro</span></span><span class="pc-price"><span data-brl>R$50</span><span data-usd>$15</span></span></div>
+      </div>
 
-        <tr class="pt-section"><td colspan="2"><span data-en>Character — 2D Coloring</span><span data-pt>Personagem — Flat Shading</span></td></tr>
-        <tr><td><span data-en>Bust</span><span data-pt>Busto</span></td><td class="pt-price"><span data-brl>R$100</span><span data-usd>$30</span></td></tr>
-        <tr><td><span data-en>Half body</span><span data-pt>Meio corpo</span></td><td class="pt-price"><span data-brl>R$120</span><span data-usd>$35</span></td></tr>
-        <tr><td><span data-en>Full body</span><span data-pt>Corpo inteiro</span></td><td class="pt-price"><span data-brl>R$130</span><span data-usd>$40</span></td></tr>
+      <div class="price-card">
+        <div class="pc-title"><span data-en>Character — Lineart + Color</span><span data-pt>Personagem — Cores Base</span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Bust</span><span data-pt>Busto</span></span><span class="pc-price"><span data-brl>R$70</span><span data-usd>$20</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Half body</span><span data-pt>Meio corpo</span></span><span class="pc-price"><span data-brl>R$80</span><span data-usd>$25</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Full body</span><span data-pt>Corpo inteiro</span></span><span class="pc-price"><span data-brl>R$90</span><span data-usd>$30</span></span></div>
+      </div>
 
-        <tr class="pt-section"><td colspan="2"><span data-en>Character — Full Color</span><span data-pt>Personagem — Full Render</span></td></tr>
-        <tr><td><span data-en>Bust</span><span data-pt>Busto</span></td><td class="pt-price"><span data-brl>R$200</span><span data-usd>$50</span></td></tr>
-        <tr><td><span data-en>Half body</span><span data-pt>Meio corpo</span></td><td class="pt-price"><span data-brl>R$225</span><span data-usd>$60</span></td></tr>
-        <tr><td><span data-en>Full body</span><span data-pt>Corpo inteiro</span></td><td class="pt-price"><span data-brl>R$250</span><span data-usd>$70</span></td></tr>
+      <div class="price-card">
+        <div class="pc-title"><span data-en>Character — 2D Coloring</span><span data-pt>Personagem — Flat Shading</span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Bust</span><span data-pt>Busto</span></span><span class="pc-price"><span data-brl>R$100</span><span data-usd>$30</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Half body</span><span data-pt>Meio corpo</span></span><span class="pc-price"><span data-brl>R$120</span><span data-usd>$35</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Full body</span><span data-pt>Corpo inteiro</span></span><span class="pc-price"><span data-brl>R$130</span><span data-usd>$40</span></span></div>
+      </div>
 
-        <tr class="pt-section"><td colspan="2"><span data-en>Reference Sheet — B&amp;W</span><span data-pt>Folha de Ref — Lineart</span></td></tr>
-        <tr><td><span data-en>1 char + 3 expressions</span><span data-pt>1 pers. + 3 expressões</span></td><td class="pt-price"><span data-brl>R$100</span><span data-usd>$30</span></td></tr>
-        <tr><td><span data-en>+ Extra face</span><span data-pt>+ Rosto extra</span></td><td class="pt-price"><span data-brl>+R$25</span><span data-usd>+$10</span></td></tr>
-        <tr><td><span data-en>+ Extra pose</span><span data-pt>+ Pose extra</span></td><td class="pt-price"><span data-brl>+R$30</span><span data-usd>+$15</span></td></tr>
+      <div class="price-card">
+        <div class="pc-title"><span data-en>Character — Full Color</span><span data-pt>Personagem — Full Render</span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Bust</span><span data-pt>Busto</span></span><span class="pc-price"><span data-brl>R$200</span><span data-usd>$50</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Half body</span><span data-pt>Meio corpo</span></span><span class="pc-price"><span data-brl>R$225</span><span data-usd>$60</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Full body</span><span data-pt>Corpo inteiro</span></span><span class="pc-price"><span data-brl>R$250</span><span data-usd>$70</span></span></div>
+      </div>
 
-        <tr class="pt-section"><td colspan="2"><span data-en>Reference Sheet — Colored</span><span data-pt>Folha de Ref — Colorida</span></td></tr>
-        <tr><td><span data-en>1 char + 3 expressions</span><span data-pt>1 pers. + 3 expressões</span></td><td class="pt-price"><span data-brl>R$150</span><span data-usd>$60</span></td></tr>
-        <tr><td><span data-en>+ Extra face</span><span data-pt>+ Rosto extra</span></td><td class="pt-price"><span data-brl>+R$30</span><span data-usd>+$15</span></td></tr>
-        <tr><td><span data-en>+ Extra pose</span><span data-pt>+ Pose extra</span></td><td class="pt-price"><span data-brl>+R$35</span><span data-usd>+$20</span></td></tr>
+      <div class="price-card">
+        <div class="pc-title"><span data-en>Ref Sheet — B&amp;W</span><span data-pt>Folha de Ref — Lineart</span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>1 char + 3 expr.</span><span data-pt>1 pers. + 3 expr.</span></span><span class="pc-price"><span data-brl>R$100</span><span data-usd>$30</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>+ Extra face</span><span data-pt>+ Rosto extra</span></span><span class="pc-price"><span data-brl>+R$25</span><span data-usd>+$10</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>+ Extra pose</span><span data-pt>+ Pose extra</span></span><span class="pc-price"><span data-brl>+R$30</span><span data-usd>+$15</span></span></div>
+      </div>
 
-        <tr class="pt-section"><td colspan="2"><span data-en>Comic Pages — per page</span><span data-pt>Quadrinho — por página</span></td></tr>
-        <tr><td><span data-en>Black &amp; white</span><span data-pt>Preto e branco</span></td><td class="pt-price"><span data-brl>R$75</span><span data-usd>$20</span></td></tr>
-        <tr><td><span data-en>Color</span><span data-pt>Colorido</span></td><td class="pt-price"><span data-brl>R$100</span><span data-usd>$30</span></td></tr>
-      </tbody>
-    </table>
+      <div class="price-card">
+        <div class="pc-title"><span data-en>Ref Sheet — Colored</span><span data-pt>Folha de Ref — Colorida</span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>1 char + 3 expr.</span><span data-pt>1 pers. + 3 expr.</span></span><span class="pc-price"><span data-brl>R$150</span><span data-usd>$60</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>+ Extra face</span><span data-pt>+ Rosto extra</span></span><span class="pc-price"><span data-brl>+R$30</span><span data-usd>+$15</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>+ Extra pose</span><span data-pt>+ Pose extra</span></span><span class="pc-price"><span data-brl>+R$35</span><span data-usd>+$20</span></span></div>
+      </div>
+
+      <div class="price-card">
+        <div class="pc-title"><span data-en>Comic Pages — per page</span><span data-pt>Quadrinho — por página</span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Black &amp; white</span><span data-pt>Preto e branco</span></span><span class="pc-price"><span data-brl>R$75</span><span data-usd>$20</span></span></div>
+        <div class="pc-row"><span class="pc-service"><span data-en>Color</span><span data-pt>Colorido</span></span><span class="pc-price"><span data-brl>R$100</span><span data-usd>$30</span></span></div>
+      </div>
+
+    </div>
 
     <div class="s-label"><span data-en>Add-ons</span><span data-pt>Adicionais</span></div>
     <div class="extras-grid">
