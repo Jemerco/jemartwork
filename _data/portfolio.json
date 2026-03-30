@@ -2,12 +2,12 @@
   "fanart": [
     {
       "title": "The Ruinous Love",
-      "meta": "",
+      "meta": "Full Render",
       "img": "public/images/06-the-ruinous-love-couples.png"
     },
     {
-      "title": "Rowan & Aelin - Throne of Glass",
-      "meta": "TOG · Rowan & Aelin",
+      "title": "Throne of Glass",
+      "meta": "2D coloring",
       "img": "https://jemcomissao.carrd.co/assets/images/gallery01/f1ff86e5.jpg?v=85d73096"
     },
     {
@@ -18,7 +18,7 @@
     {
       "img": "public/images/olive_e_adam___the_love_hipothesys_by_0jem0_dfe0dza-375w-2x.jpg",
       "title": "The Love Hipothesis",
-      "meta": "Adam & Olive"
+      "meta": "2D coloring"
     }
   ],
   "capa": [
@@ -51,25 +51,29 @@
   "landscape": [
     {
       "title": "Field",
-      "img": "public/images/07-helena-alchemised-1-.jpg"
+      "img": "public/images/07-helena-alchemised-1-.jpg",
+      "meta": "Full render"
     },
     {
       "img": "public/images/09-landscape2.jpg",
-      "title": "Desert practice"
+      "title": "Desert practice",
+      "meta": "Full render"
     },
     {
       "img": "public/images/3.jpg",
-      "title": "Clouds"
+      "title": "Clouds",
+      "meta": "Full render"
     },
     {
       "img": "public/images/1.jpg",
-      "title": "Sky practice"
+      "title": "Sky practice",
+      "meta": "Full render"
     }
   ],
   "character_sheet": [
     {
       "title": "Reference Sheet",
-      "meta": "Character · Ref Sheet",
+      "meta": "2D coloring",
       "img": "https://jemcomissao.carrd.co/assets/images/gallery05/1ea4bafd.jpg?v=85d73096"
     }
   ]
