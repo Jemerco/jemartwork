@@ -10,7 +10,7 @@
 :root{--bg:#f7f2ea;--bg2:#f0ead8;--bg3:#e8e0cc;--surface:#faf7f2;--border:#ddd5c0;--border2:#ccc3aa;--gold:#8a6f42;--gold-lt:#b8966a;--gold-dim:#c8b090;--sky:#8faabb;--cream:#2a2018;--text:#3d3020;--text-mid:#6a5c48;--text-dim:#9a8c78;--green:#5a7a4a;--rose:#c08878;--max-w:1100px;}
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.7;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.7;}
 
 /* NAV */
 .nav{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;}
@@ -59,8 +59,8 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 
 .s-label{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px;padding-top:44px;}
 .s-label::after{content:'';flex:1;height:1px;background:var(--border);}
-.s-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--cream);margin-bottom:8px;line-height:1.1;}
-.s-desc{font-size:11px;color:var(--text-mid);margin-bottom:22px;line-height:1.9;}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;color:var(--cream);margin-bottom:8px;line-height:1.1;}
+.s-desc{font-size:15px;color:var(--text-mid);margin-bottom:22px;line-height:1.9;}
 
 /* PORTFOLIO */
 .filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
@@ -198,7 +198,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 /* ABOUT */
 .about-block{background:var(--surface);border-radius:4px;padding:22px;margin-bottom:0;box-shadow:0 1px 4px rgba(0,0,0,.06);}
 .about-name{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--text);margin-bottom:10px;}
-.about-bio{font-size:11px;color:var(--text-mid);line-height:1.9;margin-bottom:16px;}
+.about-bio{font-size:16px;color:var(--text-mid);line-height:1.9;margin-bottom:16px;}
 .about-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .about-tag{padding:4px 10px;background:var(--bg2);border-radius:2px;font-size:9px;color:var(--text-dim);}
 
@@ -246,8 +246,8 @@ body.shop-int [data-br]{display:none!important;}
   .page-body{padding:0 40px;}
   .section{padding:0;}
 
-  .s-title{font-size:40px;}
-  .s-desc{font-size:12px;margin-bottom:28px;}
+  .s-title{font-size:44px;}
+  .s-desc{font-size:15px;margin-bottom:28px;}
 
   /* Portfolio — 4 cols */
   .port-grid{grid-template-columns:repeat(4,1fr);gap:14px;}
@@ -298,7 +298,7 @@ body.shop-int [data-br]{display:none!important;}
 .price-table thead th{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);padding:0 0 10px;text-align:left;border-bottom:1px solid var(--border);}
 .price-table thead th:last-child{text-align:right;}
 .price-table .pt-section td{padding:18px 0 4px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-mid);}
-.price-table tbody tr:not(.pt-section) td{padding:7px 0;border-bottom:1px solid var(--bg3);font-size:13px;color:var(--text);}
+.price-table tbody tr:not(.pt-section) td{padding:7px 0;border-bottom:1px solid var(--bg3);font-size:15px;color:var(--text);}
 .price-table tbody tr:not(.pt-section):last-child td,.price-table tbody tr:not(.pt-section) + .pt-section ~ tr:first-of-type td{border-bottom:none;}
 .price-table .pt-price{text-align:right;color:var(--gold);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;white-space:nowrap;padding-left:16px;}
 
@@ -378,9 +378,6 @@ body.shop-int [data-br]{display:none!important;}
   <!-- LEFT: price table + details -->
   <div>
     <div class="s-label"><span data-en>Commissions</span><span data-pt>Comissões</span></div>
-    <h2 class="s-title"><span data-en>Commission your art</span><span data-pt>Encomende sua arte</span></h2>
-    <p class="s-desc"><span data-en>Original characters, fanart, book covers, editorial and more. Use the builder on the right to get your estimate.</span><span data-pt>Personagens originais, fanart, capas de livro, editorial e mais. Use o orçador ao lado para calcular.</span></p>
-
     <table class="price-table">
       <thead>
         <tr>
@@ -501,20 +498,10 @@ body.shop-int [data-br]{display:none!important;}
         <span><span class="ch-badge" data-en>Recommended</span><span class="ch-badge" data-pt>Recomendado</span><span class="ch-main">E-mail</span></span>
       </button>
       <div class="prefill-panel" id="panel-email">
-        <div class="f-row-2">
-          <div class="f-group"><label class="f-label" data-en>Your name</label><label class="f-label" data-pt>Seu nome</label><input class="f-input" type="text" id="f-name" placeholder="Name"></div>
-          <div class="f-group"><label class="f-label">E-mail</label><input class="f-input" type="email" id="f-email" placeholder="you@email.com"></div>
-        </div>
-        <div class="f-group"><label class="f-label" data-en>Estimated quote</label><label class="f-label" data-pt>Orçamento estimado</label><input class="f-input" type="text" id="f-quote" placeholder="—" readonly></div>
-        <div class="f-group"><label class="f-label" data-en>Description &amp; references</label><label class="f-label" data-pt>Descrição e referências</label><textarea class="f-textarea" id="f-desc" placeholder="Describe your character, share reference links or images..."></textarea></div>
-        <div class="f-group">
-          <label class="f-label" data-en>Reference images</label>
-          <label class="f-label" data-pt>Imagens de referência</label>
-          <input class="f-input" type="file" accept="image/*" multiple id="f-images" style="cursor:pointer;">
-          <span style="font-size:9px;color:var(--text-dim);margin-top:5px;display:block;" data-en>Select multiple files at once. Images will be listed in the email — send the actual files via Instagram DM <a href="https://instagram.com/0jem0" style="color:var(--gold)">@0jem0</a> if needed.</span>
-          <span style="font-size:9px;color:var(--text-dim);margin-top:5px;display:block;" data-pt>Selecione vários arquivos de uma vez. Os nomes aparecem no email — envie as imagens pelo Instagram DM <a href="https://instagram.com/0jem0" style="color:var(--gold)">@0jem0</a> se necessário.</span>
-        </div>
+        <span class="pf-label" data-en>Message ready to send</span><span class="pf-label" data-pt>Mensagem pronta para enviar</span>
+        <div class="pf-msg" id="pf-email-msg">—</div>
         <button class="submit-btn" onclick="submitEmail()"><span data-en>✦ Open in email app</span><span data-pt>✦ Abrir no app de email</span></button>
+        <p style="font-size:9px;color:var(--text-dim);margin-top:8px;"><a href="mailto:jemerco.creative@gmail.com" style="color:var(--gold);text-decoration:none;">jemerco.creative@gmail.com</a></p>
       </div>
       <button class="ch-btn insta" onclick="openChannel('insta')">
         <span class="ch-icon">📸</span>
@@ -540,8 +527,6 @@ body.shop-int [data-br]{display:none!important;}
 <section class="section sec-band" id="shop">
 <div class="sec-inner">
   <div class="s-label">Shop</div>
-  <h2 class="s-title"><span data-en>Prints & Products</span><span data-pt>Prints & Produtos</span></h2>
-  <p class="s-desc"><span data-en>Art prints, stickers, canvas and more. International shipping via Redbubble. Brazilian orders via Montink.</span><span data-pt>Art prints, adesivos, canvas e mais. Internacional via Redbubble. Brasil via Montink.</span></p>
   <div class="toggle-bar">
     <button class="tgl-opt active" onclick="setShop('int',this)">🌎 International — Redbubble</button>
     <button class="tgl-opt" onclick="setShop('br',this)">🇧🇷 Brasil — Montink</button>
@@ -621,9 +606,7 @@ function setLang(l){
   document.querySelectorAll('.tgl-opt[onclick*="setCurrency"]').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes("'"+autoCur+"'")));
   renderCalcSub();
   renderPortfolio();
-  updateCalcResult(); // refresh Instagram prefill message in new language
-  const fDesc=document.getElementById('f-desc');
-  if(fDesc) fDesc.placeholder=l==='pt'?'Descreva seu personagem, envie links ou imagens de referência...':'Describe your character, share reference links or images...';
+  updateCalcResult(); // refresh prefill messages in new language
 }
 // COPY QUOTE
 function copyQuote(){
@@ -636,11 +619,6 @@ function copyQuote(){
     btn.textContent = en ? '✓ Copied!' : '✓ Copiado!';
     setTimeout(()=>btn.innerHTML=orig, 2000);
   });
-  // Fill email description field if panel already open
-  const fDesc = document.getElementById('f-desc');
-  if(fDesc) fDesc.value = msg;
-  const fQuote = document.getElementById('f-quote');
-  if(fQuote) fQuote.value = price;
 }
 
 // POLICIES — lê de dados.js
@@ -809,7 +787,7 @@ function calcBase(){
 function updateCalcResult(){
   const res=calcBase();const priceEl=document.getElementById('calc-price');const noteEl=document.getElementById('calc-note');
   const E=currentCur==='brl'?eBRL:eUSD;
-  if(!res){priceEl.textContent='—';noteEl.textContent=isEN()?'Select options above':'Selecione as opções acima';document.getElementById('f-quote').value='';updatePrefills('—');return;}
+  if(!res){priceEl.textContent='—';noteEl.textContent=isEN()?'Select options above':'Selecione as opções acima';updatePrefills('—');return;}
   let total=res.base;const notes=[];
   state.extras.forEach(k=>{const e=E[k];if(e.pct){const add=Math.round(res.base*e.pct/100);total+=add;notes.push(`+${res.sym}${add}`);}else{total+=e.flat;notes.push(`+${res.sym}${e.flat}`);}});
   const display=`${res.sym}${total}`;
@@ -817,7 +795,6 @@ function updateCalcResult(){
   const copyBtn=document.getElementById('copy-quote-btn');
   if(copyBtn) copyBtn.style.display='block';
   noteEl.textContent=notes.length?notes.join(' · '):(state.cat==='capa'?(isEN()?'base price, may increase':'valor pode aumentar'):'');
-  document.getElementById('f-quote').value=display;
   updatePrefills(display);
 }
 
@@ -836,7 +813,7 @@ function buildMsg(price){
   lines.push(`${en?'Estimated':'Estimativa'}: ${price}`,'',en?'[Describe your character + share references 🎨]':'[Descreva seu personagem e envie referências 🎨]');
   return lines.join('\n');
 }
-function updatePrefills(price){const msg=buildMsg(price);document.getElementById('pf-insta-msg').textContent=msg;}
+function updatePrefills(price){const msg=buildMsg(price);document.getElementById('pf-insta-msg').textContent=msg;const em=document.getElementById('pf-email-msg');if(em)em.textContent=msg;}
 
 // CHANNELS
 let openCh=null;
@@ -844,31 +821,14 @@ function openChannel(ch){
   if(openCh===ch){document.getElementById('panel-'+ch).classList.remove('open');document.querySelector('.ch-btn.'+ch).classList.remove('active');openCh=null;return;}
   if(openCh){document.getElementById('panel-'+openCh).classList.remove('open');document.querySelector('.ch-btn.'+openCh).classList.remove('active');}
   document.getElementById('panel-'+ch).classList.add('open');document.querySelector('.ch-btn.'+ch).classList.add('active');openCh=ch;
-  // Auto-fill email form from current quote
-  if(ch==='email'){
-    const price=document.getElementById('calc-price').textContent;
-    const fQuote=document.getElementById('f-quote');
-    const fDesc=document.getElementById('f-desc');
-    if(price&&price!=='—'){
-      if(fQuote&&!fQuote.value) fQuote.value=price;
-      if(fDesc&&!fDesc.value) fDesc.value=buildMsg(price);
-    }
-  }
 }
 function copyPrefill(ch){const text=document.getElementById('pf-'+ch+'-msg').textContent;navigator.clipboard.writeText(text).then(()=>{const b=event.target;const orig=b.innerHTML;b.textContent=isEN()?'✓ Copied!':'✓ Copiado!';setTimeout(()=>b.innerHTML=orig,2000);});}
 function submitEmail(){
-  const name=document.getElementById('f-name').value.trim();
-  const replyTo=document.getElementById('f-email').value.trim();
-  const quote=document.getElementById('f-quote').value;
-  const desc=document.getElementById('f-desc').value.trim();
   const en=isEN();
   const to=DADOS.contato.email;
   const subject=en?'Commission Request — Jem Art':'Pedido de Comissão — Jem Art';
-  let body='';
-  if(name) body+=(en?'From: ':'De: ')+name+(replyTo?' ('+replyTo+')':'')+'\n';
-  if(quote&&quote!=='—') body+=(en?'Estimate: ':'Estimativa: ')+quote+'\n';
-  if(body) body+='\n';
-  body+=desc||(en?'[Describe your character and share reference links]':'[Descreva seu personagem e compartilhe links de referência]');
+  const msgEl=document.getElementById('pf-email-msg');
+  const body=msgEl&&msgEl.textContent&&msgEl.textContent!=='—'?msgEl.textContent:(en?'[Describe your commission request]':'[Descreva seu pedido de comissão]');
   window.open('mailto:'+to+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body));
 }
 
