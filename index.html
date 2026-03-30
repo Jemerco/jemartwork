@@ -372,11 +372,11 @@ body.cur-brl [data-usd]{display:none!important;}
 <!-- COMMISSIONS -->
 <section class="section sec-band" id="commissions">
 <div class="sec-inner">
+<div class="s-label"><span data-en>Commissions</span><span data-pt>Comissões</span></div>
 <div class="comm-new-layout">
 
   <!-- LEFT: price table + details -->
   <div>
-    <div class="s-label"><span data-en>Commissions</span><span data-pt>Comissões</span></div>
     <table class="price-table">
       <thead>
         <tr>
@@ -526,30 +526,12 @@ body.cur-brl [data-usd]{display:none!important;}
 <section class="section sec-band" id="shop">
 <div class="sec-inner">
   <div class="s-label">Shop</div>
-  <div data-en>
-    <div class="shop-grid">
-      <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.6055916782.7702/aps,504x498,small,transparent-pad,600x600,f8f8f8.u4.jpg" alt="Bryce Quinlan" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Bryce Quinlan — Crescent City</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/i/art-print/Bryce-Quinlan-Crescent-City-by-Jemerco/172857702.1G4ZT" target="_blank">Redbubble ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.6054271744.1391/st,small,507x507-pad,600x600,f8f8f8.u4.jpg" alt="Gothic Key" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Ornamental Gothic Key</div><div class="prod-price">from $3</div><a class="prod-link" href="https://www.redbubble.com/i/sticker/Ornamental-Gothic-Key-Illustration-by-Jemerco/177761391.EJUG5" target="_blank">Redbubble ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.6080800946.6903/aps,504x498,small,transparent-pad,600x600,f8f8f8.u4.jpg" alt="Lucy and Aspen" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Lucy & Aspen — The Selection</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/i/art-print/The-Selection-Lucy-and-Aspen-by-Jemerco/172446903.1G4ZT" target="_blank">Redbubble ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.6056150043.1654/st,small,507x507-pad,600x600,f8f8f8.u4.jpg" alt="Jinu Saja Boys" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Jinu — Saja Boys</div><div class="prod-price">from $3</div><a class="prod-link" href="https://www.redbubble.com/i/sticker/Jinu-Saja-Boys-by-Jemerco/172271654.EJUG5" target="_blank">Redbubble ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.5798710736.6080/aps,504x498,small,transparent-pad,600x600,f8f8f8.u4.jpg" alt="The Ruinous Love" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">The Ruinous Love — Bucher & Blackbird</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/i/art-print/The-Ruinous-Love-Bucher-and-Blackbird-by-Jemerco/169526080.1G4ZT" target="_blank">Redbubble ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.4209925686.3955/aps,504x498,small,transparent-pad,600x600,f8f8f8.u4.jpg" alt="The Love Hypothesis" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Olive & Adam — The Love Hypothesis</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/i/art-print/The-Love-Hypothesis-Olive-and-Adam-by-Jemerco/121453955.1G4ZT" target="_blank">Redbubble ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.3278851600.8188/aps,504x498,small,transparent-pad,600x600,f8f8f8.u4.jpg" alt="Lucien ACOTAR" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Lucien — ACOTAR</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/i/art-print/Lucien-Acotar-by-Jemerco/100378188.1G4ZT" target="_blank">Redbubble ↗</a></div></div>
-    </div>
-    <p style="text-align:center;font-size:10px;color:var(--text-dim);padding-bottom:8px;"><a href="https://www.redbubble.com/people/Jemerco/shop" style="color:var(--gold);text-decoration:none;" target="_blank">View all on Redbubble ↗</a></p>
+  <div class="port-slider-wrap">
+    <button class="port-arrow port-prev" id="shop-prev" onclick="slideShop(-1)">&#8592;</button>
+    <div class="shop-grid" id="shop-grid"></div>
+    <button class="port-arrow port-next" id="shop-next" onclick="slideShop(1)">&#8594;</button>
   </div>
-  <div data-pt>
-    <div class="shop-grid">
-      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55003/studio/31060/art/358799/cards.png" alt="Lucien Vanserra" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Lucien Vanserra — ACOTAR</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/lucien-vanserra-acotar" target="_blank">Colab55 ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55003/studio/31060/art/358830/cards.png" alt="Rowan e Aelin" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Rowan & Aelin — Trono de Vidro</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/rowan-e-aelin-trono-de-vidro" target="_blank">Colab55 ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55002/studio/31060/art/358831/cards.png" alt="Lorcan e Elide" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Lorcan & Elide — Trono de Vidro</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/lorcan-e-elide-trono-de-vidro" target="_blank">Colab55 ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55003/studio/31060/art/358838/cards.png" alt="Azriel e Gwyn" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Azriel & Gwyn — ACOTAR</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/azriel-e-gwyn" target="_blank">Colab55 ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55004/studio/31060/art/358848/cards.png" alt="Alys e Evan" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Alys & Evan</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/alys-e-evan" target="_blank">Colab55 ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55002/studio/31060/art/360565/cards.png" alt="Evan Couple Set" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Evan — Couple Set</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/evan-couple-set" target="_blank">Colab55 ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55002/studio/31060/art/360566/cards.png" alt="Alys Couple Set" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Alys — Couple Set</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/alys-couple-set" target="_blank">Colab55 ↗</a></div></div>
-    </div>
-    <p style="text-align:center;font-size:10px;color:var(--text-dim);padding-bottom:8px;"><a href="https://www.colab55.com/@0jem0" style="color:var(--gold);text-decoration:none;" target="_blank">Ver todos na Colab55 ↗</a></p>
-  </div>
+  <p style="text-align:center;font-size:10px;color:var(--text-dim);padding-bottom:8px;" id="shop-store-link"></p>
 </div>
 </section>
 
@@ -618,6 +600,7 @@ function setLang(l){
   renderCalcSub();
   renderPortfolio();
   updateCalcResult(); // refresh prefill messages in new language
+  shopPage=0; renderShop();
 }
 // COPY QUOTE
 function copyQuote(){
@@ -860,6 +843,29 @@ function renderAbout() {
   document.getElementById('about-tags').innerHTML = s.tags.map(t => `<span class="about-tag">${t}</span>`).join('');
 }
 renderAbout();
+
+// SHOP SLIDER
+var shopPage=0;
+const SHOP_PER_PAGE=8;
+function renderShop(){
+  const en=isEN();
+  const items=en?DADOS.loja_int:DADOS.loja_br;
+  const store=en?'Redbubble':'Colab55';
+  const storeUrl=en?'https://www.redbubble.com/people/Jemerco/shop':'https://www.colab55.com/@0jem0';
+  const storeLinkText=en?'View all on Redbubble ↗':'Ver todos na Colab55 ↗';
+  const start=shopPage*SHOP_PER_PAGE;
+  const page=items.slice(start,start+SHOP_PER_PAGE);
+  const grid=document.getElementById('shop-grid');
+  if(grid)grid.innerHTML=page.map(p=>`<div class="prod-card"><div class="prod-img"><img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'prod-ph\\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">${p.name}</div><div class="prod-price">${p.price}</div><a class="prod-link" href="${p.link}" target="_blank">${store} ↗</a></div></div>`).join('');
+  const prev=document.getElementById('shop-prev');
+  const next=document.getElementById('shop-next');
+  if(prev)prev.disabled=shopPage===0;
+  if(next)next.disabled=start+SHOP_PER_PAGE>=items.length;
+  const lnk=document.getElementById('shop-store-link');
+  if(lnk)lnk.innerHTML=`<a href="${storeUrl}" style="color:var(--gold);text-decoration:none;" target="_blank">${storeLinkText}</a>`;
+}
+function slideShop(dir){shopPage+=dir;renderShop();}
+renderShop();
 
 // Busca dados salvos pelo admin (/_data/*.json) e re-renderiza
 Promise.all([
