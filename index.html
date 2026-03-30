@@ -220,8 +220,6 @@ body.lang-en [data-pt]{display:none!important;}
 body.lang-pt [data-en]{display:none!important;}
 body.cur-usd [data-brl]{display:none!important;}
 body.cur-brl [data-usd]{display:none!important;}
-body.shop-br [data-int]{display:none!important;}
-body.shop-int [data-br]{display:none!important;}
 
 /* ANIMATION */
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
@@ -314,7 +312,7 @@ body.shop-int [data-br]{display:none!important;}
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="/dados.js"></script>
 </head>
-<body class="lang-en cur-usd shop-int">
+<body class="lang-en cur-usd">
 
 <nav class="nav">
   <div class="nav-inner">
@@ -528,11 +526,7 @@ body.shop-int [data-br]{display:none!important;}
 <section class="section sec-band" id="shop">
 <div class="sec-inner">
   <div class="s-label">Shop</div>
-  <div class="toggle-bar">
-    <button class="tgl-opt active" onclick="setShop('int',this)">🌎 International — Redbubble</button>
-    <button class="tgl-opt" onclick="setShop('br',this)">🇧🇷 Brasil — Montink</button>
-  </div>
-  <div data-int>
+  <div data-en>
     <div class="shop-grid">
       <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.6055916782.7702/aps,504x498,small,transparent-pad,600x600,f8f8f8.u4.jpg" alt="Bryce Quinlan" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Bryce Quinlan — Crescent City</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/i/art-print/Bryce-Quinlan-Crescent-City-by-Jemerco/172857702.1G4ZT" target="_blank">Redbubble ↗</a></div></div>
       <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.6054271744.1391/st,small,507x507-pad,600x600,f8f8f8.u4.jpg" alt="Gothic Key" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Ornamental Gothic Key</div><div class="prod-price">from $3</div><a class="prod-link" href="https://www.redbubble.com/i/sticker/Ornamental-Gothic-Key-Illustration-by-Jemerco/177761391.EJUG5" target="_blank">Redbubble ↗</a></div></div>
@@ -542,15 +536,19 @@ body.shop-int [data-br]{display:none!important;}
       <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.4209925686.3955/aps,504x498,small,transparent-pad,600x600,f8f8f8.u4.jpg" alt="The Love Hypothesis" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Olive & Adam — The Love Hypothesis</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/i/art-print/The-Love-Hypothesis-Olive-and-Adam-by-Jemerco/121453955.1G4ZT" target="_blank">Redbubble ↗</a></div></div>
       <div class="prod-card"><div class="prod-img"><img src="https://ih1.redbubble.net/image.3278851600.8188/aps,504x498,small,transparent-pad,600x600,f8f8f8.u4.jpg" alt="Lucien ACOTAR" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Lucien — ACOTAR</div><div class="prod-price">from $14</div><a class="prod-link" href="https://www.redbubble.com/i/art-print/Lucien-Acotar-by-Jemerco/100378188.1G4ZT" target="_blank">Redbubble ↗</a></div></div>
     </div>
-    <p style="text-align:center;font-size:10px;color:var(--text-dim);padding-bottom:8px;"><a href="https://www.redbubble.com/people/Jemerco/shop" style="color:var(--gold);text-decoration:none;" target="_blank"><span data-en>View all on Redbubble ↗</span><span data-pt>Ver todos no Redbubble ↗</span></a></p>
+    <p style="text-align:center;font-size:10px;color:var(--text-dim);padding-bottom:8px;"><a href="https://www.redbubble.com/people/Jemerco/shop" style="color:var(--gold);text-decoration:none;" target="_blank">View all on Redbubble ↗</a></p>
   </div>
-  <div data-br>
-    <div class="info-block"><strong data-en>Brazilian store — Montink</strong><strong data-pt>Loja Brasileira — Montink</strong><span data-en>Print-on-demand, delivery via Correios across Brazil.</span><span data-pt>Print-on-demand com entrega pelos Correios em todo o Brasil.</span></div>
+  <div data-pt>
     <div class="shop-grid">
-      <div class="prod-card"><div class="prod-img"><div class="prod-ph">🎨</div></div><div class="prod-info"><div class="prod-name">Nesta Archeron — ACOTAR</div><div class="prod-price">a partir de R$39</div><a class="prod-link" href="#" target="_blank">Montink ↗</a></div></div>
-      <div class="prod-card"><div class="prod-img"><div class="prod-ph">🎨</div></div><div class="prod-info"><div class="prod-name">Selestra Somniatis</div><div class="prod-price">a partir de R$39</div><a class="prod-link" href="#" target="_blank">Montink ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55003/studio/31060/art/358799/cards.png" alt="Lucien Vanserra" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Lucien Vanserra — ACOTAR</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/lucien-vanserra-acotar" target="_blank">Colab55 ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55003/studio/31060/art/358830/cards.png" alt="Rowan e Aelin" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Rowan & Aelin — Trono de Vidro</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/rowan-e-aelin-trono-de-vidro" target="_blank">Colab55 ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55002/studio/31060/art/358831/cards.png" alt="Lorcan e Elide" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Lorcan & Elide — Trono de Vidro</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/lorcan-e-elide-trono-de-vidro" target="_blank">Colab55 ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55003/studio/31060/art/358838/cards.png" alt="Azriel e Gwyn" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Azriel & Gwyn — ACOTAR</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/azriel-e-gwyn" target="_blank">Colab55 ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55004/studio/31060/art/358848/cards.png" alt="Alys e Evan" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Alys & Evan</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/alys-e-evan" target="_blank">Colab55 ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55002/studio/31060/art/360565/cards.png" alt="Evan Couple Set" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Evan — Couple Set</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/evan-couple-set" target="_blank">Colab55 ↗</a></div></div>
+      <div class="prod-card"><div class="prod-img"><img src="https://cdn.colab55.com/images/55002/studio/31060/art/360566/cards.png" alt="Alys Couple Set" onerror="this.parentElement.innerHTML='<div class=\'prod-ph\'>🎨</div>'"></div><div class="prod-info"><div class="prod-name">Alys — Couple Set</div><div class="prod-price">a partir de R$14</div><a class="prod-link" href="https://www.colab55.com/@0jem0/cards/alys-couple-set" target="_blank">Colab55 ↗</a></div></div>
     </div>
-    <div class="info-block" style="font-size:10px;"><span data-pt>⚙ Cadastre suas artes na <a href="https://montink.com">Montink</a> e atualize os links acima.</span><span data-en>⚙ Register your art on <a href="https://montink.com">Montink</a> and update the links above.</span></div>
+    <p style="text-align:center;font-size:10px;color:var(--text-dim);padding-bottom:8px;"><a href="https://www.colab55.com/@0jem0" style="color:var(--gold);text-decoration:none;" target="_blank">Ver todos na Colab55 ↗</a></p>
   </div>
 </div>
 </section>
@@ -603,10 +601,6 @@ body.shop-int [data-br]{display:none!important;}
       <a class="footer-social" href="https://www.deviantart.com/0jem0" target="_blank" title="DeviantArt">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.207 4.794l.23-.43V0h-4.169l-.436.44-2.021 3.771-.646.383H4.58v5.504h4.104l.32.446-4.424 8.218-.23.43V24h4.169l.437-.44 2.02-3.771.647-.383h7.585v-5.503h-4.104l-.32-.447 4.423-8.662z"/></svg>
       </a>
-      <!-- Redbubble -->
-      <a class="footer-social" href="https://www.redbubble.com/people/Jemerco/shop" target="_blank" title="Redbubble">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5c2.25 0 4.174.985 5.497 2.544L15.3 9.241A4.484 4.484 0 0 0 12 7.5a4.5 4.5 0 0 0-4.5 4.5 4.5 4.5 0 0 0 4.5 4.5 4.484 4.484 0 0 0 3.3-1.741l2.197 2.197A7.476 7.476 0 0 1 12 19.5 7.5 7.5 0 0 1 4.5 12 7.5 7.5 0 0 1 12 4.5zm0 3a4.5 4.5 0 0 1 0 9 4.5 4.5 0 0 1 0-9z"/></svg>
-      </a>
     </div>
   </div>
 </footer>
@@ -655,7 +649,6 @@ var currentCur='usd';
 const isEN=()=>document.body.classList.contains('lang-en');
 function setCurrency(c,btn){currentCur=c;document.body.className=document.body.className.replace(/cur-\w+/,'cur-'+c);document.querySelectorAll('.tgl-opt[onclick*="setCurrency"]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');updateCalcResult();}
 // SHOP
-function setShop(r,btn){document.body.className=document.body.className.replace(/shop-\w+/,'shop-'+r);document.querySelectorAll('.tgl-opt[onclick*="setShop"]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
 
 // PORTFOLIO — filter buttons + paginated grid
 var currentFilter=null;

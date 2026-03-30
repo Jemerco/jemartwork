@@ -218,19 +218,49 @@ const DADOS = {
     tags: ["Fantasy Art", "Book Fanart", "Character Design", "Editorial", "Comic Pages"],
   },
 
-  /* ── LOJA BRASIL (Montink) ── */
+  /* ── LOJA BRASIL (Colab55) ── */
   loja_br: [
     {
-      name:  "Nesta Archeron — ACOTAR",
-      price: "a partir de R$39",
-      link:  "#", // substitua pelo link Montink
-      img:   "https://jemcomissao.carrd.co/assets/images/gallery01/882c113b.jpg?v=85d73096",
+      name:  "Lucien Vanserra — ACOTAR",
+      price: "a partir de R$14",
+      link:  "https://www.colab55.com/@0jem0/cards/lucien-vanserra-acotar",
+      img:   "https://cdn.colab55.com/images/55003/studio/31060/art/358799/cards.png",
     },
     {
-      name:  "Selestra Somniatis",
-      price: "a partir de R$39",
-      link:  "#", // substitua pelo link Montink
-      img:   "https://jemcomissao.carrd.co/assets/images/gallery03/2f589bcc.jpg?v=85d73096",
+      name:  "Rowan & Aelin — Trono de Vidro",
+      price: "a partir de R$14",
+      link:  "https://www.colab55.com/@0jem0/cards/rowan-e-aelin-trono-de-vidro",
+      img:   "https://cdn.colab55.com/images/55003/studio/31060/art/358830/cards.png",
+    },
+    {
+      name:  "Lorcan & Elide — Trono de Vidro",
+      price: "a partir de R$14",
+      link:  "https://www.colab55.com/@0jem0/cards/lorcan-e-elide-trono-de-vidro",
+      img:   "https://cdn.colab55.com/images/55002/studio/31060/art/358831/cards.png",
+    },
+    {
+      name:  "Azriel & Gwyn — ACOTAR",
+      price: "a partir de R$14",
+      link:  "https://www.colab55.com/@0jem0/cards/azriel-e-gwyn",
+      img:   "https://cdn.colab55.com/images/55003/studio/31060/art/358838/cards.png",
+    },
+    {
+      name:  "Alys & Evan",
+      price: "a partir de R$14",
+      link:  "https://www.colab55.com/@0jem0/cards/alys-e-evan",
+      img:   "https://cdn.colab55.com/images/55004/studio/31060/art/358848/cards.png",
+    },
+    {
+      name:  "Evan — Couple Set",
+      price: "a partir de R$14",
+      link:  "https://www.colab55.com/@0jem0/cards/evan-couple-set",
+      img:   "https://cdn.colab55.com/images/55002/studio/31060/art/360565/cards.png",
+    },
+    {
+      name:  "Alys — Couple Set",
+      price: "a partir de R$14",
+      link:  "https://www.colab55.com/@0jem0/cards/alys-couple-set",
+      img:   "https://cdn.colab55.com/images/55002/studio/31060/art/360566/cards.png",
     },
   ],
 
